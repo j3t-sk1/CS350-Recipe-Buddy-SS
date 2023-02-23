@@ -2,14 +2,24 @@
 <!-- vscode specific: -->
     <!-- "ctrl /" to comment/uncomment entire line -->
     <!-- "ctrl shift k" to delete entire line -->
+    <!-- "ctrl tab" to quickly cycle between tabs open -->
+    <!-- "alt up/down arrow key" to move entire line  up or down without affecting other lines -->
+    <!-- "ctrl L" to select entire line-->
+    <!-- "tab" with entire line selected to tab without cursor being at beginning of line -->
 
 <!-- general shortcuts that are useful: -->
     <!-- "ctrl backspace" to delete an entire word -->
     <!-- "ctrl x" to cut whatever is highlighted -->
     <!-- "ctrl z" to undo --> 
     <!-- 'ctrl y' to redo -->
+    <!-- 'ctrl s' to save the file you're working on -->
+    <!-- 'ctrl r' in a browser to refresh the page, useful for updating changes from vscode quickly -->
+    <!-- 'ctrl t' to open a new tab in a browser -->
+    <!-- 'ctrl w' to delete tab you're currently on in a browser -->
+    
+    <!-- *Note: remember you have to save your files in vscode before you can see the changes in the browser -->    
 
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
@@ -30,27 +40,34 @@
     <main id="page">
       <nav><!-- main menu -->
         <ul>
-          <li><a href="#">&#8592; 1</a></li>
+          <li><a href="#">&#8592; this is an unordered list (bullets)</a></li>
           <li><a href="#" class="active">2</a></li>
           <li><a href="#">3 &#8594;</a></li>
         </ul>
       </nav>
       <header><!-- hero unit -->
-        <figure>
-          <img src="img/tale.jpg" alt="A very long tale" />
-          <p>if you have images, line above is how you insert them using html</p>
-        </figure>
-        <div class="hero-copy">
-          <h1 class="small">use h1 for title</h1>
-          <h2>can be used for subtitle</h2>
-        </div>
+        <div class="header_info"> 
+            <figure>
+                <img src="img/tale.jpg" alt="A very long tale" />
+                <p>if you have images, line above is how you insert them using html</p>
+              </figure>
+              <div class="hero-copy">
+                <h1 class="small">use h1 for title</h1>
+                <h2>can be used for subtitle</h2>
+              </div>
+            </div>
       </header>
       <article><!-- page content -->
         <p>text here</p>
+
+        <div class="box_example">
+            <p> box example </p>
+        </div>
+
         <div class="pagination">
-          <a class="button" href="#">&#8592; this is how buttons are done in html&nbsp;</a>
-          <a class="button" href="#page">&nbsp;button2&nbsp;</a>
-          <a class="button" href="#">&nbsp;button3 &#8594;</a>
+          <a class="button" href="#pag1">&#8592; this is how buttons are done in html&nbsp;</a>
+          <a class="button" href="#page2">&nbsp;button2&nbsp;</a>
+          <a class="button" href="#page3">&nbsp;notice how the href changes when you click these links &#8594;</a>
         </div>
       </article>
       <footer>

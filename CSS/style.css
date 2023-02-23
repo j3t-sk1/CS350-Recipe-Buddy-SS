@@ -1,0 +1,29 @@
+/* This will contain all (or most CSS, later down the line we might want a secondary css file depending how we do this) */
+
+/* This is how you access the div class from the html, and change only that class: */
+.header_info { 
+    color:rgb(31, 146, 146);
+    background-color: blanchedalmond;
+}
+
+/* This function doesn't have a . before it because its one of the preset divs from html, you only use . with the custom classes you create */
+body {
+    background-color: rgb(173, 117, 179);
+}
+
+/* Can use px, %, rem, em, for sizing elements*/
+/* You generally want to avoid px, as its the pixel count (so on higher ppi screens, the size of that element will be smaller*/
+/* As a general rule of thumb, I like using % (for example if you want a box covering most of the screen, you can set width like: "width: 80%" and it'll span 80% */
+/* I also frequently use rem, its based of the font size of the root element */
+
+.box_example {
+    margin: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 100px;
+    height: 40%;
+    border: 2px solid red;
+    border-radius: .5rem;
+
+    background-color:yellow;
+}

@@ -27,3 +27,32 @@ body {
 
     background-color:yellow;
 }
+
+.favorite_recipes {
+    margin: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 100px;
+    height: 40%;
+    border: 2px solid red;
+    border-radius: .5rem;
+
+    background-color: yellow;
+}
+
+.favorite1 {
+    position: absolute;
+    margin: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 20px;
+    height: 20%;
+    border: 2px solid red;
+    border-radius: .5rem;
+
+    background-color: blue;
+}
+
+.f1 {
+    position: absolute;
+}

@@ -1,3 +1,11 @@
+<!-- Checklist: -->
+<!-- 1. How to change form field color -->
+<!-- 2. How to put "search" text inside form field -->
+<!-- 3. Add search icon on right side of form field -->
+<!-- 4. Continue filling out rest of vertical & horizontal nav bars -->
+<!-- 5. Get spacing correct for all main boxes for center screen -->
+
+
 <!-- Useful commands to know to speed up programing: -->
 <!-- vscode specific: -->
     <!-- "ctrl /" to comment/uncomment entire line -->
@@ -73,6 +81,7 @@
           <!-- <li><a href="#">3 &#8594;</a></li> -->
         <!-- </ul> -->
       </nav>
+      
       <header><!-- hero unit -->
         <div class="header_info"> 
             <!-- <figure> -->
@@ -81,13 +90,16 @@
               <!-- </figure> -->
               <div class="header_bar">
                 <h1 class="small">RecipeBuddy</h1>
-                <h2 class="sub_small">The only cookbook you need.</h2>
+                <!-- <h2 class="sub_small">The only cookbook you need.</h2> -->
 
                 <div class="search">
-                  <form action="/html/tags/html_form_tag_action.cfm" method="get">
-                    Search:
-                    <input type="text" name="last_name" value="" maxlength="100" />
-                    <input type="submit" value="Submit" />
+                  <!-- <form action="/html/tags/html_form_tag_action.cfm" method="get"> -->
+                    <form>
+                      <div class="search_font">
+                        Search:
+                       </div>
+                      <input type="text" class="searching" name="search" value="" maxlength="100" />
+                      <!-- <input type="submit" value="Submit" /> -->
                     </form>
                 </div>
 
@@ -116,10 +128,14 @@
 
         <p> Favorite Recipes </p>
         <div class="favorite_recipes">
-            <button type = "favorite1">First Favorite Recipe</button>
-            <button type = "favorite2">Second Favorite Recipe</button>
-            <button type = "favorite3">Third Favorite Recipe</button>
-            <button type = "favorite4">Fourth Favorite Recipe</button>
+            <ul class="favorite1">
+              <li class="list"> 
+                <a class="f1" href="#f1">&nbsp; f1&nbsp; </a>
+              </li>
+            </ul>
+            <a class="favorite2" href="#favorite2">&nbsp;Second Favorite Recipe&nbsp;</a>
+            <a class="favorite3" href="#favorite3">&nbsp;Third Favorite Recipe&nbsp;</a>
+            <a class="favorite4" href="#favorite4">&nbsp;Fourth Favorite Recipe&nbsp;</a>
         </div>
 
         <div class="pagination">

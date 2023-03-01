@@ -10,7 +10,7 @@
 .header_bar {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
 }
 
@@ -19,15 +19,35 @@
 
 }
 
-.sub_small {
-    margin-left: 1.5rem;
-    margin-top: -1rem;
-}
+/* .sub_small { */
+    /* margin-left: 1.5rem; */
+    /* margin-top: -1rem; */
+/* } */
 
 .search {
-    display: flex;
-    flex-direction: row;
+    /* display: flex; */
+    /* flex-direction: row; */
+    margin-top: 2rem;
+    margin-left: 4rem;
+    border-radius: 20px;
+    padding-right: 1rem;
+    width: 36rem;
 }
+
+.searching {
+    border: 2px solid #eee;
+    margin-top: -1.5rem;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    padding:10px;
+    border-radius:10px;
+    width: 30rem;
+    /* color:rgb(48, 48, 48); why wont this work?? */
+    float: right;
+}
+
+/* .search_font { */
+/* } */
 
 /* This function doesn't have a . before it because its one of the preset divs from html, you only use . with the custom classes you create */
 body {

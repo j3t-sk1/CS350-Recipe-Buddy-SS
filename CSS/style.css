@@ -27,6 +27,7 @@
 }
 
 .search {
+    size: 600px;
     margin: auto;
     margin-left: 3rem;
     border-radius: 20px;
@@ -41,7 +42,7 @@
     box-shadow:0 0 15px 4px rgba(0,0,0,0.09);
     padding:10px;
     border-radius: 20px;
-    width: 80%;
+    width: 70%;
     float: left;
     color:rgb(19, 19, 19);
 }
@@ -74,9 +75,20 @@ input[type=text]:focus {
     margin-top: 0.8rem;
 }
 
-/* svg.icon_search { */
-    /* color:rgb(231, 228, 28); */
-/* } */
+.add {
+    padding-right: 4rem;
+    float: left;
+}
+
+.edit {
+    padding-right: 4rem;
+    float: left;
+}
+
+.delete {
+    padding-right: 4rem;
+    float: left;
+}
 
 body {
     background-color: rgb(48, 48, 48);

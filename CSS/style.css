@@ -113,6 +113,9 @@ body {
 
 .favorite_recipes {
     margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding-left: 10%;
     padding-right: 10%;
     width: 100px;
@@ -127,6 +130,7 @@ body {
    background-color: #e7e7e7; color: black;
    border: 2px solid red;
    text-align: center;  
+   margin: 10px;
 }
 
 

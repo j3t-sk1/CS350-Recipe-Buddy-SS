@@ -125,6 +125,7 @@ body {
 
 .favorite_recipes {
     margin: auto;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -140,6 +141,7 @@ body {
 
 .recent_recipes {
     margin: auto;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -155,6 +157,7 @@ body {
 
 .rated_recipes {
     margin: auto;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -168,7 +171,9 @@ body {
     background-color: aquamarine;
 }
 
+p {
 
+}
 
 
 

@@ -10,17 +10,23 @@
 .header_bar {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .small {
     margin-left: 1rem;
+
 }
 
 .sub_small {
-    /* margin-left: 1.5rem; */
-    /* margin-top: -1rem; */
-    flex-direction: column;
-    flex-wrap: wrap;
+    margin-left: 1.5rem;
+    margin-top: -1rem;
+}
+
+.search {
+    display: flex;
+    flex-direction: row;
 }
 
 /* This function doesn't have a . before it because its one of the preset divs from html, you only use . with the custom classes you create */

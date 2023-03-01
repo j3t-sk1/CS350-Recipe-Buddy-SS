@@ -2,13 +2,28 @@
 
 /* This is how you access the div class from the html, and change only that class: */
 .header_info { 
-    color:rgb(31, 146, 146);
-    background-color: blanchedalmond;
+    color:rgb(231, 228, 28);
+    background-color: rgb(85, 85, 85);
+    border-radius: 0.25rem;
+}
+
+.header_bar {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+}
+
+.small {
+    margin-left: 1rem;
+}
+
+.sub_small {
+    margin-left: 1.5rem;
+    margin-top: -1rem;
 }
 
 /* This function doesn't have a . before it because its one of the preset divs from html, you only use . with the custom classes you create */
 body {
-    background-color: rgb(63, 63, 63);
+    background-color: rgb(48, 48, 48);
 }
 
 /* Can use px, %, rem, em, for sizing elements*/

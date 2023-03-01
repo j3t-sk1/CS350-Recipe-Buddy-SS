@@ -79,11 +79,21 @@
                 <!-- <img src="img/tale.jpg" alt="A very long tale" /> -->
                 <!-- <p>if you have images, line above is how you insert them using html</p> -->
               <!-- </figure> -->
-              <div class="title">
+              <div class="header_bar">
                 <h1 class="small">RecipeBuddy</h1>
-                <h2>The only cookbook you need.</h2>
+                <h2 class="sub_small">The only cookbook you need.</h2>
+
+                <form action="/html/tags/html_form_tag_action.cfm" method="get">
+                  First name:
+                  <input type="text" name="first_name" value="" maxlength="100" />
+                  <br />
+                  Last name:
+                  <input type="text" name="last_name" value="" maxlength="100" />
+                  <input type="submit" value="Submit" />
+                  </form>
               </div>
             </div>
+
       </header>
       <article><!-- page content -->
         <p>text here</p>
@@ -117,13 +127,13 @@
         </div>
 
         <div class="pagination">
-          <a href="file:///C:/Users/cpsou/OneDrive/Documents/GitHub/CS350-Recipe-Buddy-SS//f1.html">&#8592; this is how buttons are done in html&nbsp;</a>
+          <a href="file:///C:/Users/cpsou/OneDrive/Documents/GitHub/CS350-Recipe-Buddy-SS//f1.html">&#8592; this is how you link to another html page&nbsp;</a>
           <a class="button" href="#page2">&nbsp;button2&nbsp;</a>
-          <a class="button" href="#page3">&nbsp;notice how the href changes when you click these links &#8594;</a>
+          <a class="button" href="#page3">&nbsp;button3 &#8594;</a>
         </div>
       </article>
       <footer>
-        <p>&copy; 2023 Shanghai Sharks (this is located in the footer)</p>
+        <p>&copy; 2023 Shanghai Sharks</p>
       </footer>
     </main>
   </body>

@@ -17,8 +17,10 @@
 }
 
 .sub_small {
-    margin-left: 1.5rem;
-    margin-top: -1rem;
+    /* margin-left: 1.5rem; */
+    /* margin-top: -1rem; */
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 /* This function doesn't have a . before it because its one of the preset divs from html, you only use . with the custom classes you create */

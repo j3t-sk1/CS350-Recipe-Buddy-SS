@@ -1,10 +1,14 @@
-/* This will contain all (or most CSS, later down the line we might want a secondary css file depending how we do this) */
+/* All styling classes for index.html and f1.html: */
 
-/* This is how you access the div class from the html, and change only that class: */
+
+/* index.html: */
 .header_info { 
     color:rgb(231, 228, 28);
     background-color: rgb(85, 85, 85);
     border-radius: 0.25rem;
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
 }
 
 .header_bar {
@@ -12,44 +16,68 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    width: 100%;
+    padding-bottom: 2rem;
+    margin-top: 1.5rem;
 }
 
 .small {
     margin-left: 1rem;
-
+    font-size: 200%;
 }
 
-/* .sub_small { */
-    /* margin-left: 1.5rem; */
-    /* margin-top: -1rem; */
-/* } */
-
 .search {
-    /* display: flex; */
-    /* flex-direction: row; */
-    margin-top: 2rem;
-    margin-left: 4rem;
+    margin: auto;
+    margin-left: 3rem;
     border-radius: 20px;
     padding-right: 1rem;
-    width: 36rem;
+    flex-grow: 1;
 }
 
 .searching {
     border: 2px solid #eee;
-    margin-top: -1.5rem;
-    border:0;
-    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    padding: 4px;
+    border: 0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.09);
     padding:10px;
-    border-radius:10px;
-    width: 30rem;
-    /* color:rgb(48, 48, 48); why wont this work?? */
-    float: right;
+    border-radius: 20px;
+    width: 80%;
+    float: left;
+    color:rgb(19, 19, 19);
 }
 
-/* .search_font { */
+/* search text field */
+input {
+    background-color:rgb(180, 180, 180);
+    /* color:aqua; */
+}
+
+input::placeholder {
+    color:rgb(29, 29, 29);
+}
+
+input:focus::placeholder {
+    -webkit-transition: ease-out;
+    color: transparent;
+}
+
+input[type=text]:focus {
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.29);
+    /* border: 2px solid #494949; */
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    outline: none;
+}
+
+.icon_search {
+    margin-left: -3.1rem;
+    margin-top: 0.8rem;
+}
+
+/* svg.icon_search { */
+    /* color:rgb(231, 228, 28); */
 /* } */
 
-/* This function doesn't have a . before it because its one of the preset divs from html, you only use . with the custom classes you create */
 body {
     background-color: rgb(48, 48, 48);
 }
@@ -98,6 +126,11 @@ body {
 .favorite1 {
    background-color: #e7e7e7; color: black;
    border: 2px solid red;
-   text-align: center;
-   
+   text-align: center;  
 }
+
+
+
+
+
+/* f1.html: */

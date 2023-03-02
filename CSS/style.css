@@ -172,8 +172,13 @@ body {
     background-color: rgb(85, 85, 85);
 }
 
-p {
-
+.button {
+    display: flex;
+    background-color: rgb(180, 180, 180);
+    padding: 20px;
+    width: 20px;
+    color: rgb(85, 85, 85);
+    text-align: center;
 }
 
 

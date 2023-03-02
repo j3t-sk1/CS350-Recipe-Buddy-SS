@@ -105,18 +105,19 @@ body {
     margin: auto;
 }
 
-
+/*
 .box_example {
     margin: auto;
     padding-left: 10%;
     padding-right: 10%;
     width: 100px;
     height: 40%;
-    border: 2px solid red;
+    border: 2px solid rgb(231, 228, 28);
     border-radius: .5rem;
 
-    background-color:aquamarine;
+    background-color:rgb(85, 85, 85);
 }
+*/
 
 .above_box {
     padding-bottom: 10rem;
@@ -133,10 +134,10 @@ body {
     padding-right: 10%;
     width: 90%;
     height: 80px;
-    border: 2px solid red;
+    border: 2px solid rgb(231, 228, 28);
     border-radius: .5rem;
 
-    background-color: aquamarine;
+    background-color: rgb(85, 85, 85);
 }
 
 .recent_recipes {
@@ -149,10 +150,10 @@ body {
     padding-right: 10%;
     width: 90%;
     height: 80px;
-    border: 2px solid red;
+    border: 2px solid rgb(231, 228, 28);
     border-radius: .5rem;
 
-    background-color: aquamarine;
+    background-color: rgb(85, 85, 85);
 }
 
 .rated_recipes {
@@ -165,10 +166,10 @@ body {
     padding-right: 10%;
     width: 90%;
     height: 80px;
-    border: 2px solid red;
+    border: 2px solid rgb(231, 228, 28);
     border-radius: .5rem;
 
-    background-color: aquamarine;
+    background-color: rgb(85, 85, 85);
 }
 
 p {

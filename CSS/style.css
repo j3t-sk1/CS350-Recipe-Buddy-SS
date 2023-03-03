@@ -2,6 +2,13 @@
 
 
 /* index.html: */
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(48, 48, 48);
+}
+
 .header_info { 
     color:rgb(231, 228, 28);
     background-color: rgb(85, 85, 85);
@@ -38,32 +45,6 @@
     /* text-decoration: underline; */
     margin: auto;
     margin-left: 1rem;
-
-    /* how to make look better
-    text-shadow:
-    1px 1px rgba(1,0,0,0.05),
-    2px 2px rgba(0,0,0,0.05),
-    3px 3px rgba(0,0,0,0.05),
-    4px 4px rgba(0,0,0,0.05),
-    5px 5px rgba(0,0,0,0.05),
-    6px 6px rgba(0,0,0,0.05),
-    7px 7px rgba(0,0,0,0.05),
-    8px 8px rgba(0,0,0,0.05),
-    9px 9px rgba(0,0,0,0.05),
-    10px 10px rgba(0,0,0,0.05),
-    11px 11px rgba(0,0,0,0.01),
-    12px 12px rgba(0,0,0,0.01),
-    13px 13px rgba(0,0,0,0.01),
-    14px 14px rgba(0,0,0,0.01),
-    15px 15px rgba(0,0,0,0.01),
-    16px 16px rgba(0,0,0,0.01),
-    17px 17px rgba(0,0,0,0.01),
-    18px 18px rgba(0,0,0,0.01),
-    19px 19px rgba(0,0,0,0.01),
-    20px 20px rgba(0,0,0,0.01),
-    21px 21px rgba(0,0,0,0.01),
-    22px 22px rgba(0,0,0,0.01),
-    /* 23px 23px rgba(0,0,0,0.01); */
 }
 
 .search {
@@ -132,11 +113,11 @@ input[type=text]:focus {
     justify-content: space-around;
     margin-left: 4rem;
     margin-right: 4rem;
-    background-color: rgb(180, 180, 180);
+    background-color: rgb(216, 215, 175);
     border-radius: 8px;
     border-style: none;
-    box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
-    color: #fff;
+    box-shadow: rgba(44, 44, 44, 0.15) 0 4px 9px;
+    color: rgb(85, 85, 85);
     cursor: pointer;
     font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
     font-size: 16px;
@@ -152,15 +133,12 @@ input[type=text]:focus {
     opacity: 1;
     transform: translateY(0);
     transition-duration: .35s;
+    box-shadow: rgba(29, 29, 29, 0.15) 0 4px 9px;
   }
   
   .add:active {
     transform: translateY(2px);
     transition-duration: .35s;
-  }
-  
-  .add:hover {
-    box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
   }
 
   .edit {
@@ -170,11 +148,11 @@ input[type=text]:focus {
     margin-left: 4rem;
     margin-right: 4rem;
     justify-content: space-around;
-    background-color: #27ae60;
+    background-color: rgb(216, 215, 175);
     border-radius: 8px;
     border-style: none;
-    box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
-    color: #fff;
+    box-shadow: rgba(44, 44, 44, 0.15) 0 4px 9px;
+    color: rgb(85, 85, 85);
     cursor: pointer;
     font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
     font-size: 16px;
@@ -185,19 +163,16 @@ input[type=text]:focus {
   }
   
   .edit:hover {
-    background-color: #1e8449;
+    background-color: rgb(221, 219, 97);
     opacity: 1;
     transform: translateY(0);
     transition-duration: .35s;
+    box-shadow: rgba(29, 29, 29, 0.15) 0 4px 9px;
   }
   
   .edit:active {
     transform: translateY(2px);
     transition-duration: .35s;
-  }
-  
-  .edit:hover {
-    box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
   }
 
   .delete {
@@ -207,11 +182,11 @@ input[type=text]:focus {
     margin-left: 4rem;
     margin-right: 4rem;
     justify-content: space-around;
-    background-color: #27ae60;
+    background-color: rgb(216, 215, 175);
     border-radius: 8px;
     border-style: none;
-    box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
-    color: #fff;
+    box-shadow: rgba(44, 44, 44, 0.15) 0 4px 9px;
+    color: rgb(85, 85, 85);
     cursor: pointer;
     font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
     font-size: 16px;
@@ -222,19 +197,16 @@ input[type=text]:focus {
   }
   
   .delete:hover {
-    background-color: #1e8449;
+    background-color: rgb(221, 219, 97);
     opacity: 1;
     transform: translateY(0);
     transition-duration: .35s;
+    box-shadow: rgba(29, 29, 29, 0.15) 0 4px 9px;
   }
   
   .delete:active {
     transform: translateY(2px);
     transition-duration: .35s;
-  }
-  
-  .delete:hover {
-    box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
   }
 
 /* .add { */
@@ -265,14 +237,6 @@ input[type=text]:focus {
 } */
 
 
-
-
-
-
-
-body {
-    background-color: rgb(48, 48, 48);
-}
 
 /* Can use px, %, rem, em, for sizing elements*/
 /* You generally want to avoid px, as its the pixel count (so on higher ppi screens, the size of that element will be smaller*/

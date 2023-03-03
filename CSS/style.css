@@ -304,15 +304,38 @@ body {
     margin-top: 5rem;
 }
 
+p.favorite{
+  text-indent: 16.5%;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 5%;
+}
+
+p.recent{
+  text-indent: 16.5%;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+p.rated{
+  text-indent: 16.5%;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+}
+
 .favorite_recipes {
     margin: auto;
     margin-bottom: 20px;
+    margin-right: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding-left: 10%;
     padding-right: 10%;
-    width: 90%;
+    width: 80%;
     height: 130px;
     border: 2px solid rgb(231, 228, 28);
     border-radius: .5rem;
@@ -323,12 +346,13 @@ body {
 .recent_recipes {
     margin: auto;
     margin-bottom: 20px;
+    margin-right: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding-left: 10%;
     padding-right: 10%;
-    width: 90%;
+    width: 80%;
     height: 130px;
     border: 2px solid rgb(231, 228, 28);
     border-radius: .5rem;
@@ -339,12 +363,13 @@ body {
 .rated_recipes {
     margin: auto;
     margin-bottom: 20px;
+    margin-right: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding-left: 10%;
     padding-right: 10%;
-    width: 90%;
+    width: 80%;
     height: 130px;
     border: 2px solid rgb(231, 228, 28);
     border-radius: .5rem;
@@ -814,6 +839,7 @@ body {
 }
 
 /* end of CSS for mainscreen buttons */
+
 
 /* CSS */
 

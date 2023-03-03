@@ -681,7 +681,7 @@ p.rated{
   width: 100px;
   flex: 1 1 0;
   justify-content: space-around;
-  align-items: center
+  align-items: center;
   margin-left: 4rem;
   margin-right: 4rem;
   background-color: rgb(180, 180, 180);

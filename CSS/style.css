@@ -66,13 +66,13 @@ body {
     border: 2px solid #eee;
     padding: 4px;
     border: 0;
-    box-shadow:0 0 15px 4px rgba(0,0,0,0.09);
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.25);
     padding: 10px;
     border-radius: 20px;
     width: 100%;
     float: left;
     color:rgb(19, 19, 19);
-    /* margin-right: 5rem; */
+    /* font-size: 12pt; */
 }
 
 /* search text field */
@@ -91,7 +91,7 @@ input:focus::placeholder {
 }
 
 input[type=text]:focus {
-    box-shadow:0 0 15px 4px rgba(0,0,0,0.29);
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.5);
     /* border: 2px solid #494949; */
     -webkit-transition: 0.2s;
     transition: 0.2s;
@@ -343,35 +343,58 @@ footer {
   margin: auto;
 }
 
-.leftside {
-  height: 78vh;  
-  width: 130%;
+.left_1 {
+  height: 30vh;  
+  width: 150%;
   background-color: rgb(102, 102, 102);
   border-radius: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
   margin-left: 1rem;
+  padding-top: 6rem;
+}
+
+.left_2 {
+  height: 47vh;  
+  width: 150%;
+  background-color: rgb(102, 102, 102);
+  border-radius: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  padding-top: 6rem;
+}
+
+.profile {
+  margin-left: 28%;
+  padding-top: 2rem;
+}
+
+.settings {
+  margin-left: 28%;
+  padding-top: 8rem;
 }
 
 .rightside {
   width: 100%;
 }
 
-
 .timer {
   margin: auto;
   background-color: rgb(42, 42, 42);
-  margin-top: 20rem;
-  margin-left: 10%;
-  padding-left: 10%;
-  margin-right: 10%;
-  padding-right: 10%;
-  padding-top: 10%;
-  padding-bottom: 10%;
+  padding-top: 20%;
+  margin-left: 5%;
+  padding-left: 5%;
+  margin-right: 5%;
+  padding-right: 5%;
   border-radius: 1rem;
-  size: 200%;
+  padding-top: 20%;
+  padding-bottom: 20%;
 }
 
+.timing {
+  font-size: 10pt;
+}
 
 .modal {
   background-color: rgba(0,0,0,0.4); /* Transparent dimmed overlay */

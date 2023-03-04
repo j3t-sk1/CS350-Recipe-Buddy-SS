@@ -136,24 +136,31 @@
         <div class="row no-gutters">
           <div class="col-md-1 no-gutters">
             <div class="leftside">
-              <img src = "icons\gear-fill.svg" alt="settings"/>
-              <img src = "icons\list.svg" alt="list"/>
-              <img src = "icons\person-circle.svg" alt="profile"/>
-
-
-               <div class="timer">
-                <form name="form_main">
-                 <div>
-                  <span id="hour">00</span>:<span id="minute">00</span>:<span id="second">00</span>:<span id="millisecond">000</span>
+              <div class="left_1">
+                <div class="timer">
+                  <form class="timing" name="form_main">
+                   <div>
+                    <span id="hour">00</span>:<span id="minute">00</span>:<span id="second">00</span>:<span id="millisecond">000</span>
+                   </div>
+                   <br />
+                
+                  <button type="button" name="start">start</button>
+                  <button type="button" name="pause">pause</button>
+                  <button type="button" name="reset">reset</button>
+                </form>
+              </div>
+              </div>
+              <div class="left_2">
+                <div class="profile">
+                  <img src = "icons\person-circle.svg" width="100px" height="100px" alt="profile"/>
                  </div>
-                 <br />
-              
-                <button type="button" name="start">start</button>
-                <button type="button" name="pause">pause</button>
-                <button type="button" name="reset">reset</button>
-              </form>
-            </div>
-              
+  
+                <img src = "icons\list.svg" alt="list"/>
+                
+              <div class="settings">
+                <img src = "icons\gear-fill.svg" width="100px" height="100px" color="red" alt="settings"/>
+              </div>
+              </div>
 
             </div>
           </div>
@@ -223,17 +230,17 @@
           </div>
         </div>
 
-        <button>Show Modal</button>
+        <!-- <button>Show Modal</button> -->
 
-        <div class="modal hidden">
-          <div class="container">
-            <div class="body">
-              <p>Click outside this box to close the modal.<p>
-              <p>You could of course add a close button etc</p>
-              <p>But this is left for the OP todo</p> 
-            </div>
-          </div>
-        </div>
+        <!-- <div class="modal hidden"> -->
+          <!-- <div class="container"> -->
+            <!-- <div class="body"> -->
+              <!-- <p>Click outside this box to close the modal.<p> -->
+              <!-- <p>You could of course add a close button etc</p> -->
+              <!-- <p>But this is left for the OP todo</p>  -->
+            <!-- </div> -->
+          <!-- </div> -->
+        <!-- </div> -->
 
         <footer>
           <p>&copy; 2023 Shanghai Shark</p>

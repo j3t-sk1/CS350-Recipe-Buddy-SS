@@ -372,7 +372,6 @@ p.rated{
     margin-left: 4rem;
     margin-right: 4rem;
     justify-content: space-around;
-    /* background-color: rgb(216, 175, 175); */
     background-image: rgb(86, 86, 86);
     border-radius: 8px;
     border-style: none;
@@ -388,7 +387,6 @@ p.rated{
 }
 
 .button:hover {
-  /* background-color: rgb(221, 219, 97); */
   background-image: linear-gradient(rgb(209, 202, 108), rgb(218, 214, 26));
   opacity: 1;
   transform: translateY(0);

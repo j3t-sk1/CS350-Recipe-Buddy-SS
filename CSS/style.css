@@ -12,7 +12,7 @@ body {
 .header_info { 
     color:rgb(231, 228, 28);
     background-color: rgb(85, 85, 85);
-    background-image: linear-gradient(rgb(131, 131, 131), rgb(85, 85, 85));
+    background-image: linear-gradient(rgb(68, 68, 68), rgb(27, 27, 27));
     border-radius: 0.25rem;
     display: flex;
     width: 100%;
@@ -30,13 +30,13 @@ body {
     width: 100%;
     padding-bottom: 2rem;
     margin-top: 1.5rem;
-    border-style: solid;
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-    border-width: 0.2rem;
+    /* border-style: solid; */
+    /* border-top: 0; */
+    /* border-left: 0; */
+    /* border-right: 0; */
+    /* border-width: 0.2rem; */
     color:rgb(117, 117, 117);
-    border-image: linear-gradient(to right, #dfdc40, 10%, #d8d8d8) 30;
+    /* border-image: linear-gradient(to right, #dfdc40, 10%, #d8d8d8) 30; */
 }
 
 .small {
@@ -45,6 +45,9 @@ body {
     /* text-decoration: underline; */
     margin: auto;
     margin-left: 1rem;
+    background-clip: text;
+    background-image: linear-gradient(rgb(204, 204, 204), rgb(255, 251, 0));
+    -webkit-text-fill-color: transparent;
 }
 
 .search {
@@ -113,7 +116,8 @@ input[type=text]:focus {
     justify-content: space-around;
     margin-left: 4rem;
     margin-right: 4rem;
-    background-color: rgb(216, 215, 175);
+    /* background-color: rgb(216, 215, 175); */
+    background-image: linear-gradient(rgb(204, 204, 144), rgb(228, 225, 73));
     border-radius: 8px;
     border-style: none;
     box-shadow: rgba(44, 44, 44, 0.15) 0 4px 9px;
@@ -128,7 +132,7 @@ input[type=text]:focus {
 }
   
   .add:hover {
-    background-color: rgb(221, 219, 97);
+    background-image: linear-gradient(rgb(209, 202, 108), rgb(218, 214, 26));
     color: rgb(48, 48, 48);
     opacity: 1;
     transform: translateY(0);
@@ -146,9 +150,10 @@ input[type=text]:focus {
     /* flex-grow: 0.33; */
     flex: 1 1 0;
     margin-left: 4rem;
-    margin-right: 4rem;
+    margin-right: 8rem;
     justify-content: space-around;
-    background-color: rgb(216, 215, 175);
+    /* background-color: rgb(216, 215, 175); */
+    background-image: linear-gradient(rgb(204, 204, 144), rgb(228, 225, 73));
     border-radius: 8px;
     border-style: none;
     box-shadow: rgba(44, 44, 44, 0.15) 0 4px 9px;
@@ -163,11 +168,13 @@ input[type=text]:focus {
   }
   
   .edit:hover {
-    background-color: rgb(221, 219, 97);
+    /* background-color: rgb(221, 219, 97); */
+    background-image: linear-gradient(rgb(209, 202, 108), rgb(218, 214, 26));
     opacity: 1;
     transform: translateY(0);
     transition-duration: .35s;
     box-shadow: rgba(29, 29, 29, 0.15) 0 4px 9px;
+    color: rgb(48, 48, 48);
   }
   
   .edit:active {
@@ -182,7 +189,8 @@ input[type=text]:focus {
     margin-left: 4rem;
     margin-right: 4rem;
     justify-content: space-around;
-    background-color: rgb(216, 215, 175);
+    /* background-color: rgb(216, 175, 175); */
+    background-image: linear-gradient(rgb(230, 146, 146), rgb(255, 86, 86));
     border-radius: 8px;
     border-style: none;
     box-shadow: rgba(44, 44, 44, 0.15) 0 4px 9px;
@@ -197,11 +205,13 @@ input[type=text]:focus {
   }
   
   .delete:hover {
-    background-color: rgb(221, 219, 97);
+    /* background-color: rgb(255, 66, 66); */
+    background-image: linear-gradient(rgb(204, 62, 62), rgb(255, 66, 66));
     opacity: 1;
     transform: translateY(0);
     transition-duration: .35s;
     box-shadow: rgba(29, 29, 29, 0.15) 0 4px 9px;
+    color: rgb(48, 48, 48);
   }
   
   .delete:active {
@@ -288,6 +298,20 @@ p.rated{
   font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
   font-size: 24px;
   font-weight: 600;
+}
+
+.left_nav {
+  width: 10%;
+  background-color: rgb(145, 145, 145);
+  display: flex;
+  /* height: 65rem; */
+  height: 100vh;
+  float: left;
+}
+
+.main_page {
+  width: 90%;
+  float: right;
 }
 
 .favorite_recipes {
@@ -839,6 +863,20 @@ p.rated{
 }
 
 /* end of CSS for mainscreen buttons */
+
+
+footer {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color:rgb(71, 71, 71);
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+  font-size: large;
+  width: 100vw;
+  margin: auto;
+
+}
 
 
 /* CSS */

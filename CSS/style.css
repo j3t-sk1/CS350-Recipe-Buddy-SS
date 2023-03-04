@@ -30,13 +30,7 @@ body {
     width: 100%;
     padding-bottom: 2rem;
     margin-top: 1.5rem;
-    /* border-style: solid; */
-    /* border-top: 0; */
-    /* border-left: 0; */
-    /* border-right: 0; */
-    /* border-width: 0.2rem; */
     color:rgb(117, 117, 117);
-    /* border-image: linear-gradient(to right, #dfdc40, 10%, #d8d8d8) 30; */
 }
 
 .small {
@@ -219,67 +213,14 @@ input[type=text]:focus {
     transition-duration: .35s;
   }
 
-/* .add { */
-    /* margin: auto; */
-    /* font-size: 17pt; */
-    /* padding-left: 6rem; */
-    /* padding-right: 3rem; */
-    /* float: left; */
-    /* flex-grow: 0.2; */
-    /* vertical-align: auto;
-    border-style: ridge;
-}
-
-.edit {
-    margin: auto;
-    font-size: 17pt;
-    padding-right: 3rem;
-    float: left;
-    flex-grow: 0.2;
-}
-
-.delete {
-    margin: auto;
-    font-size: 17pt;
-    padding-right: 3rem;
-    float: left;
-    flex-grow: 0.2;
-} */
-
-
-
-/* Can use px, %, rem, em, for sizing elements*/
-/* You generally want to avoid px, as its the pixel count (so on higher ppi screens, the size of that element will be smaller*/
-/* As a general rule of thumb, I like using % (for example if you want a box covering most of the screen, you can set width like: "width: 80%" and it'll span 80% */
-/* I also frequently use rem, its based of the font size of the root element */
-
-.flex-container {
-    background-color: aquamarine;
-    width: 95%;
-    margin: auto;
-}
-
-/*
-.box_example {
-    margin: auto;
-    padding-left: 10%;
-    padding-right: 10%;
-    width: 100px;
-    height: 40%;
-    border: 2px solid rgb(231, 228, 28);
-    border-radius: .5rem;
-
-    background-color:rgb(85, 85, 85);
-}
-*/
-
 .above_box {
     padding-bottom: 10rem;
     margin-top: 5rem;
 }
 
 p.favorite{
-  text-indent: 16.5%;
+  /* text-indent: 16.5%; */
+  text-indent: 12.5%;
   font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
   font-size: 24px;
   font-weight: 600;
@@ -287,53 +228,44 @@ p.favorite{
 }
 
 p.recent{
-  text-indent: 16.5%;
+  /* text-indent: 16.5%; */
+  text-indent: 12.5%;
   font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
   font-size: 24px;
   font-weight: 600;
 }
 
 p.rated{
-  text-indent: 16.5%;
+  /* text-indent: 16.5%; */
+  text-indent: 12.5%;
   font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
   font-size: 24px;
   font-weight: 600;
 }
 
-.left_nav {
-  width: 10%;
-  background-color: rgb(145, 145, 145);
-  display: flex;
-  /* height: 65rem; */
-  height: 100vh;
-  float: left;
-}
-
 .main_page {
-  width: 90%;
-  float: right;
+  width: 100%;
 }
 
 .favorite_recipes {
-    margin: auto;
     margin-bottom: 20px;
     margin-right: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-left: 12%;
     padding-left: 10%;
     padding-right: 10%;
     width: 80%;
     height: 150px;
     border: 2px solid rgb(231, 228, 28);
     border-radius: .5rem;
-
     background-color: rgb(85, 85, 85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .recent_recipes {
-    margin: auto;
     margin-bottom: 20px;
+    margin-left: 12%;
     margin-right: 50px;
     display: flex;
     justify-content: center;
@@ -349,8 +281,8 @@ p.rated{
 }
 
 .rated_recipes {
-    margin: auto;
     margin-bottom: 20px;
+    margin-left: 12%;
     margin-right: 50px;
     display: flex;
     justify-content: center;
@@ -361,7 +293,6 @@ p.rated{
     height: 150px;
     border: 2px solid rgb(231, 228, 28);
     border-radius: .5rem;
-
     background-color: rgb(85, 85, 85);
 }
 
@@ -401,8 +332,8 @@ p.rated{
 }
 
 footer {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
   background-color:rgb(71, 71, 71);
   justify-content: center;
   text-align: center;
@@ -410,8 +341,42 @@ footer {
   font-size: large;
   width: 100vw;
   margin: auto;
-
 }
+
+.leftside {
+  height: 78vh;  
+  width: 130%;
+  background-color: rgb(102, 102, 102);
+  border-radius: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+
+.rightside {
+  width: 100%;
+}
+
+.timer {
+  margin: auto;
+  background-color: rgb(42, 42, 42);
+  margin-top: 20rem;
+  margin-left: 10%;
+  padding-left: 10%;
+  margin-right: 10%;
+  padding-right: 10%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  border-radius: 1rem;
+}
+
+
+
+/* @media screen and (min-width: 768px) { */
+  /* .leftside, .rightside { */
+    /* height: 100vh; */
+  /* } */
+/* } */
 
 
 /* CSS */

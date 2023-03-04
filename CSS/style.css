@@ -2,10 +2,17 @@
 
 
 /* index.html: */
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(48, 48, 48);
+}
+
 .header_info { 
     color:rgb(231, 228, 28);
     background-color: rgb(85, 85, 85);
-    background-image: linear-gradient(rgb(131, 131, 131), rgb(85, 85, 85));
+    background-image: linear-gradient(rgb(68, 68, 68), rgb(27, 27, 27));
     border-radius: 0.25rem;
     display: flex;
     width: 100%;
@@ -23,13 +30,7 @@
     width: 100%;
     padding-bottom: 2rem;
     margin-top: 1.5rem;
-    border-style: solid;
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-    border-width: 0.2rem;
     color:rgb(117, 117, 117);
-    border-image: linear-gradient(to right, #dfdc40, 10%, #d8d8d8) 30;
 }
 
 .small {
@@ -38,32 +39,9 @@
     /* text-decoration: underline; */
     margin: auto;
     margin-left: 1rem;
-
-    /* how to make look better
-    text-shadow:
-    1px 1px rgba(1,0,0,0.05),
-    2px 2px rgba(0,0,0,0.05),
-    3px 3px rgba(0,0,0,0.05),
-    4px 4px rgba(0,0,0,0.05),
-    5px 5px rgba(0,0,0,0.05),
-    6px 6px rgba(0,0,0,0.05),
-    7px 7px rgba(0,0,0,0.05),
-    8px 8px rgba(0,0,0,0.05),
-    9px 9px rgba(0,0,0,0.05),
-    10px 10px rgba(0,0,0,0.05),
-    11px 11px rgba(0,0,0,0.01),
-    12px 12px rgba(0,0,0,0.01),
-    13px 13px rgba(0,0,0,0.01),
-    14px 14px rgba(0,0,0,0.01),
-    15px 15px rgba(0,0,0,0.01),
-    16px 16px rgba(0,0,0,0.01),
-    17px 17px rgba(0,0,0,0.01),
-    18px 18px rgba(0,0,0,0.01),
-    19px 19px rgba(0,0,0,0.01),
-    20px 20px rgba(0,0,0,0.01),
-    21px 21px rgba(0,0,0,0.01),
-    22px 22px rgba(0,0,0,0.01),
-    /* 23px 23px rgba(0,0,0,0.01); */
+    background-clip: text;
+    background-image: linear-gradient(rgb(204, 204, 204), rgb(255, 251, 0));
+    -webkit-text-fill-color: transparent;
 }
 
 .search {
@@ -132,11 +110,12 @@ input[type=text]:focus {
     justify-content: space-around;
     margin-left: 4rem;
     margin-right: 4rem;
-    background-color: rgb(180, 180, 180);
+    /* background-color: rgb(216, 215, 175); */
+    background-image: linear-gradient(rgb(204, 204, 144), rgb(228, 225, 73));
     border-radius: 8px;
     border-style: none;
-    box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
-    color: #fff;
+    box-shadow: rgba(44, 44, 44, 0.15) 0 4px 9px;
+    color: rgb(85, 85, 85);
     cursor: pointer;
     font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
     font-size: 16px;
@@ -147,20 +126,17 @@ input[type=text]:focus {
 }
   
   .add:hover {
-    background-color: rgb(221, 219, 97);
+    background-image: linear-gradient(rgb(209, 202, 108), rgb(218, 214, 26));
     color: rgb(48, 48, 48);
     opacity: 1;
     transform: translateY(0);
     transition-duration: .35s;
+    box-shadow: rgba(29, 29, 29, 0.15) 0 4px 9px;
   }
   
   .add:active {
     transform: translateY(2px);
     transition-duration: .35s;
-  }
-  
-  .add:hover {
-    box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
   }
 
   .edit {
@@ -168,13 +144,14 @@ input[type=text]:focus {
     /* flex-grow: 0.33; */
     flex: 1 1 0;
     margin-left: 4rem;
-    margin-right: 4rem;
+    margin-right: 8rem;
     justify-content: space-around;
-    background-color: #27ae60;
+    /* background-color: rgb(216, 215, 175); */
+    background-image: linear-gradient(rgb(204, 204, 144), rgb(228, 225, 73));
     border-radius: 8px;
     border-style: none;
-    box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
-    color: #fff;
+    box-shadow: rgba(44, 44, 44, 0.15) 0 4px 9px;
+    color: rgb(85, 85, 85);
     cursor: pointer;
     font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
     font-size: 16px;
@@ -185,19 +162,18 @@ input[type=text]:focus {
   }
   
   .edit:hover {
-    background-color: #1e8449;
+    /* background-color: rgb(221, 219, 97); */
+    background-image: linear-gradient(rgb(209, 202, 108), rgb(218, 214, 26));
     opacity: 1;
     transform: translateY(0);
     transition-duration: .35s;
+    box-shadow: rgba(29, 29, 29, 0.15) 0 4px 9px;
+    color: rgb(48, 48, 48);
   }
   
   .edit:active {
     transform: translateY(2px);
     transition-duration: .35s;
-  }
-  
-  .edit:hover {
-    box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
   }
 
   .delete {
@@ -207,11 +183,12 @@ input[type=text]:focus {
     margin-left: 4rem;
     margin-right: 4rem;
     justify-content: space-around;
-    background-color: #27ae60;
+    /* background-color: rgb(216, 175, 175); */
+    background-image: linear-gradient(rgb(230, 146, 146), rgb(255, 86, 86));
     border-radius: 8px;
     border-style: none;
-    box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
-    color: #fff;
+    box-shadow: rgba(44, 44, 44, 0.15) 0 4px 9px;
+    color: rgb(85, 85, 85);
     cursor: pointer;
     font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
     font-size: 16px;
@@ -222,82 +199,19 @@ input[type=text]:focus {
   }
   
   .delete:hover {
-    background-color: #1e8449;
+    /* background-color: rgb(255, 66, 66); */
+    background-image: linear-gradient(rgb(204, 62, 62), rgb(255, 66, 66));
     opacity: 1;
     transform: translateY(0);
     transition-duration: .35s;
+    box-shadow: rgba(29, 29, 29, 0.15) 0 4px 9px;
+    color: rgb(48, 48, 48);
   }
   
   .delete:active {
     transform: translateY(2px);
     transition-duration: .35s;
   }
-  
-  .delete:hover {
-    box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
-  }
-
-/* .add { */
-    /* margin: auto; */
-    /* font-size: 17pt; */
-    /* padding-left: 6rem; */
-    /* padding-right: 3rem; */
-    /* float: left; */
-    /* flex-grow: 0.2; */
-    /* vertical-align: auto;
-    border-style: ridge;
-}
-
-.edit {
-    margin: auto;
-    font-size: 17pt;
-    padding-right: 3rem;
-    float: left;
-    flex-grow: 0.2;
-}
-
-.delete {
-    margin: auto;
-    font-size: 17pt;
-    padding-right: 3rem;
-    float: left;
-    flex-grow: 0.2;
-} */
-
-
-
-
-
-
-
-body {
-    background-color: rgb(48, 48, 48);
-}
-
-/* Can use px, %, rem, em, for sizing elements*/
-/* You generally want to avoid px, as its the pixel count (so on higher ppi screens, the size of that element will be smaller*/
-/* As a general rule of thumb, I like using % (for example if you want a box covering most of the screen, you can set width like: "width: 80%" and it'll span 80% */
-/* I also frequently use rem, its based of the font size of the root element */
-
-.flex-container {
-    background-color: aquamarine;
-    width: 95%;
-    margin: auto;
-}
-
-/*
-.box_example {
-    margin: auto;
-    padding-left: 10%;
-    padding-right: 10%;
-    width: 100px;
-    height: 40%;
-    border: 2px solid rgb(231, 228, 28);
-    border-radius: .5rem;
-
-    background-color:rgb(85, 85, 85);
-}
-*/
 
 .above_box {
     padding-bottom: 10rem;
@@ -305,7 +219,8 @@ body {
 }
 
 p.favorite{
-  text-indent: 16.5%;
+  /* text-indent: 16.5%; */
+  text-indent: 12.5%;
   font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
   font-size: 24px;
   font-weight: 600;
@@ -313,39 +228,44 @@ p.favorite{
 }
 
 p.recent{
-  text-indent: 16.5%;
+  /* text-indent: 16.5%; */
+  text-indent: 12.5%;
   font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
   font-size: 24px;
   font-weight: 600;
 }
 
 p.rated{
-  text-indent: 16.5%;
+  /* text-indent: 16.5%; */
+  text-indent: 12.5%;
   font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
   font-size: 24px;
   font-weight: 600;
 }
 
+.main_page {
+  width: 100%;
+}
+
 .favorite_recipes {
-    margin: auto;
     margin-bottom: 20px;
     margin-right: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-left: 12%;
     padding-left: 10%;
     padding-right: 10%;
     width: 80%;
-    height: 130px;
+    height: 150px;
     border: 2px solid rgb(231, 228, 28);
     border-radius: .5rem;
-
     background-color: rgb(85, 85, 85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .recent_recipes {
-    margin: auto;
     margin-bottom: 20px;
+    margin-left: 12%;
     margin-right: 50px;
     display: flex;
     justify-content: center;
@@ -353,7 +273,7 @@ p.rated{
     padding-left: 10%;
     padding-right: 10%;
     width: 80%;
-    height: 130px;
+    height: 150px;
     border: 2px solid rgb(231, 228, 28);
     border-radius: .5rem;
 
@@ -361,8 +281,8 @@ p.rated{
 }
 
 .rated_recipes {
-    margin: auto;
     margin-bottom: 20px;
+    margin-left: 12%;
     margin-right: 50px;
     display: flex;
     justify-content: center;
@@ -370,475 +290,93 @@ p.rated{
     padding-left: 10%;
     padding-right: 10%;
     width: 80%;
-    height: 130px;
+    height: 150px;
     border: 2px solid rgb(231, 228, 28);
     border-radius: .5rem;
-
     background-color: rgb(85, 85, 85);
 }
 
-
-
-/* beginning of CSS for mainscreen buttons */
-
-.favorite1 {
+.button {
   display: flex;
-  /* flex-grow: 0.33; */
-  flex: 1 1 0;
-  justify-content: space-around;
-  margin-left: 4rem;
-  margin-right: 4rem;
-  background-color: rgb(180, 180, 180);
-  border-radius: 8px;
-  border-style: none;
-  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
-  color: #fff;
-  cursor: pointer;
-  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 13px 20px;
-  transform: translate3d(0, 0, 0);
-  user-select: none;
+    /* flex-grow: 0.33; */
+    flex: 1 1 0;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    justify-content: space-around;
+    background-image: rgb(86, 86, 86);
+    border-radius: 8px;
+    border-style: none;
+    box-shadow: rgba(44, 44, 44, 0.15) 0 4px 9px;
+    color: rgb(85, 85, 85);
+    cursor: pointer;
+    font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 13px 20px;
+    transform: translate3d(0, 0, 0);
+    user-select: none;
 }
 
-.favorite1:hover {
-  background-color: rgb(221, 219, 97);
-    color: rgb(48, 48, 48);
-    opacity: 1;
-    transform: translateY(0);
-    transition-duration: .35s;
+.button:hover {
+  background-image: linear-gradient(rgb(209, 202, 108), rgb(218, 214, 26));
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;
+  box-shadow: rgba(29, 29, 29, 0.15) 0 4px 9px;
+  color: rgb(48, 48, 48);
 }
 
-.favorite1:active {
+.button:active {
   transform: translateY(2px);
   transition-duration: .35s;
 }
 
-.favorite1:hover {
-  box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
-}
-
-
-.favorite2 {
-  display: flex;
-  /* flex-grow: 0.33; */
-  flex: 1 1 0;
-  justify-content: space-around;
-  margin-left: 4rem;
-  margin-right: 4rem;
-  background-color: rgb(180, 180, 180);
-  border-radius: 8px;
-  border-style: none;
-  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
-  color: #fff;
-  cursor: pointer;
-  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
-  font-size: 16px;
+footer {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+  background-color:rgb(71, 71, 71);
+  justify-content: center;
+  text-align: center;
   font-weight: 600;
-  padding: 13px 20px;
-  transform: translate3d(0, 0, 0);
-  user-select: none;
+  font-size: large;
+  width: 100vw;
+  margin: auto;
 }
 
-.favorite2:hover {
-  background-color: rgb(221, 219, 97);
-    color: rgb(48, 48, 48);
-    opacity: 1;
-    transform: translateY(0);
-    transition-duration: .35s;
+.leftside {
+  height: 78vh;  
+  width: 130%;
+  background-color: rgb(102, 102, 102);
+  border-radius: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
 }
 
-.favorite2:active {
-  transform: translateY(2px);
-  transition-duration: .35s;
+.rightside {
+  width: 100%;
 }
 
-.favorite2:hover {
-  box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
+.timer {
+  margin: auto;
+  background-color: rgb(42, 42, 42);
+  margin-top: 20rem;
+  margin-left: 10%;
+  padding-left: 10%;
+  margin-right: 10%;
+  padding-right: 10%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  border-radius: 1rem;
 }
 
-.favorite3 {
-  display: flex;
-  /* flex-grow: 0.33; */
-  flex: 1 1 0;
-  justify-content: space-around;
-  margin-left: 4rem;
-  margin-right: 4rem;
-  background-color: rgb(180, 180, 180);
-  border-radius: 8px;
-  border-style: none;
-  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
-  color: #fff;
-  cursor: pointer;
-  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 13px 20px;
-  transform: translate3d(0, 0, 0);
-  user-select: none;
-}
 
-.favorite3:hover {
-  background-color: rgb(221, 219, 97);
-    color: rgb(48, 48, 48);
-    opacity: 1;
-    transform: translateY(0);
-    transition-duration: .35s;
-}
 
-.favorite3:active {
-  transform: translateY(2px);
-  transition-duration: .35s;
-}
-
-.favorite3:hover {
-  box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
-}
-
-.favorite4 {
-  display: flex;
-  /* flex-grow: 0.33; */
-  flex: 1 1 0;
-  justify-content: space-around;
-  margin-left: 4rem;
-  margin-right: 4rem;
-  background-color: rgb(180, 180, 180);
-  border-radius: 8px;
-  border-style: none;
-  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
-  color: #fff;
-  cursor: pointer;
-  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 13px 20px;
-  transform: translate3d(0, 0, 0);
-  user-select: none;
-}
-
-.favorite4:hover {
-  background-color: rgb(221, 219, 97);
-    color: rgb(48, 48, 48);
-    opacity: 1;
-    transform: translateY(0);
-    transition-duration: .35s;
-}
-
-.favorite4:active {
-  transform: translateY(2px);
-  transition-duration: .35s;
-}
-
-.favorite4:hover {
-  box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
-}
-
-.recent1 {
-  display: flex;
-  /* flex-grow: 0.33; */
-  flex: 1 1 0;
-  justify-content: space-around;
-  margin-left: 4rem;
-  margin-right: 4rem;
-  background-color: rgb(180, 180, 180);
-  border-radius: 8px;
-  border-style: none;
-  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
-  color: #fff;
-  cursor: pointer;
-  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 13px 20px;
-  transform: translate3d(0, 0, 0);
-  user-select: none;
-}
-
-.recent1:hover {
-  background-color: rgb(221, 219, 97);
-    color: rgb(48, 48, 48);
-    opacity: 1;
-    transform: translateY(0);
-    transition-duration: .35s;
-}
-
-.recent1:active {
-  transform: translateY(2px);
-  transition-duration: .35s;
-}
-
-.recent1:hover {
-  box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
-}
-
-.recent2 {
-  display: flex;
-  /* flex-grow: 0.33; */
-  flex: 1 1 0;
-  justify-content: space-around;
-  margin-left: 4rem;
-  margin-right: 4rem;
-  background-color: rgb(180, 180, 180);
-  border-radius: 8px;
-  border-style: none;
-  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
-  color: #fff;
-  cursor: pointer;
-  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 13px 20px;
-  transform: translate3d(0, 0, 0);
-  user-select: none;
-}
-
-.recent2:hover {
-  background-color: rgb(221, 219, 97);
-    color: rgb(48, 48, 48);
-    opacity: 1;
-    transform: translateY(0);
-    transition-duration: .35s;
-}
-
-.recent2:active {
-  transform: translateY(2px);
-  transition-duration: .35s;
-}
-
-.recent2:hover {
-  box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
-}
-
-.recent3 {
-  display: flex;
-  /* flex-grow: 0.33; */
-  flex: 1 1 0;
-  justify-content: space-around;
-  margin-left: 4rem;
-  margin-right: 4rem;
-  background-color: rgb(180, 180, 180);
-  border-radius: 8px;
-  border-style: none;
-  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
-  color: #fff;
-  cursor: pointer;
-  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 13px 20px;
-  transform: translate3d(0, 0, 0);
-  user-select: none;
-}
-
-.recent3:hover {
-  background-color: rgb(221, 219, 97);
-    color: rgb(48, 48, 48);
-    opacity: 1;
-    transform: translateY(0);
-    transition-duration: .35s;
-}
-
-.recent3:active {
-  transform: translateY(2px);
-  transition-duration: .35s;
-}
-
-.recent3:hover {
-  box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
-}
-
-.recent4 {
-  display: flex;
-  /* flex-grow: 0.33; */
-  flex: 1 1 0;
-  justify-content: space-around;
-  margin-left: 4rem;
-  margin-right: 4rem;
-  background-color: rgb(180, 180, 180);
-  border-radius: 8px;
-  border-style: none;
-  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
-  color: #fff;
-  cursor: pointer;
-  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 13px 20px;
-  transform: translate3d(0, 0, 0);
-  user-select: none;
-}
-
-.recent4:hover {
-  background-color: rgb(221, 219, 97);
-    color: rgb(48, 48, 48);
-    opacity: 1;
-    transform: translateY(0);
-    transition-duration: .35s;
-}
-
-.recent4:active {
-  transform: translateY(2px);
-  transition-duration: .35s;
-}
-
-.recent4:hover {
-  box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
-}
-
-.rated1 {
-  display: flex;
-  /* flex-grow: 0.33; */
-  flex: 1 1 0;
-  justify-content: space-around;
-  margin-left: 4rem;
-  margin-right: 4rem;
-  background-color: rgb(180, 180, 180);
-  border-radius: 8px;
-  border-style: none;
-  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
-  color: #fff;
-  cursor: pointer;
-  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 13px 20px;
-  transform: translate3d(0, 0, 0);
-  user-select: none;
-}
-
-.rated1:hover {
-  background-color: rgb(221, 219, 97);
-    color: rgb(48, 48, 48);
-    opacity: 1;
-    transform: translateY(0);
-    transition-duration: .35s;
-}
-
-.rated1:active {
-  transform: translateY(2px);
-  transition-duration: .35s;
-}
-
-.rated1:hover {
-  box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
-}
-
-.rated2 {
-  display: flex;
-  /* flex-grow: 0.33; */
-  flex: 1 1 0;
-  justify-content: space-around;
-  margin-left: 4rem;
-  margin-right: 4rem;
-  background-color: rgb(180, 180, 180);
-  border-radius: 8px;
-  border-style: none;
-  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
-  color: #fff;
-  cursor: pointer;
-  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 13px 20px;
-  transform: translate3d(0, 0, 0);
-  user-select: none;
-}
-
-.rated2:hover {
-  background-color: rgb(221, 219, 97);
-    color: rgb(48, 48, 48);
-    opacity: 1;
-    transform: translateY(0);
-    transition-duration: .35s;
-}
-
-.rated2:active {
-  transform: translateY(2px);
-  transition-duration: .35s;
-}
-
-.rated2:hover {
-  box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
-}
-
-.rated3 {
-  display: flex;
-  /* flex-grow: 0.33; */
-  flex: 1 1 0;
-  justify-content: space-around;
-  margin-left: 4rem;
-  margin-right: 4rem;
-  background-color: rgb(180, 180, 180);
-  border-radius: 8px;
-  border-style: none;
-  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
-  color: #fff;
-  cursor: pointer;
-  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 13px 20px;
-  transform: translate3d(0, 0, 0);
-  user-select: none;
-}
-
-.rated3:hover {
-  background-color: rgb(221, 219, 97);
-    color: rgb(48, 48, 48);
-    opacity: 1;
-    transform: translateY(0);
-    transition-duration: .35s;
-}
-
-.rated3:active {
-  transform: translateY(2px);
-  transition-duration: .35s;
-}
-
-.rated3:hover {
-  box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
-}
-
-.rated4 {
-  display: flex;
-  /* flex-grow: 0.33; */
-  flex: 1 1 0;
-  justify-content: space-around;
-  margin-left: 4rem;
-  margin-right: 4rem;
-  background-color: rgb(180, 180, 180);
-  border-radius: 8px;
-  border-style: none;
-  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
-  color: #fff;
-  cursor: pointer;
-  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 13px 20px;
-  transform: translate3d(0, 0, 0);
-  user-select: none;
-}
-
-.rated4:hover {
-  background-color: rgb(221, 219, 97);
-    color: rgb(48, 48, 48);
-    opacity: 1;
-    transform: translateY(0);
-    transition-duration: .35s;
-}
-
-.rated4:active {
-  transform: translateY(2px);
-  transition-duration: .35s;
-}
-
-.rated4:hover {
-  box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
-}
-
-/* end of CSS for mainscreen buttons */
+/* @media screen and (min-width: 768px) { */
+  /* .leftside, .rightside { */
+    /* height: 100vh; */
+  /* } */
+/* } */
 
 
 /* CSS */

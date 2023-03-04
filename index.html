@@ -1,9 +1,5 @@
 <!-- Checklist: -->
 <!-- 1. *CRTIICAL: Add in all other major pages (adding recipes, deleting recipes, user settings, searching results screen, sorting screen, pantry (if time), etc.) -->
-<!-- 1. How to change form field color -->
-<!-- 2. How to put "search" text inside form field -->
-<!-- 3. Add search icon on right side of form field -->
-<!-- 4. Continue filling out rest of vertical & horizontal nav bars -->
 <!-- 5. Get spacing correct for all main boxes for center screen -->
 <!-- 6. Low priority: Media Queries -->
 <!-- 7. Very low priority: Website Logo -->
@@ -50,12 +46,14 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <link href="css/style.css" rel="stylesheet">
+
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -134,64 +132,103 @@
                   <!-- </div> -->
                 <!-- </div> -->
       </header>
-      <article><!-- page content -->
+      <article><!-- page content -->        
+        <div class="row no-gutters">
+          <div class="col-md-1 no-gutters">
+            <div class="leftside">
+              <img src = "icons\gear-fill.svg" alt="settings"/>
+              <img src = "icons\list.svg" alt="list"/>
+              <img src = "icons\person-circle.svg" alt="profile"/>
 
-        <img src = "icons\gear-fill.svg" alt="settings"/>
-        <img src = "icons\list.svg" alt="list"/>
-        <img src = "icons\person-circle.svg" alt="profile"/>
 
-        <!-- <p>text here</p> -->
+            <div class="timer">
+              <form name="form_main">
+                <div>
+                  <span id="hour">00</span>:<span id="minute">00</span>:<span id="second">00</span>:<span id="millisecond">000</span>
+                </div>
+                <br />
+              
+                <button type="button" name="start">start</button>
+                <button type="button" name="pause">pause</button>
+                <button type="button" name="reset">reset</button>
+              </form>
+            </div>
+              
 
-        <!-- <div class="flex-container"> -->
-          <!-- <ul> -->
-            <!-- <div>1</div> -->
-            <!-- <div>2</div> -->
-            <!-- <div>3</div> -->
-          <!-- </ul> -->
-        <!-- </div>  -->
-
-        <!-- <div class="above_box"> -->
-            <!-- <p>above box text</p> -->
-        <!-- </div> -->
-
-         <!-- <div class="box_example"> -->
-            <!-- <p> box example </p> -->
-        <!-- </div>  -->
-
-        <p class="favorite" style="color:rgb(231, 228, 28)"> Favorite Recipes </p>
-        <div class="favorite_recipes">
-            <button class="favorite1" role="button" style="margin:70px">First Favorite Recipe</button>
-            <button class="favorite2" role="button" style="margin:70px">Second Favorite Recipe</button>
-            <button class="favorite3" role="button" style="margin:70px">Third Favorite Recipe</button>
-            <button class="favorite4" role="button" style="margin:70px">Fourth Favorite Recipe</button>
+            </div>
+          </div>
+          <div class="col-md-11 no-gutters">
+            <div class="rightside">
+              <div class="main_page">
+                <p class="favorite" style="color:rgb(231, 228, 28)"> Favorite Recipes </p>
+                <div class="favorite_recipes">
+        
+                    <button class="button" role="button">
+                      <a style="color:rgb(74, 74, 74)" href="favorite1.html">First Favorite Recipe</a>
+                    </button>
+        
+                    <button class="button" role="button">
+                      <a style="color:rgb(74, 74, 74)" href="favorite2.html">Second Favorite Recipe</a>
+                    </button>
+        
+                    <button class="button" role="button">
+                      <a style="color:rgb(74, 74, 74)" href="favorite3.html">Third Favorite Recipe</a>
+                    </button>
+        
+                    <button class="button" role="button">
+                      <a style="color:rgb(74, 74, 74)" href="favorite4.html">Fourth Favorite Recipe</a>
+                    </button>
+                </div>
+        
+                <p class="recent" style="color:rgb(231, 228, 28)"> Most Recent Recipes </p>
+                <div class="recent_recipes">
+        
+                    <button class="button" role="button">
+                      <a style="color:rgb(74, 74, 74)" href="recent1.html">Most Recent Recipe</a>
+                    </button>
+        
+                    <button class="button" role="button">
+                      <a style="color:rgb(74, 74, 74)" href="recent2.html">Second Most Recent Recipe</a>
+                    </button>
+        
+                    <button class="button" role="button">
+                      <a style="color:rgb(74, 74, 74)" href="recent3.html">Third Most Recent Recipe</a>
+                    </button>
+        
+                    <button class="button" role="button">
+                      <a style="color:rgb(74, 74, 74)" href="recent4.html">Fourth Most Recent Recipe</a>
+                    </button>
+                </div>
+        
+                <p class="rated" style="color:rgb(231, 228, 28)"> Highest Rated Recipes </p>
+                <div class="rated_recipes">
+        
+                    <button class="button" role="button">
+                      <a style="color:rgb(74, 74, 74)" href="rated1.html">Highest Rated Recipe</a>
+                    </button>
+        
+                    <button class="button" role="button">
+                      <a style="color:rgb(74, 74, 74)" href="rated2.html">Second Highest Rated Recipe</a>
+                    </button>
+        
+                    <button class="button" role="button">
+                      <a style="color:rgb(74, 74, 74)" href="rated3.html">Third Highest Rated Recipe</a>
+                    </button>
+        
+                    <button class="button" role="button">
+                      <a style="color:rgb(74, 74, 74)" href="rated4.html">Fourth Highest Rated Recipe</a>
+                    </button>
+                </div>
+            </div> 
+          </div>
         </div>
 
-        <p class="recent" style="color:rgb(231, 228, 28)"> Most Recent Recipes </p>
-        <div class="recent_recipes">
-            <button class="recent1" role="button" style="margin:70px">Most Recent Recipe</button>
-            <button class="recent2" role="button" style="margin:70px">Second Most Recent Recipe</button>
-            <button class="recent3" role="button" style="margin:70px">Third Most Recent Recipe</button>
-            <button class="recent4" role="button" style="margin:70px">Fourth Most Recent Recipe</button>
-        </div>
-
-        <p class="rated" style="color:rgb(231, 228, 28)"> Highest Rated Recipes </p>
-        <div class="rated_recipes">
-            <button class="rated1" role="button" style="margin:70px">Highest Rated Recipe</button>
-            <button class="rated2" role="button" style="margin:70px">Second Highest Rated Recipe</button>
-            <button class="rated3" role="button" style="margin:70px">Third Highest Rated Recipe</button>
-            <button class="rated4" role="button" style="margin:70px">Fourth Highest Rated Recipe</button>
-        </div>
-
-        <div class="pagination">
-          <a href="f1.html">&#8592; this is how you link to another html page&nbsp;</a>
-          <a class="button" href="#page2">&nbsp;button2&nbsp;</a>
-          <a class="button" href="#page3">&nbsp;button3 &#8594;</a>
-        </div>
+       
+        <footer>
+          <p>&copy; 2023 Shanghai Shark</p>
+        </footer>
       </article>
-      <footer>
-        <p>&copy; 2023 Shanghai Shark</p>
-      </footer>
     </main>
-
+  </div>
   </body>
 </html>

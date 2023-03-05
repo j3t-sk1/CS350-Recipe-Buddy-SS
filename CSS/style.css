@@ -212,6 +212,43 @@ input[type=text]:focus {
     transform: translateY(2px);
     transition-duration: .35s;
   }
+.delrecipe {
+    display: flex;
+    /* flex-grow: 0.33; */
+    flex: 1 1 0;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    justify-content: space-around;
+    /* background-color: rgb(216, 175, 175); */
+    /*I think this would look better as just a solid red*/
+    background-image: linear-gradient(rgb(160, 99, 99), rgb(225, 59, 59));
+    border-radius: 8px;
+    border-style: none;
+    box-shadow: rgba(44, 44, 44, 0.15) 0 4px 9px;
+    color: rgb(85, 85, 85);
+    cursor: pointer;
+    font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 13px 20px;
+    transform: translate3d(0, 0, 0);
+    user-select: none;
+  }
+  
+.delrecipe:hover {
+    /* background-color: rgb(255, 66, 66); */
+    background-image: linear-gradient(rgb(204, 62, 62), rgb(255, 66, 66));
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: .35s;
+    box-shadow: rgba(29, 29, 29, 0.15) 0 4px 9px;
+    color: rgb(48, 48, 48);
+  }
+  
+  .delrecipe:active {
+    transform: translateY(2px);
+    transition-duration: .35s;
+  }
 
 .above_box {
     padding-bottom: 10rem;

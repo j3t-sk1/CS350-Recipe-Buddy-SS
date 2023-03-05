@@ -502,6 +502,15 @@ p.listed_rating {
   margin: auto;
 }
 
+p.listed_text {
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 3%;
+  color: rgb(86, 86, 86);
+  margin: auto;
+}
+
 .button {
   display: flex;
     /* flex-grow: 0.33; */

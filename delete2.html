@@ -136,25 +136,40 @@
             <div class="row no-gutters">
               <div class="col-md-1 no-gutters">
                 <div class="leftside">
-                  <img src = "icons\gear-fill.svg" alt="settings"/>
-                  <img src = "icons\list.svg" alt="list"/>
-                  <img src = "icons\person-circle.svg" alt="profile"/>
+                  <div class="left_1">
+                    <div class="timer">
+                      <form class="timing" name="form_main">
+                       <div>
+                        <span id="hour">00</span>:<span id="minute">00</span>:<span id="second">00</span>:<span id="millisecond">000</span>
+                       </div>
+                       <br />
+                    
+                      <button type="button" name="start">start</button>
+                      <button type="button" name="pause">pause</button>
+                      <button type="button" name="reset">reset</button>
+                    </form>
+                  </div>
+                  </div>
+                  <div class="left_2">
+                    <button id="home" class="b_home">
+                        <a width="100px" height="100px" alt="home" href="index.html">
+                          <img src="icons\house-fill.svg" width="100px" height="100px">
+                        </a>
+                    </button>
     
+                    <button id="profile" class="b_profile">
+                      <a width="100px" height="100px" alt="profile" href="profile.html">
+                        <img src="icons\person-circle.svg" width="100px" height="100px">
+                      </a>
+                  </button>
     
-                   <div class="timer">
-                    <form name="form_main">
-                     <div>
-                      <span id="hour">00</span>:<span id="minute">00</span>:<span id="second">00</span>:<span id="millisecond">000</span>
-                     </div>
-                     <br />
-                  
-                    <button type="button" name="start">start</button>
-                    <button type="button" name="pause">pause</button>
-                    <button type="button" name="reset">reset</button>
-                  </form>
+                  <button id="settings" class="b_settings">
+                    <a width="100px" height="100px" alt="home" href="settings.html">
+                      <img src="icons\gear-fill.svg" width="100px" height="100px">
+                    </a>
+                </button>
                 </div>
-                  
-                
+    
                 </div>
               </div>
               <div class="col-md-11 no-gutters">

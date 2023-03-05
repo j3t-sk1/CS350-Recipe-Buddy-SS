@@ -55,14 +55,34 @@ function returnData(input) {
 // -- End of timer function
 
 
-var modal = document.querySelector(".modal");
-var container = modal.querySelector(".container");
+// var modal = document.querySelector(".modal");
+// var container = modal.querySelector(".container");
 
-document.querySelector("button").addEventListener("click", function (e) {
-  modal.classList.remove("hidden")
-});
+// document.querySelector("button").addEventListener("click", function (e) {
+//   modal.classList.remove("hidden")
+// });
 
-document.querySelector(".modal").addEventListener("click", function (e) {
-  if (e.target !== modal && e.target !== container) return;     
-  modal.classList.add("hidden");
-});
+// document.querySelector(".modal").addEventListener("click", function (e) {
+//   if (e.target !== modal && e.target !== container) return;     
+//   modal.classList.add("hidden");
+// });
+
+
+
+const modal = document.querySelector(".modal");
+const trigger = document.querySelector(".trigger");
+const closeButton = document.querySelector(".close-button");
+
+function toggleModal() {
+    modal.classList.toggle("show-modal");
+}
+
+function windowOnClick(event) {
+    if (event.target === modal) {
+        toggleModal();
+    }
+}
+
+trigger.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick); 

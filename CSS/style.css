@@ -432,35 +432,47 @@ footer {
 }
 
 .left_1 {
-  height: 30vh;  
+  height: 19.5vh;  
   width: 150%;
   background-color: rgb(102, 102, 102);
   border-radius: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
   margin-left: 1rem;
-  padding-top: 6rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
 }
 
 .left_2 {
-  height: 47vh;  
+  height: 57vh;  
   width: 150%;
   background-color: rgb(102, 102, 102);
   border-radius: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
   margin-left: 1rem;
-  padding-top: 6rem;
+  padding-top: 4rem;
+}
+
+.b_home {
+  background: transparent;
+  border: none !important;
+  font-size: 0;
+  margin-left: 28%;
+}
+
+.home {
+  /* margin-left: 28%; */
 }
 
 .profile {
   margin-left: 28%;
-  padding-top: 2rem;
+  padding-top: 6rem;
 }
 
 .settings {
   margin-left: 28%;
-  padding-top: 8rem;
+  padding-top: 5rem;
 }
 
 .rightside {
@@ -470,14 +482,13 @@ footer {
 .timer {
   margin: auto;
   background-color: rgb(42, 42, 42);
-  padding-top: 20%;
   margin-left: 5%;
   padding-left: 5%;
   margin-right: 5%;
   padding-right: 5%;
   border-radius: 1rem;
-  padding-top: 20%;
-  padding-bottom: 20%;
+  padding-top: 15%;
+  padding-bottom: 15%;
 }
 
 .timing {

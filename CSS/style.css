@@ -406,7 +406,7 @@ p.adding-recipe{
 }
 
 .rated_recipes {
-    margin-bottom: 20px;
+    margin-top: 20px;
     margin-left: 12%;
     margin-right: 50px;
     display: flex;
@@ -419,6 +419,38 @@ p.adding-recipe{
     border: 2px solid rgb(231, 228, 28);
     border-radius: .5rem;
     background-color: rgb(85, 85, 85);
+}
+
+.listed_recipes {
+    margin-top: 2%;
+    margin-bottom: 20px;
+    margin-right: 50px;
+    margin-left: 12%;
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 80%;
+    height: 150px;
+    border: 2px solid rgb(231, 228, 28);
+    border-radius: .5rem;
+    background-color: rgb(85, 85, 85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p.recipe_name {
+  text-indent: 12.5%;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  margin-top: 3%;
+}
+
+.recipe_image {
+  display: flex;
+  width: 15%;
+  height: 70%;
+  background-color: rgb(42, 42, 42);
 }
 
 .button {

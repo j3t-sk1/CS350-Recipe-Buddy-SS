@@ -439,18 +439,45 @@ p.adding-recipe{
 }
 
 p.recipe_name {
-  text-indent: 12.5%;
   font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
-  font-size: 48px;
+  font-size: 34px;
   font-weight: 600;
   margin-top: 3%;
+  color: rgb(42, 42, 42);
+  margin: auto;
 }
 
-.recipe_image {
+.listed_recipe_image {
   display: flex;
   width: 15%;
   height: 70%;
   background-color: rgb(42, 42, 42);
+  margin: auto;
+}
+
+.listed_time {
+  display: flex;
+  width: 15%;
+  height: 70%;
+  background-color: rgb(42, 42, 42);
+  margin: auto;
+}
+
+.listed_serving_size {
+  display: flex;
+  width: 15%;
+  height: 70%;
+  background-color: rgb(42, 42, 42);
+  margin: auto;
+}
+
+p.listed_rating {
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 34px;
+  font-weight: 600;
+  margin-top: 3%;
+  color: rgb(42, 42, 42);
+  margin: auto;
 }
 
 .button {

@@ -1,9 +1,5 @@
 <!-- Checklist: -->
 <!-- 1. *CRTIICAL: Add in all other major pages (adding recipes, deleting recipes, user settings, searching results screen, sorting screen, pantry (if time), etc.) -->
-<!-- 1. How to change form field color -->
-<!-- 2. How to put "search" text inside form field -->
-<!-- 3. Add search icon on right side of form field -->
-<!-- 4. Continue filling out rest of vertical & horizontal nav bars -->
 <!-- 5. Get spacing correct for all main boxes for center screen -->
 <!-- 6. Low priority: Media Queries -->
 <!-- 7. Very low priority: Website Logo -->
@@ -50,12 +46,14 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href="lib/animate/animate.min.css" rel="stylesheet">
         <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
         <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
         <link href="css/bootstrap.min.css" rel="stylesheet">
     
         <link href="css/style.css" rel="stylesheet">
+    
         
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -111,6 +109,7 @@
                           
                           <div class="icon_search">
                             <a href="search.html"><img src ="icons\search.svg" alt="search" width="20" height="20" class="icon_search"/></a>
+                            
                           </div>
                           <!-- <input type="submit" value="Submit" /> -->
                         </form>
@@ -133,40 +132,26 @@
                       <!-- </div> -->
                     <!-- </div> -->
           </header>
-          <article><!-- page content -->
+          <article><!-- page content -->        
+            <div class="row no-gutters">
+              <div class="col-md-1 no-gutters">
+                <div class="leftside">
+                  <img src = "icons\gear-fill.svg" alt="settings"/>
+                  <img src = "icons\list.svg" alt="list"/>
+                  <img src = "icons\person-circle.svg" alt="profile"/>
     
-            <img src = "icons\gear-fill.svg" alt="settings"/>
-            <img src = "icons\list.svg" alt="list"/>
-            <img src = "icons\person-circle.svg" alt="profile"/>
     
-            <!-- <p>text here</p> -->
+                   <div class="timer">
+                    <form name="form_main">
+                     <div>
+                      <span id="hour">00</span>:<span id="minute">00</span>:<span id="second">00</span>:<span id="millisecond">000</span>
+                     </div>
+                     <br />
+                  
+                    <button type="button" name="start">start</button>
+                    <button type="button" name="pause">pause</button>
+                    <button type="button" name="reset">reset</button>
+                  </form>
+                </div>
+                  
     
-            <!-- <div class="flex-container"> -->
-              <!-- <ul> -->
-                <!-- <div>1</div> -->
-                <!-- <div>2</div> -->
-                <!-- <div>3</div> -->
-              <!-- </ul> -->
-            <!-- </div>  -->
-    
-            <!-- <div class="above_box"> -->
-                <!-- <p>above box text</p> -->
-            <!-- </div> -->
-    
-             <!-- <div class="box_example"> -->
-                <!-- <p> box example </p> -->
-            <!-- </div>  -->
-    
-            <div class="pagination">
-              <a href="f1.html">&#8592; this is how you link to another html page&nbsp;</a>
-              <a class="button" href="#page2">&nbsp;button2&nbsp;</a>
-              <a class="button" href="#page3">&nbsp;button3 &#8594;</a>
-            </div>
-          </article>
-          <footer>
-            <p>&copy; 2023 Shanghai Shark</p>
-          </footer>
-        </main>
-    
-      </body>
-    </html>

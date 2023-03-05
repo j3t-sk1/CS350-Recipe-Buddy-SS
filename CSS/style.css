@@ -64,10 +64,12 @@ body {
 .searching {
     margin: auto;
     border: 2px solid #eee;
-    padding: 4px;
+    /* padding: 4px; */
     border: 0;
     box-shadow:0 0 15px 4px rgba(0,0,0,0.25);
     padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     border-radius: 20px;
     width: 100%;
     float: left;
@@ -78,7 +80,7 @@ body {
 /* search text field */
 input {
     background-color:rgb(180, 180, 180);
-    /* color:aqua; */
+    font-size: 15pt;
 }
 
 input::placeholder {
@@ -99,8 +101,23 @@ input[type=text]:focus {
 }
 
 .icon_search {
-    margin-left: -3.2rem;
-    margin-top: 0.9rem;
+  margin-left: -3.3rem;
+  margin-top: 0.8rem;
+}
+
+a {
+  color:rgb(85, 85, 85);
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(45, 45, 45);
+  text-decoration: none;
+}
+
+a:visited {
+  color:rgb(85, 85, 85);
+  text-decoration: none;
 }
 
 .add {
@@ -124,7 +141,7 @@ input[type=text]:focus {
     transform: translate3d(0, 0, 0);
     user-select: none;
 }
-  
+
   .add:hover {
     background-image: linear-gradient(rgb(209, 202, 108), rgb(218, 214, 26));
     color: rgb(48, 48, 48);
@@ -135,8 +152,12 @@ input[type=text]:focus {
   }
   
   .add:active {
-    transform: translateY(2px);
+    transform: translateY(3px);
     transition-duration: .35s;
+  }
+
+  .add:visited {
+    color:aqua;
   }
 
   .edit {
@@ -368,6 +389,7 @@ p.adding-recipe{
   font-size: 15pt;
   display: block;
 }
+
 .main_page {
   width: 100%;
 }
@@ -498,9 +520,17 @@ footer {
   margin-left: 28%;
 }
 
+.b_home:hover {
+  transform: translateY(-4px);
+  transition-duration: 0.3s;
+}
+
 .b_home:active {
-  box-shadow: 0 5px 5px #575757;
-  transform: translateY(2px);
+  transform: translateY(3px);
+}
+
+.b_home:visited {
+  display: none;
 }
 
 .b_profile {
@@ -511,12 +541,38 @@ footer {
   margin-top: 6rem;
 }
 
+.b_profile:hover {
+  transform: translateY(-4px);
+  transition-duration: 0.3s;
+}
+
+.b_profile:active {
+  transform: translateY(3px);
+}
+
+.b_profile:visited {
+  display: none;
+}
+
 .b_settings {
   background: transparent;
   border: none !important;
   font-size: 0;
   margin-left: 28%;
   margin-top: 6rem;
+}
+
+.b_settings:hover {
+  transform: translateY(-4px);
+  transition-duration: 0.3s;
+}
+
+.b_settings:active {
+  transform: translateY(3px);
+}
+
+.b_settings:visited {
+  display: none;
 }
 
 

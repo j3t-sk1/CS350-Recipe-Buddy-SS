@@ -243,6 +243,94 @@ p.rated{
   font-weight: 600;
 }
 
+p.adding-recipe{
+  text-indent: 12.5%;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  margin-top: 3%;
+}
+
+.recipe-name{
+  margin: auto;
+  margin-left: 220px;
+  border: 2px solid #eee;
+  padding: 4px;
+  border: 0;
+  padding: 10px;
+  border-radius: 4px;
+  width: 800px;
+  float: left;
+  color:rgb(19, 19, 19);
+  font-size: 15pt;
+  display: block;
+}
+
+.recipe-rate{
+  clear: both;
+  margin: auto;
+  margin-top:2px;
+  margin-left: 220px;
+  border: 2px solid #eee;
+  padding: 4px;
+  border: 0;
+  padding: 10px;
+  border-radius: 4px;
+  width: 60px;
+  float: left;
+  color:rgb(19, 19, 19);
+  font-size: 15pt;
+  display: block;
+}
+.instructions{
+  margin: auto;
+  margin-left: 2px;
+  margin-top: 2px;
+  margin-bottom: 5px;
+  background-color: rgb(180, 180, 180);
+  border: 2px solid #eee;
+  padding: 20px;
+  border: 0;
+  padding: 10px;
+  border-radius: 4px;
+  width: 400px;
+  height: 400px;
+  float: left;
+  color:rgb(19, 19, 19);
+  font-size: 15pt;
+  color: black;
+}
+.oven-temp{
+  margin: auto;
+  margin-top:2px;
+  margin-left: 2px;
+  border: 2px solid #eee;
+  padding: 4px;
+  border: 0;
+  padding: 10px;
+  border-radius: 4px;
+  width: 120px;
+  float: left;
+  color:rgb(19, 19, 19);
+  font-size: 15pt;
+  display: block;
+}
+.temp-type{
+  background-color:rgb(180, 180, 180);
+  margin: auto;
+  margin-top:2px;
+  margin-left: 2px;
+  border: 2px solid #eee;
+  padding: 4px;
+  border: 0;
+  padding: 10px;
+  border-radius: 4px;
+  width: 120px;
+  float: left;
+  color:rgb(19, 19, 19);
+  font-size: 15pt;
+  display: block;
+}
 .main_page {
   width: 100%;
 }

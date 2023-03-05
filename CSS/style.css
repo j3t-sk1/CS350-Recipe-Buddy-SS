@@ -461,19 +461,27 @@ footer {
   margin-left: 28%;
 }
 
-.home {
-  /* margin-left: 28%; */
+.b_home:active {
+  box-shadow: 0 5px 5px #575757;
+  transform: translateY(2px);
 }
 
-.profile {
+.b_profile {
+  background: transparent;
+  border: none !important;
+  font-size: 0;
   margin-left: 28%;
-  padding-top: 6rem;
+  margin-top: 6rem;
 }
 
-.settings {
+.b_settings {
+  background: transparent;
+  border: none !important;
+  font-size: 0;
   margin-left: 28%;
-  padding-top: 5rem;
+  margin-top: 6rem;
 }
+
 
 .rightside {
   width: 100%;

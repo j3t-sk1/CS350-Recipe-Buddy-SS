@@ -73,8 +73,6 @@
         <!-- <link href="css/modern-normalize.css" rel="stylesheet"> -->
         <!-- needs our stylesheet here -->
         <!-- <link href="css/style.css" rel="stylesheet"> -->
-    
-      </head>
       <body>
         <main id="page">
           <nav><!-- main menu -->
@@ -92,8 +90,15 @@
                     <!-- <p>if you have images, line above is how you insert them using html</p> -->
                   <!-- </figure> -->
                   <div class="header_bar">
-                    <h1 class="small">RecipeBuddy</h1>
-                    
+    
+      <!-- **BUTTON HOME -->
+                  <!-- <button class="home" role="button"> -->
+                    <!-- <h1 class="small">RecipeBuddy</h1> -->
+                    <!-- <a href="index.html"></a> -->
+                  <!-- </button> -->
+    
+                  <h1 class="small">RecipeBuddy</h1>
+    
                     <!-- <h2 class="sub_small">The only cookbook you need.</h2> -->
                     <!-- <h2 class="sub_small">The only cookbook you need.</h2> -->
     
@@ -108,16 +113,26 @@
                           <input type="text" class="searching" name="search" placeholder="Search" maxlength="100"/>
                           
                           <div class="icon_search">
-                            <a href="search.html"><img src ="icons\search.svg" alt="search" width="20" height="20" class="icon_search"/></a>
+                            <a href="search.html"><img src ="icons\search.svg" alt="search" width="24" height="24" class="icon_search"/></a>
                             
                           </div>
                           <!-- <input type="submit" value="Submit" /> -->
                         </form>
                       </div>
     
-                      <button class="add" role="button">Add</button>
-                      <button class="edit" role="button">Edit</button>
-                      <button class="delete" role="button">Delete</button>
+                      <!-- <button class="add" role="button">
+                        <a href="adding-recipe.html">Add</a>
+                      </button> -->
+    
+                      <button class="add" role="button" onclick="window.location.href='adding-recipe.html';">Add</button>
+                      <button class="edit" role="button" onclick="window.location.href='edit.html';">Edit</button>
+                      <button class="delete" role="button" onclick="window.location.href='delete2.html';">Delete</button>
+    
+                      <!-- <button class="edit" role="button">Edit</button> -->
+    
+                      <!-- <button class="delete" role="button"> -->
+                        <!-- <a href="delete.html">Delete</a> -->
+                      <!-- </button> -->
     
                       <!-- <div class="add"> -->
                         <!-- <p>Add</p> -->
@@ -147,38 +162,69 @@
                       <button type="button" name="start">start</button>
                       <button type="button" name="pause">pause</button>
                       <button type="button" name="reset">reset</button>
-                    </form>
-                  </div>
+                      </form>
+                    </div>
                   </div>
                   <div class="left_2">
-                    <div class="profile">
-                      <img src = "icons\person-circle.svg" width="100px" height="100px" alt="profile"/>
-                     </div>
-      
-                    <img src = "icons\list.svg" alt="list"/>
-                    
-                  <div class="settings">
-                    <img src = "icons\gear-fill.svg" width="100px" height="100px" color="red" alt="settings"/>
-                  </div>
-                  </div>
+                    <button id="home" class="b_home">
+                        <a width="100px" height="100px" alt="home" href="index.html">
+                          <img src="icons\house-fill.svg" width="100px" height="100px">
+                        </a>
+                    </button>
+    
+                    <button id="profile" class="b_profile">
+                      <a width="100px" height="100px" alt="profile" href="profile.html">
+                        <img src="icons\person-circle.svg" width="100px" height="100px">
+                      </a>
+                  </button>
+    
+                  <button id="settings" class="b_settings">
+                    <a width="100px" height="100px" alt="home" href="settings.html">
+                      <img src="icons\gear-fill.svg" width="100px" height="100px">
+                    </a>
+                </button>
+                </div>
     
                 </div>
               </div>
               <div class="col-md-11 no-gutters">
                 <div class="rightside">
                   <div class="main_page">
+    
+                    <button class="trigger">Click here to trigger the modal!</button>
+                    <div class="modal">
+                        <div class="modal-content">
+                            <span class="close-button">&times;</span>
+                            <h1>Hello, I am a modal!</h1>
+                        </div>
+                    </div> 
+    
                     <p class="adding-recipe" style="color:rgb(231, 228, 28)"> Add Recipe </p>
-                    <input type="text" class="recipe-name" name="recipename" placeholder="Recipe Name">
-                    <input type="text" class="recipe-rate" name="reciperate" placeholder="Rate Recipe">
-                    <input type="text" class="oven-temp" name="oventemp" placeholder="Oven Temp">
-                    <select class="temp-type">
-                      <option value="Fahrenheit">°F</option>
-                      <option value="Celcius">°C</option>
-                    </select>
-
-                    <textarea class="instructions" name="Intruct" placeholder="Intructions"></textarea>
                     
-                    
+                        <input type="text" class="recipe-name" name="recipename" placeholder="Recipe Name">
+                        <input type="text" class="recipe-rate" name="reciperate" placeholder="Rate Recipe">
+                        <input type="text" class="oven-temp" name="oventemp" placeholder="Oven Temp">
+                        <select class="temp-type">
+                          <option value="Fahrenheit">°F</option>
+                          <option value="Celcius">°C</option>
+                        </select>
+                        <p></p>
+                        <select class="serv-size">
+                          <option value="title"><span class="serv-size-word">Serving Size</span></option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10+">10+</option>
+                        </select>
+                        <p class="picturebox">Picture</p>
+                        <textarea class="instructions" name="Intruct" placeholder="Intructions"></textarea>
+                    </div>
                 </div> 
               </div>
             </div>

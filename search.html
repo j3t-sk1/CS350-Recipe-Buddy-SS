@@ -137,6 +137,43 @@
 
             <p class="search_text" style="float:left; color:rgb(231, 228, 28); margin-left:125px;"> Search&nbsp;Results </p>
             <img src = "icons\list.svg" width="24" height="24" alt="list" style="float:right; margin-right:125px; margin-top:55px;"/>
+            <form id="make_checkbox_select">
+              <select name="Filters">
+                  <option disabled hidden selected value="Placeholder">Filters</option>
+                  <option value="Gluten-Free">Gluten-Free</option>
+                  <option value="Dairy-Free">Dairy-Free</option>
+                  <option value="Nut-Free">Nut-Free</option>
+                  <option value="Vegetarian">Vegetarian</option>
+                  <option value="Vegan">Vegan</option>
+              </select>
+              
+              <input type="submit" />
+              
+            </form>
+            
+            <script src="page.js"></script>
+            
+            <script>
+            
+              $(function()
+              {
+                var mySelectCheckbox = new checkbox_select(
+                {
+                  selector : "#make_checkbox_select",
+                        selected_translation : "selected",
+                        all_translation : "Selected all",
+                        not_found : "Not found",
+            
+                  // Event during initialization
+                  onApply : function(e)
+                  {
+                            alert("Custom Event: " + e.selected);
+                  }
+                });
+              
+              });
+                
+            </script>
                 <div class="search_results" style="clear: both;">
                       <a style="color:rgb(231, 228, 28); font-size: 400%;" href="f1.html">First Search Result</a>
                 </div>

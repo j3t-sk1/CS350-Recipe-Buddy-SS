@@ -100,40 +100,29 @@ if(typeof String.prototype.trim !== 'function') {
 
 var checkbox_select = function(params)
 {
-  // Error handling first
-  // ----------------------------------------------------------------------------------------------------
-  
+  // Error handling
+
   var error = false;
 
-  // If the selector is not given
   if(!params.selector) {                                              console.error("selector needs to be defined"); error = true; }
 
-  // If the selector is not a string
   if(typeof params.selector != "string") {                            console.error("selector needs to be a string"); error = true; }
 
-  // If the element is not a form
   if(!$(params.selector).is("form")) {                                console.error("Element needs to be a form"); error = true; }
 
-  // If the element doesn't contain a select
   if($(params.selector).find("select").length < 1) {                  console.error("Element needs to have a select in it"); error = true; }
 
-  // If the element doesn't contain option elements
   if($(params.selector).find("option").length < 1) {                  console.error("Select element needs to have an option in it"); error = true; }
 
-  // If the select element doesn't have a name attribute
   if($(params.selector).find('select').attr('name') == undefined) {   console.error("Select element needs to have a name attribute"); error = true; }
 
-  // If there was an error at all, dont continue in the code.
   if(error)
       return false;
-
-  // ----------------------------------------------------------------------------------------------------
 
   var that            = this,
       $_native_form   = $(params.selector),
       $_native_select = $_native_form.find('select'),
       
-      // Variables
       selector                = params.selector,
       select_name             = $_native_select.attr('name').charAt(0).toUpperCase() + $_native_select.attr('name').substr(1),
       selected_translation    = params.selected_translation   ? params.selected_translation   : "selected",
@@ -141,7 +130,6 @@ var checkbox_select = function(params)
       not_found_text          = params.not_found              ? params.not_found              : "No " + select_name + "s found.",
       currently_selected      = [],
       
-      // Create the elements needed for the checkbox select
       $_parent_div    = $("<div />")      .addClass("checkbox_select"),
       $_select_anchor = $("<a />")        .addClass("checkbox_select_anchor")     .text( select_name ),
       $_search        = $("<input />")    .addClass("checkbox_select_search"),
@@ -182,7 +170,6 @@ var checkbox_select = function(params)
           }
       },
 
-      // Template for the li, will be used in a loop.
       createItem  = function(name, value, count)
       {
           var uID             = 'checkbox_select_' + select_name + "_" + name.replace(" ", "_"),
@@ -217,7 +204,6 @@ var checkbox_select = function(params)
       
     if(!$_parent_div.hasClass("expanded"))
     {  
-      // Only do the Apply event if its different
       if(currently_selected != $_submit.data("selected"))
       {
         $_submit.data("selected" , currently_selected);
@@ -231,14 +217,12 @@ var checkbox_select = function(params)
     }					
   };
   
-  // Event of this instance
   that.onApply = typeof params.onApply == "function" ? 
               
                   params.onApply :
               
                   function(e) 
                   {
-                      //e.selected is accessible
                   };
 
   that.update = function() 
@@ -257,17 +241,12 @@ var checkbox_select = function(params)
 
   that.check = function(checkbox_name, checked) 
   {
-      //$_ul.find("input[type=checkbox][name=" + trim(checkbox_name) + "]").attr('checked', checked ? checked : false);
 
   $_ul.find("input[type=checkbox]").each(function()
   {
-    // If this elements name is equal to the one sent in the function
     if($(this).attr('name') == checkbox_name)
     {
-      // Apply the checked state to this checkbox
       $(this).attr('checked', checked ? checked : false);
-      
-      // Break out of each loop
       return false;
     }
   });
@@ -275,8 +254,6 @@ var checkbox_select = function(params)
       updateCurrentlySelected();
 
   }
-
-  // Build mark up before pushing into page
   $_dropdown_div  .prepend($_search);
   $_dropdown_div  .append($_ul);
   $_dropdown_div  .append($_not_found);
@@ -284,12 +261,8 @@ var checkbox_select = function(params)
   $_dropdown_div  .appendTo($_parent_div);
   $_select_anchor .prependTo($_parent_div);
 
-  // Iterate through option elements
   that.update();
 
-  // Events 
-
-  // Actual dropdown action
   $_select_anchor.click( 
 
       function()
@@ -298,7 +271,6 @@ var checkbox_select = function(params)
       }
   );
            
-  // Filters the checkboxes by search on keyup
   $_search.keyup(
 
       function()
@@ -332,7 +304,6 @@ var checkbox_select = function(params)
           }
           else
           {
-              // If it doesn't contain 
               if($_ul.text().toLowerCase().indexOf(search) == -1)
               {
                   if($_not_found.hasClass("hide"))
@@ -374,12 +345,9 @@ var checkbox_select = function(params)
       }
   );
 
-  // Delete the original form submit
   $(params.selector).find('input[type=submit]').remove();
 
-  // Put finalized markup into page.
   $_native_select.after($_parent_div);
 
-  // Hide the original element
   $_native_select.hide();
 };

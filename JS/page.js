@@ -351,3 +351,4 @@ var checkbox_select = function(params)
 
   $_native_select.hide();
 };
+

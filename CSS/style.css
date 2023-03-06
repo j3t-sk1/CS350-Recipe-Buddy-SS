@@ -7,6 +7,18 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: rgb(48, 48, 48);
+  animation: fadeInAnimation ease 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
 }
 
 .header_info { 
@@ -19,8 +31,6 @@ body {
     flex-grow: 1;
     color:rgb(224, 223, 159);
 }
-
-
 
 .header_bar {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -35,7 +45,7 @@ body {
 
 .small {
     color:rgb(231, 228, 28);
-    font-size: 200%;
+    font-size: 390%;
     /* text-decoration: underline; */
     margin: auto;
     margin-left: 1rem;
@@ -52,14 +62,6 @@ body {
     /* flex-grow: 1; */
     flex: 8 1 0;
 }
-
-/* .sub_small { */
-    /* color: rgb(245, 230, 148); */
-    /* flex-direction: column; */
-    /* font-size: 14px; */
-    /* margin-top: 5rem; */
-    /* margin-left: -15rem; */
-/* } */
 
 .searching {
     margin: auto;
@@ -437,12 +439,19 @@ p.adding-recipe{
   padding-right: 10%;
   width: 80%;
   height: 150px;
-  border: 2px solid rgb(231, 228, 28);
+  /* border: 2px solid rgb(231, 228, 28); */
   border-radius: .5rem;
   background-color: rgb(85, 85, 85);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.favorite_recipes:hover {
+  box-shadow: 5px 5px 5px rgb(33, 33, 33);
+  transition: box-shadow 0.2s ease-in-out;
+  transform: translate(2px, -3px);
+  transition: 0.25s;
 }
 
 .recent_recipes {
@@ -456,10 +465,17 @@ p.adding-recipe{
     padding-right: 10%;
     width: 80%;
     height: 150px;
-    border: 2px solid rgb(231, 228, 28);
+    /* border: 2px solid rgb(231, 228, 28); */
     border-radius: .5rem;
 
     background-color: rgb(85, 85, 85);
+}
+
+.recent_recipes:hover {
+  box-shadow: 5px 5px 5px rgb(33, 33, 33);
+  transition: box-shadow 0.2s ease-in-out;
+  transform: translate(2px, -3px);
+  transition: 0.25s;
 }
 
 .rated_recipes {
@@ -473,9 +489,16 @@ p.adding-recipe{
     padding-right: 10%;
     width: 80%;
     height: 150px;
-    border: 2px solid rgb(231, 228, 28);
+    /* border: 2px solid rgb(231, 228, 28); */
     border-radius: .5rem;
     background-color: rgb(85, 85, 85);
+}
+
+.rated_recipes:hover {
+  box-shadow: 5px 5px 5px rgb(33, 33, 33);
+  transition: box-shadow 0.2s ease-in-out;
+  transform: translate(2px, -3px);
+  transition: 0.25s;
 }
 
 .listed_recipes {
@@ -487,7 +510,7 @@ p.adding-recipe{
     padding-right: 10%;
     width: 80%;
     height: 150px;
-    border: 2px solid rgb(231, 228, 28);
+    /* border: 2px solid rgb(231, 228, 28); */
     border-radius: .5rem;
     background-color: rgb(85, 85, 85);
     display: flex;
@@ -629,6 +652,7 @@ footer {
 .b_home:hover {
   transform: translateY(-4px);
   transition-duration: 0.3s;
+  transform: scale(1.1);
 }
 
 .b_home:active {
@@ -650,6 +674,7 @@ footer {
 .b_profile:hover {
   transform: translateY(-4px);
   transition-duration: 0.3s;
+  transform: scale(1.1);
 }
 
 .b_profile:active {
@@ -671,6 +696,7 @@ footer {
 .b_settings:hover {
   transform: translateY(-4px);
   transition-duration: 0.3s;
+  transform: scale(1.1);
 }
 
 .b_settings:active {
@@ -957,4 +983,88 @@ div.checkbox_select .select_input
 .hide
 {
     display: none;
+}
+
+.profile_body {
+ text-indent: 12.5%;
+ height: 70vh;
+ text-indent: 12.5%;
+ font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+ font-size: 24px;
+ font-weight: 600;
+ margin-top: 3%;
+ color: #e9e732;
+}
+
+.user_box {
+  width: 80%;
+  height: 95%;
+  margin-left: 14%;
+  background-color: rgb(102, 102, 102);
+  border-radius: 1rem;
+}
+
+.user_recipes {
+  padding-top: 4rem;
+}
+
+@media (max-width: 1000px) {
+
+  .small {
+    font-size: 200%;
+  }
+
+  .add {
+    flex: 2 0 0;
+    flex-direction: row;
+    margin-left: 1rem;
+    margin-right: 0.75rem;
+  }
+
+  .edit {
+    flex: 2 0 0;
+    flex-direction: row;
+    margin-right: 0.75rem;
+    margin-left: 0.75rem;
+  }
+
+  .delete {
+    flex: 1.5 0 0;
+    flex-direction: row;
+    margin-right: 1.25rem;
+    margin-left: 1.5rem;
+  }
+
+  .rightside {
+    width: 100%;
+  }
+
+  .b_home {
+    margin-left: 3.5%;
+    transform: scale(0.75);
+  }
+
+  .b_home:hover {
+    transform: scale(0.9);
+  }
+
+  .b_profile {
+    margin-left: 3.5%;
+    transform: scale(0.75);
+  }
+
+  .b_profile:hover {
+    transform: scale(0.9);
+  }
+
+  .b_settings {
+    margin-left: 3.5%;
+    transform: scale(0.75);
+  }
+
+  .b_settings:hover {
+    transform: scale(0.9);
+  }
+
+
 }

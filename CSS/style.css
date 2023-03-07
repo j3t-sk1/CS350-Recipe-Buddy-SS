@@ -1037,6 +1037,7 @@ div.checkbox_select .select_input
   width: 80%;
   height: 94%;
   margin-left: 14%;
+  overflow-y:auto;
   background-color: rgb(102, 102, 102);
   border-radius: 1rem;
 }

@@ -234,7 +234,11 @@
                         <p class="listed_text">Serving Size</p>
                       </div>
                       <p class="listed_rating">Rating</p>
-                      <button class="trigger">Delete</button>
+                      <button id="home" class="trigger">
+                        <a width="80px" height="80px" alt="delete">
+                          <img src="icons\trash3-fill.svg" width="100px" height="100px">
+                        </a>
+                      </button>
                       <div class="modal">
                           <div class="modal-content">
                             <span class="close-button">&times;</span>
@@ -262,8 +266,8 @@
                           <div class="modal-content">
                             <span class="close-button">&times;</span>
                             <h1>Are you sure you want to delete?</h1>
-                            <button>Yes</button>
-                            <button>No</button>
+                            <button class="button">Yes</button>
+                            <button class="button">No</button>
                           </div>
                       </div> 
                     </div>
@@ -271,17 +275,6 @@
               </div>
             </div>
     
-            <button>Show Modal</button>
-    
-            <div class="modal hidden">
-              <div class="container">
-                <div class="body">
-                  <p>Click outside this box to close the modal.<p>
-                  <p>You could of course add a close button etc</p>
-                  <p>But this is left for the OP todo</p> 
-                </div>
-              </div>
-            </div>
     
             <footer>
               <p>&copy; 2023 Shanghai Shark</p>

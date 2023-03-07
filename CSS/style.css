@@ -285,30 +285,9 @@ a:visited {
     color: #e9e732;
   }
 /* Swith user */
-  .s_user {
-    display: flex;
-    flex: 1 1 0;
-    margin-left: 5rem;
-    margin-right: 4rem;
-    justify-content: space-around;
-    background-color: rgb(240, 234, 234);
-    /* background-image: linear-gradient(rgb(230, 146, 146), rgb(255, 86, 86)); */
-    border-radius: 8px;
-    border-style: none;
-    box-shadow: rgba(44, 44, 44, 0.15) 0 4px 9px;
-    color: rgb(85, 85, 85);
-    cursor: pointer;
-    font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    padding: 13px 20px;
-    transform: translate3d(0, 0, 0);
-    user-select: none;
-  }
   .su_drop {
     position: relative;
     display: inline-block;
-    color: #00A600;
   }
   
   .su_drop-content {

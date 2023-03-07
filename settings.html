@@ -99,8 +99,20 @@
           <div class="col-md-11 no-gutters">
             <div class="rightside">
               <div class="settings_body">
-                <p>Body goes here</p>
+                <p>Settings</p>
+
+                <div class="user_box">
+                  <div class="user_recipes">
+                    <button class="s_user" role="button" onclick="myFunction()">Switch User</button>
+                    <div id="su_drop" class ="su_drop-content">
+                      <p>user1</p> 
+                      <p>user2</p> 
+                      <p>user3</p> 
+                      <p>new user</p> 
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div> 
           </div>
         </div>
@@ -111,5 +123,12 @@
     </main>
   </div>
   <script src="js/page.js"></script>
+  <script>
+    document.getElementById("s_user").onclick = function() {myFunction()};
+    
+    function myFunction() {
+      document.getElementById("su_drop").classList.toggle("su_show");
+    }
+    </script>
   </body>
 </html>

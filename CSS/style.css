@@ -339,7 +339,7 @@ p.rated{
   font-size: 24px;
   font-weight: 600;
 }
-
+/*-----------------------------------*/
 p.adding-recipe{
   text-indent: 12.5%;
   font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
@@ -351,13 +351,13 @@ p.adding-recipe{
 
 .recipe-name{
   margin: auto;
-  margin-left: 13%;
+  /*margin-left: 13%;*/
   border: 2px solid #eee;
   padding: 4px;
   border: 0;
   padding: 10px;
   border-radius: 4px;
-  width: 800px;
+  width: 700px;
   float: left;
   color:rgb(19, 19, 19);
   font-size: 15pt;
@@ -367,48 +367,41 @@ p.adding-recipe{
 .recipe-rate{
   clear: both;
   margin: auto;
-  margin-top:2px;
-  margin-left: 13%;
+  margin-top:10px;
   border: 2px solid #eee;
   padding: 4px;
   border: 0;
   padding: 10px;
   border-radius: 4px;
-  width: 60px;
+  width: 90px;
   float: left;
   color:rgb(19, 19, 19);
   font-size: 15pt;
   display: block;
 }
 .instructions{
-  margin: auto;
-  margin-left: 2px;
-  margin-top: 2px;
-  margin-bottom: 5px;
   background-color: rgb(180, 180, 180);
-  border: 2px solid #eee;
   padding: 20px;
-  border: 0;
+  border: none;
   padding: 10px;
   border-radius: 4px;
   width: 493px;
-  height: 400px;
+  height: 500px;
   float: left;
   color:rgb(19, 19, 19);
   font-size: 15pt;
   color: black;
-  display:block;
 }
 .oven-temp{
   margin: auto;
-  margin-top:2px;
-  margin-left: 2px;
+  margin-top:10px;
+  margin-left: 10px;
   border: 2px solid #eee;
   padding: 4px;
   border: 0;
   padding: 10px;
   border-radius: 4px;
-  width: 120px;
+  width: 190px;
   float: left;
   color:rgb(19, 19, 19);
   font-size: 15pt;
@@ -417,8 +410,8 @@ p.adding-recipe{
 .temp-type{
   background-color:rgb(180, 180, 180);
   margin: auto;
-  margin-top:2px;
-  margin-left: 2px;
+  margin-top:10px;
+  margin-left: 10px;
   border: 2px solid #eee;
   padding: 4px;
   border: 0;
@@ -431,17 +424,16 @@ p.adding-recipe{
   display: block;
 }
 .serv-size{
-  clear:both;
   background-color:rgb(180, 180, 180);
   margin: auto;
-  margin-top:2px;
-  margin-left: 13%;
+  margin-top:10px;
+  margin-left: 10px;
   border: 2px solid #eee;
   padding: 4px;
   border: 0;
   padding: 10px;
   border-radius: 4px;
-  width: 120px;
+  width: 145px;
   float:left;
   color:rgb(19, 19, 19);
   font-size: 15pt;
@@ -452,17 +444,89 @@ p.adding-recipe{
 }
 .picturebox{
   background-color:rgb(180, 180, 180);
-  width:200px;
-  height:200px;
+  width: 490px;
+  height: 380px;
   font-size: 30px;
   display: block;
-  margin-top: 170px;
-  margin-left: 13%;
+  margin-top: 120px;
+  margin-left:30%;
   text-align:center;
-  padding-top: 75px;
+  padding-top: 170px;
   border-radius: 4px;
 }
-
+.add-divbox{
+  margin-left: 13%;
+  width: 700px;
+  display: inline-block;
+  vertical-align: top;
+}
+.instruct-box{
+  width: 500px;
+  margin-left: 10px;
+  display:inline-block;
+  vertical-align:top;
+}
+.utensilslist{
+  clear: both;
+  background-color: rgb(180, 180, 180);
+  padding: 20px;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 10px;
+  width: 200px;
+  height: 380px;
+  float: left;
+  color:rgb(19, 19, 19);
+  font-size: 15pt;
+  color: black;
+}    
+.ingredientslist{
+  background-color: rgb(180, 180, 180);
+  padding: 20px;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  width: 200px;
+  height: 500px;
+  float: left;
+  color:rgb(19, 19, 19);
+  font-size: 15pt;
+  color: black;
+}
+.pantry{
+  width: 200px;
+  margin-left: 8px;
+  display:inline-block;
+  vertical-align:top;
+}             
+.savebutton{
+  margin-left: 1400px;
+}
+.save{
+    background-image: rgb(255, 86, 86);
+    border-radius: 8px;
+    border-style: none;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 13px 20px;
+}
+.cancel{
+  margin-left: 10px;
+    background-image: rgb(255, 0, 0);
+    border-radius: 8px;
+    border-style: none;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 13px 20px;
+}
+/*-----------------------------------*/
 .main_page {
   width: 100%;
 }

@@ -1119,6 +1119,15 @@ div.checkbox_select .select_input
  margin-top: 2%;
  color: #e9e732;
 }
+.pantrylist{
+  width: 60%;
+  height: 30%;
+  margin-top: 2%;
+  margin-left: 2%;
+  overflow-y: auto;
+  background-color: #5b5b5b;
+  border-radius: 1rem;
+}
 
 .user_box {
   width: 80%;

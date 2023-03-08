@@ -101,21 +101,58 @@
               <div class="settings_body">
                 <p>Settings</p>
 
-                <div class="user_box">
-                  <div class="user_recipes">
-                    <img src="icons/person-circle.svg" width="60px" height="60px" onclick="Function()">
-                    <p>Change Profile Picture</p>
-                    <button id="filler" class="add" role="button" >Logout</button>
-                    <button id="filler" class="add" role="button" >Change Email</button>
-                    <button id="filler" class="add" role="button" >Change Password</button>
-                    <button id="s_user" class="add" role="button" onclick="myFunction()">Switch User</button>
-                    <div id="su_drop" class ="su_drop-content">
-                      <p>user1</p> 
-                      <p>user2</p> 
-                      <p>user3</p> 
-                      <p>new user</p> 
+                <div class="settings_box">
+
+
+                  <div class="row no-gutters">
+                    <div class="col-md-6 no-gutters">
+                    <div class="leftside">
+
+                      <div class="pfp">
+                       <img src="icons/person-circle.svg" width="60px" height="60px" onclick="Function()">
+                      </div>
+                      <div class="email">
+                        <button id="filler" class="add" role="button">Change Email</button>
+                      </div>
+                      <div class="pass">
+                        <button id="filler" class="add" role="button">Change Password</button>
+                      </div>
+                      <div class="switch_user">
+                        <button id="s_user" class="add" role="button" onclick="myFunction()">Switch User</button>
+                      </div>
+
+                    </div>
+                    </div>
+                    <!-- <div class="col-md-11 no-gutters"> -->
+                      <div class="col-md-6 no-gutters">
+                        <!-- <div class="rightside"> -->
+                      <!-- <div class="rightside"> -->
+                        <p>Change User Picture</p>
+                        <div class="user_picture">
+                          <p>picture</p>
+                        </div>
+                      <!-- </div> -->
                     </div>
                   </div>
+
+                  <div class="setting">
+                    <div id="su_drop" class ="su_drop-content">
+                    <div class="switch_text">
+                      <button id="filler" class="void" role="button">User 1</button>
+                    </div>
+                    <div class="switch_text">
+                      <button id="filler" class="void" role="button">User 2</button>
+                    </div>
+                    <div class="switch_text">
+                      <button id="filler" class="void" role="button">User 3</button>
+                    </div>
+                    <div class="switch_text">
+                      <button id="filler" class="void" role="button">New User</button>
+                    </div>
+
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div> 

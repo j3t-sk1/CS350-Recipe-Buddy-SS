@@ -1263,6 +1263,14 @@ div.checkbox_select .select_input
   padding-top: 1rem;
 }
 
+.user_info_1 p {
+  color:antiquewhite;
+  font-size: 14pt;
+  padding-left: 2rem;
+  margin-top: -1rem;
+  padding-top: 1rem;
+}
+
 .info_box {
   margin-left: 2rem;
   border-radius: 1rem;
@@ -1398,6 +1406,18 @@ div.checkbox_select .select_input
 
   .b_settings:hover {
     transform: scale(0.9);
+  }
+
+  .user_info {
+    margin-left: -2.5rem;
+  }
+
+  .user_info p {
+    font-size: 10pt;
+  }
+  
+  .user_info_1 p {
+    font-size: 10pt;
   }
 }
 

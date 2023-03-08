@@ -1299,8 +1299,8 @@ div.checkbox_select .select_input
 /*Dropdown*/
  /* Dropdown Button */
  .dropbtn {
-  background-color: #04AA6D;
-  color: white;
+  background-color: rgb(231,228,28);
+  color: darkgray;
   padding: 16px;
   font-size: 16px;
   border: none;
@@ -1337,7 +1337,7 @@ div.checkbox_select .select_input
 .dropdown:hover .dropdown-content {display: block;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;
+.dropdown:hover .dropbtn {background-color: #b2b506;
   transform: translateY(-8px);
   transition-duration: 0.3s;
   transform: scale(1.1);

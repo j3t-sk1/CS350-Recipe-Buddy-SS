@@ -199,6 +199,30 @@ a:visited {
     transition-duration: .35s;
   }
 
+  .edit_body {
+    height: 70vh;
+  }
+
+  .edit_body p {
+    /* height: 70vh; */
+    text-indent: 12.5%;
+    font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 2%;
+    color: #e9e732;
+  }
+
+  .edit_box {
+    /* margin-top: 4rem; */
+    width: 80%;
+    height: 94%;
+    margin-left: 14%;
+    overflow-y: auto;
+    background-color: rgb(102, 102, 102);
+    border-radius: 1rem;
+  }
+
   .delete {
     display: flex;
     /* flex-grow: 0.33; */
@@ -207,7 +231,7 @@ a:visited {
     margin-right: 4rem;
     justify-content: space-around;
     /* background-color: rgb(216, 175, 175); */
-    background-image: linear-gradient(rgb(230, 146, 146), rgb(255, 86, 86));
+    background-image: linear-gradient(rgb(226, 98, 98), rgb(251, 74, 74));
     border-radius: 8px;
     border-style: none;
     box-shadow: rgba(44, 44, 44, 0.15) 0 4px 9px;
@@ -281,13 +305,48 @@ a:visited {
     font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
     font-size: 24px;
     font-weight: 600;
-    margin-top: 3%;
+    /* margin-top: 3%; */
+    margin-top: 3.4rem;
     color: #e9e732;
   }
+
+  .settings_box {
+    width: 80%;
+    height: 94%;
+    margin-left: 14%;
+    background-color: rgb(102, 102, 102);
+    border-radius: 1rem;
+  }
+  
+  .settings_box p {
+    margin-top: 3rem;
+    margin-left: 2rem;
+    text-indent: 0;
+  }
+
+  .pfp {
+    margin-top: 8rem;
+    margin-left: 24rem;
+    scale: 250%;
+  }
+
+  .email {
+    margin-top: 12rem;
+  }
+
+  .pass {
+    margin-top: 3rem;
+  }
+
+  .switch_user {
+    margin-top: 4rem;
+  }
+
 /* Swith user */
   .su_drop {
     position: relative;
     display: inline-block;
+
   }
   
   .su_drop-content {
@@ -296,7 +355,12 @@ a:visited {
     background-color: #f9f9f9;
     min-width: 160px;
     overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
+    border-radius: 1rem;
+
+    background-color:#5b5b5b;
+    margin-left: 19rem;
+    margin-top: -5rem;
   }
   
   .su_drop-content a {
@@ -304,10 +368,55 @@ a:visited {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    transition: ease-in-out 2s;
   }
   
   .su_drop-content a:hover {background-color: #f1f1f1}
-  .su_show {display:block;}
+  .su_show {
+    display:block;
+    /* transition: ease-in-out 2s; */
+
+  }
+
+.su_show p {
+  margin-top: 1rem;
+}
+
+.switch_text {
+  background-color:#ddd;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.void {
+  color:#5b5b5b;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 0.8rem;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  background: transparent;
+  border: none !important;
+  /* font-size: 0; */
+}
+
+.void:hover {
+  transform: translateX(8px);
+  transition: ease-in-out;
+  transition-duration: 0.2s;
+  box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.1);
+}
+
+.void:active {
+  background-color:#5b5b5b;
+  transition: ease 0.3s;
+  transform: translate(8px, 3px);
+}
+
+.void:focus {
+  outline: none;
+}
 
 .above_box {
     padding-bottom: 10rem;
@@ -315,13 +424,11 @@ a:visited {
 }
 
 p.favorite{
-  /* text-indent: 16.5%; */
   text-indent: 12.5%;
   font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
   font-size: 24px;
   font-weight: 600;
   margin-top: 3%;
-  
 }
 
 p.recent{
@@ -529,6 +636,7 @@ p.adding-recipe{
 /*-----------------------------------*/
 .main_page {
   width: 100%;
+  margin-top: -1.8rem;
 }
 
 .favorite_recipes {
@@ -616,6 +724,13 @@ p.adding-recipe{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.listed_recipes:hover {
+  box-shadow: 5px 5px 5px rgb(33, 33, 33);
+  transition: box-shadow 0.2s ease-in-out;
+  transform: translate(2px, -3px);
+  transition: 0.25s;
 }
 
 p.recipe_name {
@@ -1133,7 +1248,7 @@ div.checkbox_select .select_input
   width: 80%;
   height: 94%;
   margin-left: 14%;
-  overflow-y:auto;
+  overflow-y: auto;
   background-color: rgb(102, 102, 102);
   border-radius: 1rem;
 }
@@ -1150,6 +1265,14 @@ div.checkbox_select .select_input
 }
 
 .user_info p {
+  color:antiquewhite;
+  font-size: 14pt;
+  padding-left: 2rem;
+  margin-top: -1rem;
+  padding-top: 1rem;
+}
+
+.user_info_1 p {
   color:antiquewhite;
   font-size: 14pt;
   padding-left: 2rem;
@@ -1181,6 +1304,7 @@ div.checkbox_select .select_input
 
 .user_recipes {
   padding-top: 5rem;
+  height: 94%;
 }
 
 .account {
@@ -1191,6 +1315,50 @@ div.checkbox_select .select_input
   margin-top: 5rem;
   margin-bottom: 15rem;
 }
+
+
+/*Dropdown*/
+ /* Dropdown Button */
+ .dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 80px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;} 
 
 @media (max-width: 1000px) {
   .small {
@@ -1248,47 +1416,17 @@ div.checkbox_select .select_input
   .b_settings:hover {
     transform: scale(0.9);
   }
+
+  .user_info {
+    margin-left: -2.5rem;
+  }
+
+  .user_info p {
+    font-size: 10pt;
+  }
+  
+  .user_info_1 p {
+    font-size: 10pt;
+  }
 }
 
-/*Dropdown*/
- /* Dropdown Button */
- .dropbtn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 80px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;} 

@@ -54,6 +54,16 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
+.smaller {
+  color:rgb(231, 228, 28);
+  font-size: 280%;
+  /* text-decoration: underline; */
+  margin: auto;
+  margin-left: 1rem;
+  background-clip: text;
+  background-image: linear-gradient(rgb(204, 204, 204), rgb(255, 251, 0));
+  -webkit-text-fill-color: transparent;
+}
 .search {
     /* margin: auto; */
     margin-left: 3rem;

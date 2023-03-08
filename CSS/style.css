@@ -1053,6 +1053,14 @@ footer {
   background-color: darkgray;
 }
 
+p.search_text{
+  /* text-indent: 16.5%; */
+  text-indent: 12.5%;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 3%;
+}
 .show-modal {
   opacity: 1;
   visibility: visible;
@@ -1405,3 +1413,11 @@ div.checkbox_select .select_input
   }
 }
 
+p.search_text{
+  /* text-indent: 16.5%; */
+  text-indent: 12.5%;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 3%;
+}

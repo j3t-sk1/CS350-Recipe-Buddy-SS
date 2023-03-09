@@ -33,20 +33,35 @@
         margin-left: -10.5%;
         margin-top: 2%;
       }
+      #test2 {
+        display: inline-block;
+        margin-left: -10.5%;
+        margin-top: 2%;
+      }
       #text {
         display: flex;
         flex-direction: row;
         font-size: large;
         margin-left: 0%;
       } 
-      #suggest {
+      #suggest1 {
+        margin-left: -10.5%;
+        margin-top: 2%;
         display: inline-block;
        } 
-      .checkbox input,.checkbox label{
-	      display:flex;
-	      flex-direction: row;
-      }
-      .checkbox label{margin-right:20px;}
+       #suggest2 {
+        margin-left: 2%;
+        margin-top: 2%;
+        display: inline-block;
+       } 
+       #text{
+        font-size: medium;
+        display: inline-flex;
+        margin-left: 0%;
+        margin-top: 2%;
+        flex-direction: row;
+       }
+
     </style>
 </head>
   <!-- </head> -->
@@ -124,20 +139,38 @@
                 <p>My Pantry</p>
 
                 <div class="user_box">
-                  <button id="test" class="add">Set Allergens</button> 
-                  <button id="suggest" class="add">Suggest More</button> 
-                  <form id="allergensL" class="pantrylist">
-                    <div>Shellfish <input type="checkbox"> </div>
-                    <div>Tree Nuts <input type="checkbox"> </div>
-                    <div>Test <input type="checkbox"> </div>
-                    <div>Test <input type="checkbox"> </div>
-                  </form>           
-                <button id="test" class="add">Owned Cookware</button>     
-                <button id="suggest" class="add">Suggest More</button>   
+                  <button id="suggest1" class="add">Suggest More</button> 
+                  <div id="allergensL" class="pantrylist">
+                    <div id="text">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      <label class="form-check-label" for="inlineCheckbox1">Shellfish</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                      <label class="form-check-label" for="inlineCheckbox2">Tree Nuts<label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                      <label class="form-check-label" for="inlineCheckbox3">Gluten</label>
+                    </div>
+                  </div>
+                  </div>               
+                <button id="suggest2" class="add">Suggest More</button>   
                   <div id="cookwareL" class="pantrylist">
                     <div id="text">
-                      <p>Blender</p>
-                      <p>Air Fryer</p>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Air Fryer</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                        <label class="form-check-label" for="inlineCheckbox2">Oven<label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                        <label class="form-check-label" for="inlineCheckbox3">Bunt Pan</label>
+                      </div>
                     </div>
                   </div>
                   

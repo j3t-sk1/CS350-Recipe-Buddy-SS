@@ -29,18 +29,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
       #test {
-        margin-left: 3%;
-        margin-top: 3%;
+        display: inline-block;
+        margin-left: -10.5%;
+        margin-top: 2%;
       }
       #text {
-        display: inline;
+        display: flex;
+        flex-direction: row;
         font-size: large;
         margin-left: 0%;
-      }
+      } 
       #suggest {
-        margin-left: 77%;
-        margin-top: 3%;
+        display: inline-block;
+       } 
+      .checkbox input,.checkbox label{
+	      display:flex;
+	      flex-direction: row;
       }
+      .checkbox label{margin-right:20px;}
     </style>
 </head>
   <!-- </head> -->
@@ -119,15 +125,15 @@
 
                 <div class="user_box">
                   <button id="test" class="add">Set Allergens</button> 
-                  <div id="allergensL" class="pantrylist">
-                    <button id="suggest" class="add">Suggest More</button> 
-                  <div id="text">
-                    <p>Shellfish <input type="checkbox"> </p>
-                    <p>Tree Nuts</p>
-                    <p>Test</p>
-                  </div>
-                </div>           
-                <button id="test" class="add">Owned Cookware</button>       
+                  <button id="suggest" class="add">Suggest More</button> 
+                  <form id="allergensL" class="pantrylist">
+                    <div>Shellfish <input type="checkbox"> </div>
+                    <div>Tree Nuts <input type="checkbox"> </div>
+                    <div>Test <input type="checkbox"> </div>
+                    <div>Test <input type="checkbox"> </div>
+                  </form>           
+                <button id="test" class="add">Owned Cookware</button>     
+                <button id="suggest" class="add">Suggest More</button>   
                   <div id="cookwareL" class="pantrylist">
                     <div id="text">
                       <p>Blender</p>

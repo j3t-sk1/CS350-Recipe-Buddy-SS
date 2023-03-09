@@ -622,7 +622,7 @@ p.adding-recipe{
   margin-left: 1400px;
 }
 .save{
-    background-image: rgb(255, 86, 86);
+    background-color: rgb(231, 229, 99);
     border-radius: 8px;
     border-style: none;
     color: rgb(0, 0, 0);
@@ -634,7 +634,7 @@ p.adding-recipe{
 }
 .cancel{
   margin-left: 10px;
-    background-image: rgb(255, 0, 0);
+    background-color: rgb(251, 135, 135);
     border-radius: 8px;
     border-style: none;
     color: rgb(0, 0, 0);
@@ -644,6 +644,104 @@ p.adding-recipe{
     font-weight: 600;
     padding: 13px 20px;
 }
+/*-----------------------------------*/
+.subtitles{
+  clear: both;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:20px;
+  color: white;
+}
+.picpic{
+  width: 310px;
+  border-radius: 10px;
+  display:inline;
+  float:left;
+
+}
+.f1-instructs{
+  color: white;
+  font-size: 15px;
+  margin-top: 10px;
+  background-color:#424242;
+  border-radius: 4px;
+  width: 470px;
+  padding-left: 5px;
+  vertical-align: top;
+  display: inline-block;
+}
+.f1-ingredients{
+  color: white;
+  font-size: 15px;
+  display: inline-block;
+  margin-left: 170px;
+  background-color:#424242;
+  border-radius: 4px;
+  width: 150px;
+  padding-left: 5px;
+  vertical-align: top;
+}
+.recipe-box{
+  margin-left:13%;
+}
+.f1-utensils{
+  color: white;
+  font-size: 15px;
+  display: inline-block;
+  margin-left: 10px;
+  background-color:#424242;
+  border-radius: 4px;
+  width: 150px;
+  padding-left: 5px;
+  vertical-align: top;
+}
+.f1-oventemp{
+  color: white;
+  font-size: 15px;
+  display: inline-block;
+  margin-left: 10px;
+  background-color:#424242;
+  border-radius: 4px;
+  width: 150px;
+  padding-left: 5px;
+  vertical-align: top;
+}
+.f1-servsize{
+  color: white;
+  font-size: 15px;
+  display: inline-block;
+  margin-left: 10px;
+  background-color:#424242;
+  border-radius: 4px;
+  width: 120px;
+  padding-left: 5px;
+  vertical-align: top;
+}
+.times{
+  clear: both;
+  display:block;
+  border: none;
+  border-radius: 8px;
+  width: 130px;
+  height: 48px;
+  vertical-align: top;
+}
+.f1-comments{
+  color: white;
+  font-size: 15px;
+  display: inline-block;
+  margin-left: 10px;
+  margin-top: 10px;
+  background-color:#424242;
+  border-radius: 4px;
+  width: 500px;
+  padding-left: 5px;
+  vertical-align: top;
+  
+}
+.indent{
+  padding-left: 40px;
+}
+
 /*-----------------------------------*/
 .main_page {
   width: 100%;

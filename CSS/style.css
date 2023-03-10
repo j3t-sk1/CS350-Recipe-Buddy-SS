@@ -1501,15 +1501,15 @@ div.checkbox_select .select_input
  color: #e9e732;
 }
 .pantrylist{
-  font-size: small;
-  text-indent: 5%;
+  font-size: large;
+  text-indent: 0%;
   display: flex;
   flex-direction: row;
   width: 60%;
   height: 30%;
   margin-top: 2%;
   margin-left: 2%;
-  /* overflow-y: auto; */
+  overflow-y: auto;
   background-color: #5b5b5b;
   border-radius: 1rem;
 }

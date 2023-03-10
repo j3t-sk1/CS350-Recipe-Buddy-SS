@@ -29,18 +29,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
       #test {
-        margin-left: 3%;
-        margin-top: 3%;
+        display: inline-block;
+        margin-left: -10.5%;
+        margin-top: 2%;
+      }
+      #test2 {
+        display: inline-block;
+        margin-left: -10.5%;
+        margin-top: 2%;
       }
       #text {
-        display: inline;
+        display: flex;
+        flex-direction: row;
         font-size: large;
         margin-left: 0%;
-      }
-      #suggest {
-        margin-left: 77%;
-        margin-top: 3%;
-      }
+      } 
+      #suggest1 {
+        margin-left: -10.5%;
+        margin-top: 2%;
+        display: inline-block;
+       } 
+       #suggest2 {
+        margin-left: 2%;
+        margin-top: 2%;
+        display: inline-block;
+       } 
+       #text{
+        font-size: large;
+        display: inline-block;
+        margin-left: 0%;
+        margin-top: 0%;
+        flex-direction: row;
+       }
+
     </style>
 </head>
   <!-- </head> -->
@@ -64,10 +85,11 @@
                     <a href="adding-recipe.html">Add</a>
                 </button>
 
-                <button class="edit" role="button">Edit</button>
+                <button class="edit" role="button">
+                  <a href="edit.html">Edit</a></button>
 
                 <button class="delete" role="button">
-                    <a href="delete.html">Delete</a>
+                    <a href="delete2.html">Delete</a>
                 </button>
         </div>
       </header>
@@ -118,20 +140,90 @@
                 <p>My Pantry</p>
 
                 <div class="user_box">
-                  <button id="test" class="add">Set Allergens</button> 
+                  <button id="suggest1" class="add">Suggest More</button> 
                   <div id="allergensL" class="pantrylist">
-                    <button id="suggest" class="add">Suggest More</button> 
-                  <div id="text">
-                    <p>Shellfish <input type="checkbox"> </p>
-                    <p>Tree Nuts</p>
-                    <p>Test</p>
+                    <div id="text">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      <label class="form-check-label" for="inlineCheckbox1">Milk</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                      <label class="form-check-label" for="inlineCheckbox2">Eggs<label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                      <label class="form-check-label" for="inlineCheckbox3">Fish</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                      <label class="form-check-label" for="inlineCheckbox3">Shellfish</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                      <label class="form-check-label" for="inlineCheckbox3">Treenuts</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                      <label class="form-check-label" for="inlineCheckbox3">Peanuts</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                      <label class="form-check-label" for="inlineCheckbox3">Wheat</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                      <label class="form-check-label" for="inlineCheckbox3">Soybeans</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                      <label class="form-check-label" for="inlineCheckbox3">Seasame</label>
+                    </div>
                   </div>
-                </div>           
-                <button id="test" class="add">Owned Cookware</button>       
+                  </div>               
+                <button id="suggest2" class="add">Suggest More</button>   
                   <div id="cookwareL" class="pantrylist">
                     <div id="text">
-                      <p>Blender</p>
-                      <p>Air Fryer</p>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">StockPot</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                        <label class="form-check-label" for="inlineCheckbox2">Skillet<label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                        <label class="form-check-label" for="inlineCheckbox3">Wok</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                        <label class="form-check-label" for="inlineCheckbox3">PressureCooker</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                        <label class="form-check-label" for="inlineCheckbox3">BreadPan</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                        <label class="form-check-label" for="inlineCheckbox3">SheetPan</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                        <label class="form-check-label" for="inlineCheckbox3">MuffinPan</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                        <label class="form-check-label" for="inlineCheckbox3">Oven</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                        <label class="form-check-label" for="inlineCheckbox3">Microwave</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                        <label class="form-check-label" for="inlineCheckbox3">BuntPan</label>
+                      </div>
                     </div>
                   </div>
                   

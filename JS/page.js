@@ -55,23 +55,15 @@ function returnData(input) {
 // -- End of timer function
 
 
-// var modal = document.querySelector(".modal");
-// var container = modal.querySelector(".container");
-
-// document.querySelector("button").addEventListener("click", function (e) {
-//   modal.classList.remove("hidden")
-// });
-
-// document.querySelector(".modal").addEventListener("click", function (e) {
-//   if (e.target !== modal && e.target !== container) return;     
-//   modal.classList.add("hidden");
-// });
-
-
 
 const modal = document.querySelector(".modal");
 const trigger = document.querySelector(".trigger");
+const trigger2 = document.querySelector(".trigger2");
+const trigger3 = document.querySelector(".trigger3");
+const trigger4 = document.querySelector(".trigger4");
+const trigger5 = document.querySelector(".trigger5");
 const closeButton = document.querySelector(".close-button");
+const close2 = document.querySelector(".m_button_2")
 
 function toggleModal() {
     modal.classList.toggle("show-modal");
@@ -84,7 +76,12 @@ function windowOnClick(event) {
 }
 
 trigger.addEventListener("click", toggleModal);
+trigger2.addEventListener("click", toggleModal);
+trigger3.addEventListener("click", toggleModal);
+trigger4.addEventListener("click", toggleModal);
+trigger5.addEventListener("click", toggleModal);
 closeButton.addEventListener("click", toggleModal);
+close2.addEventListener("click", toggleModal);
 window.addEventListener("click", windowOnClick); 
 
 //dropdown

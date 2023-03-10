@@ -1,38 +1,4 @@
-<!-- Checklist: -->
-<!-- 1. *CRTIICAL: Add in all other major pages (adding recipes, deleting recipes, user settings, searching results screen, sorting screen, pantry (if time), etc.) -->
-<!-- 1. How to change form field color -->
-<!-- 2. How to put "search" text inside form field -->
-<!-- 3. Add search icon on right side of form field -->
-<!-- 4. Continue filling out rest of vertical & horizontal nav bars -->
-<!-- 5. Get spacing correct for all main boxes for center screen -->
-<!-- 6. Low priority: Media Queries -->
-<!-- 7. Very low priority: Website Logo -->
-
-<!-- Useful commands to know to speed up programing: -->
-<!-- vscode specific: -->
-    <!-- "ctrl /" to comment/uncomment entire line -->
-    <!-- "ctrl shift k" to delete entire line -->
-    <!-- "ctrl tab" to quickly cycle between tabs open -->
-    <!-- "alt up/down arrow key" to move entire line  up or down without affecting other lines -->
-    <!-- "ctrl L" to select entire line-->
-    <!-- "tab" with entire line selected to tab without cursor being at beginning of line -->
-
-<!-- general shortcuts that are useful: -->
-    <!-- "ctrl backspace" to delete an entire word -->
-    <!-- "ctrl x" to cut whatever is highlighted -->
-    <!-- "ctrl z" to undo --> 
-    <!-- 'ctrl y' to redo -->
-    <!-- 'ctrl s' to save the file you're working on -->
-    <!-- 'ctrl r' in a browser to refresh the page, useful for updating changes from vscode quickly -->
-    <!-- 'ctrl t' to open a new tab in a browser -->
-    <!-- 'ctrl w' to delete tab you're currently on in a browser -->
-    
-    <!-- 'F12' to open devtools on any browser for the inspector -->
-
-    <!-- *Note: remember you have to save your files in vscode before you can see the changes in the browser -->    
-    <!-- *Note: remember that using firefox is the most useful browser for front-end dev -->
-
-    <!DOCTYPE html>
+   <!DOCTYPE html>
     <html lang="en-US">
       <head>
         <meta charset="utf-8">
@@ -178,14 +144,39 @@
                 <div class="rightside">
                   <div class="main_page">
                     <p class="search_text" style="float:left; color:rgb(231, 228, 28); font-size:250%; margin-left:150px; margin-bottom:0px; margin-top:50px;"> Search&nbsp;Results </p>
-                      <div class="dropdown" style="float:right; margin-right:100px; margin-top:40px;">
-                        <button class="dropbtn">Filters</button>
+                    <div class="search" style="float:left; margin-left:100px; margin-bottom:5px; margin-top:50px; width:400px;">
+                      <!-- C:\Users\cpsou\OneDrive\Documents\GitHub\CS350-Recipe-Buddy-SS\icons\loupe.png -->
+                      <!-- <form action="/html/tags/html_form_tag_action.cfm" method="get"> -->
+                        <form>
+                          <!-- <i class="search_icon" style="font-size: 0.73em;"> -->
+                            <!-- <img src="icons\loupe.png"> -->
+                          <!-- </i> -->
+    
+                          <input type="text" class="searching" name="search" placeholder="Filter by keyword" maxlength="100"/>
+                          
+                          <div class="icon_search">
+                            <img src ="icons\search.svg" alt="search" width="20" height="20" class="icon_search"/>
+                          </div>
+                          <!-- <input type="submit" value="Submit" /> -->
+                        </form>
+                      </div>
+                   
+                    <!-- <div class="search">
+                        <form>
+                          <input type="text" class="searching2" name="search" placeholder="Search" maxlength="100"/>
+                          
+                          <div class="icon_search">
+                            <a href="search.html"><img src ="icons\search.svg" alt="search" width="24" height="24" class="icon_search2"/></a>
+                            
+                          </div>
+                        </form>
+                      </div> -->
+                      <div class="dropdown" style="float:right; margin-right:100px; margin-top:50px;">
+                        <button class="add">Filters</button>
                         <div class="dropdown-content">
-                          <p style="font-size:small;">Breakfast<input type=checkbox style="float:right; margin-right:5px;"></p>
-                          <p style="font-size:small;">Lunch<input type=checkbox style="float:right; margin-right:5px;"></p>
-                          <p style="font-size:small;">Dinner<input type=checkbox style="float:right; margin-right:5px;"></p>
-                          <p style="font-size:small;">Dessert/Snack<input type=checkbox style="float:right; margin-right:5px;"></p>
-                          <p style="font-size:small;">Holiday/Special<input type=checkbox style="float:right; margin-right:5px;"></p>
+                          <p style="font-size:small;">Meal Type<input type=checkbox style="float:right; margin-right:5px;"></p>
+                          <p style="font-size:small;">My Recipes<input type=checkbox style="float:right; margin-right:5px;"></p>
+                          <p style="font-size:small;">In My Pantry<input type=checkbox style="float:right; margin-right:5px;"></p>
                           <p style="font-size:small;">Allergens<input type=checkbox style="float:right; margin-right:5px;"></p>
                         </div>
                       </div> 
@@ -194,7 +185,7 @@
                         
                           
                       </script>
-                      <div class="edit_box">
+                      <div class="edit_box" style= "overflow-y:scroll; max-height:600px;">
                         <div class="user_recipes">
                           <button class="listed_recipes" onclick="window.location.href='favorite1.html';">
                             <div class="listed_recipe_image">

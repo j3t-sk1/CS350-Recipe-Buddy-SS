@@ -90,6 +90,28 @@ body {
     /* font-size: 12pt; */
 }
 
+.icon_search2 {
+  margin-left: -3.3rem;
+  margin-top: 6.2rem;
+}  
+
+.searching2 {
+  /* margin: auto; */
+  border: 2px solid #eee;
+  /* padding: 4px; */
+  border: 0;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.25);
+  padding: 10px;
+  padding-top: 5px;
+  /* padding-bottom: 5px; */
+  border-radius: 20px;
+  width: 40%;
+  float: left;
+  color:rgb(19, 19, 19);
+  margin-top: 5.7rem;
+  margin-left: 7rem;
+}
+
 /* search text field */
 input {
     background-color:rgb(180, 180, 180);
@@ -153,6 +175,8 @@ a:visited {
     padding: 13px 20px;
     transform: translate3d(0, 0, 0);
     user-select: none;
+    /* align-content: flex-start; */
+    /* flex-direction: row; */
 }
 
   .add:hover {
@@ -172,6 +196,48 @@ a:visited {
   .add:visited {
     color:aqua;
   }
+
+  .add2 {
+    display: flex;
+    /* flex-grow: 0.33; */
+    flex: 1 1 0;
+    justify-content: space-around;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    /* background-color: rgb(216, 215, 175); */
+    background-image: linear-gradient(rgb(204, 204, 144), rgb(228, 225, 73));
+    border-radius: 8px;
+    border-style: none;
+    box-shadow: rgba(44, 44, 44, 0.15) 0 4px 9px;
+    color: rgb(85, 85, 85);
+    cursor: pointer;
+    font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 13px 20px;
+    transform: translate3d(0, 0, 0);
+    user-select: none;
+    /* align-content: flex-start; */
+    /* flex-direction: row; */
+    margin-top: -5rem;
+    margin-bottom: 2rem;
+    margin-left: -5rem;
+}
+
+  .add2:hover {
+    background-image: linear-gradient(rgb(209, 202, 108), rgb(218, 214, 26));
+    color: rgb(48, 48, 48);
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: .35s;
+    box-shadow: rgba(29, 29, 29, 0.15) 0 4px 9px;
+  }
+  
+  .add2:active {
+    transform: translateY(3px);
+    transition-duration: .35s;
+  }
+
 
   .edit {
     display: flex;
@@ -232,6 +298,17 @@ a:visited {
     overflow-y: auto;
     background-color: rgb(102, 102, 102);
     border-radius: 1rem;
+  }
+
+  .delete_box {
+    width: 80%;
+    height: 63.5rem;
+    margin-left: 14%;
+    /* overflow-y: auto; */
+    overflow: scroll;
+    background-color: rgb(102, 102, 102);
+    border-radius: 1rem;
+    /* margin-top: 3rem; */
   }
 
   .delete {
@@ -612,6 +689,22 @@ p.adding-recipe{
   font-size: 15pt;
   color: black;
 }
+
+::-webkit-input-placeholder {
+  color:rgb(19, 19, 19);
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color:rgb(19, 19, 19);
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  color:rgb(19, 19, 19);
+}
+
+:-ms-input-placeholder {  
+  color:rgb(19, 19, 19);
+}
 .pantry{
   width: 200px;
   margin-left: 8px;
@@ -619,7 +712,9 @@ p.adding-recipe{
   vertical-align:top;
 }             
 .savebutton{
-  margin-left: 1400px;
+  margin-left: 75%;
+  display: flex;
+  margin-right: 7rem;
 }
 .save{
     background-color: rgb(231, 229, 99);
@@ -673,7 +768,7 @@ p.adding-recipe{
   color: white;
   font-size: 15px;
   display: inline-block;
-  margin-left: 170px;
+  margin-left: 0.6%;
   background-color:#424242;
   border-radius: 4px;
   width: 150px;
@@ -692,6 +787,7 @@ p.adding-recipe{
   border-radius: 4px;
   width: 150px;
   padding-left: 5px;
+  padding-bottom: 3%;
   vertical-align: top;
 }
 .f1-oventemp{
@@ -703,6 +799,7 @@ p.adding-recipe{
   border-radius: 4px;
   width: 150px;
   padding-left: 5px;
+  padding-bottom: 10.5rem;
   vertical-align: top;
 }
 .f1-servsize{
@@ -714,7 +811,10 @@ p.adding-recipe{
   border-radius: 4px;
   width: 120px;
   padding-left: 5px;
+  padding-right: 17rem;
+  padding-bottom: 10.5rem;
   vertical-align: top;
+  margin-right: 10%;
 }
 .times{
   clear: both;
@@ -820,20 +920,25 @@ p.adding-recipe{
 }
 
 .listed_recipes {
+  margin: 0 auto;
     margin-top: 2%;
     margin-bottom: 20px;
-    margin-right: 50px;
-    margin-left: 12%;
+    /* margin-right: 50px; */
+    /* margin-left: 12%; */
+    /* margin-right: 12%; */
     padding-left: 10%;
     padding-right: 10%;
     width: 80%;
     height: 150px;
     /* border: 2px solid rgb(231, 228, 28); */
-    border-radius: .5rem;
+    border-radius: 0.75rem;
     background-color: rgb(85, 85, 85);
     display: flex;
     justify-content: center;
     align-items: center;
+    justify-self: center;
+    justify-items: center;
+
 }
 
 .listed_recipes:hover {
@@ -935,15 +1040,16 @@ p.listed_text {
 
 footer {
   padding-top: 3rem;
-  padding-bottom: 3rem;
+  /* padding-bottom: 3rem; */
   background-color:rgb(71, 71, 71);
   justify-content: center;
   text-align: center;
   font-weight: 600;
   font-size: large;
   width: 100vw;
-  margin: auto;
+  /* margin: auto; */
   color:#888888;
+  padding-bottom: 4.2rem;
 }
 
 .left_1 {
@@ -1075,21 +1181,11 @@ footer {
   font-size: 10pt;
 }
 
-.modal {
-  background-color: rgba(0,0,0,0.4);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: table;
-}
-
- .modal.hidden {
+.modal.hidden {
   display: none;
 } 
 
- .modal .container {
+.modal .container {
  display: table-cell;
  text-align: center;
  vertical-align: middle;
@@ -1103,43 +1199,133 @@ footer {
   background-color: white;
   border: 1px solid black; 
   padding: 10px;
-  width: 80%;
+  width: 550%;
   height: 80%;
+  z-index: 2;
 } 
-
-
-
-/* CSS */
-
-
-/* f1.html: */
 
 
 .modal {
   position: fixed;
-  left: 0;
-  top: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  background: transparent; border: none !important; font-size: 0;
+  top: 0;
+  left: 0;
+  display: table;
   opacity: 0;
   visibility: hidden;
   transform: scale(1.1);
   transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+  background: transparent; 
+  /* background: blur(2px); */
+  border: none !important; 
+  font-size: 0;
 }
 
 .modal-content {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  /* width: 300%; */
+  /* height: 200%; */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
   padding: 1rem 1.5rem;
   width: 24rem;
   border-radius: 0.5rem;
+  background-color: #5b5b5b;
+  flex-wrap: wrap;
+  /* width: 60%; */
+  /* height: 200%; */
+  z-index: 2;
+  padding-bottom: 4rem;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-flow: row wrap;
+}
+
+.m_button {
+  display: flex;
+  /* flex-grow: 0.33; */
+  flex: 1 1 0;
+  justify-content: space-around;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  /* background-color: rgb(216, 215, 175); */
+  background-image: linear-gradient(rgb(204, 204, 144), rgb(228, 225, 73));
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(44, 44, 44, 0.15) 0 4px 9px;
+  color: rgb(85, 85, 85);
+  cursor: pointer;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  /* padding: 13px 20px; */
+  /* margin-left: 0%; */
+  /* margin-right: 30%; */
+  margin-top: 5%;
+  /* margin-bottom: 2%; */
+  transform: translate3d(0, 0, 0);
+  user-select: none;
+  align-content: flex-start;
+  flex-direction: row;
+}
+
+.m_button:hover {
+      background-image: linear-gradient(rgb(209, 202, 108), rgb(218, 214, 26));
+    color: rgb(48, 48, 48);
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: .35s;
+    box-shadow: rgba(29, 29, 29, 0.15) 0 4px 9px;
+}
+
+.m_button:active {
+  transform: translateY(3px);
+  transition-duration: .35s;
+}
+
+.m_button_2 {
+  display: flex;
+  /* flex-grow: 0.33; */
+  flex: 1 1 0;
+  justify-content: space-around;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  /* background-color: rgb(216, 215, 175); */
+  background-image: linear-gradient(rgb(204, 204, 144), rgb(228, 225, 73));
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(44, 44, 44, 0.15) 0 4px 9px;
+  color: rgb(85, 85, 85);
+  cursor: pointer;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  /* padding: 13px 20px; */
+  /* margin-left: 0%; */
+  /* margin-right: 30%; */
+  margin-top: 5%;
+  /* margin-bottom: 2%; */
+  transform: translate3d(0, 0, 0);
+  user-select: none;
+  align-content: flex-start;
+  flex-direction: row;
+}
+
+.m_button_2:hover {
+      background-image: linear-gradient(rgb(209, 202, 108), rgb(218, 214, 26));
+    color: rgb(48, 48, 48);
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: .35s;
+    box-shadow: rgba(29, 29, 29, 0.15) 0 4px 9px;
+}
+
+.m_button_2:active {
+  transform: translateY(3px);
+  transition-duration: .35s;
 }
 
 .close-button {
@@ -1149,11 +1335,11 @@ footer {
   text-align: center;
   cursor: pointer;
   border-radius: 0.25rem;
-  background-color: lightgray;
+  background-color: whitesmoke;
 }
 
 .close-button:hover {
-  background-color: darkgray;
+  /* background-color: darkgray; */
 }
 
 p.search_text{
@@ -1317,6 +1503,10 @@ div.checkbox_select .select_input
  color: #e9e732;
 }
 .pantrylist{
+  font-size: large;
+  text-indent: 0%;
+  display: flex;
+  flex-direction: row;
   width: 60%;
   height: 30%;
   margin-top: 2%;
@@ -1368,6 +1558,7 @@ div.checkbox_select .select_input
   background-color: #5b5b5b;
   padding: 1rem;
   padding-top: 1rem;
+  margin-bottom: 6rem;
 }
 
 .user_picture {
@@ -1385,7 +1576,7 @@ div.checkbox_select .select_input
 }
 
 .user_recipes {
-  padding-top: 5rem;
+  /* padding-top: 5rem; */
   height: 94%;
 }
 
@@ -1413,19 +1604,21 @@ div.checkbox_select .select_input
 .dropdown {
   position: relative;
   display: inline-block;
+
 }
 
-/* Dropdown Content (Hidden by Default) */
+
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
-  min-width: 110px;
+  background-color:gray;
+  min-width: 125px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+
 }
 
-/* Links inside the dropdown */
+
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
@@ -1433,7 +1626,8 @@ div.checkbox_select .select_input
   display: block;
 }
 
-/* Change color of dropdown links on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
 .dropdown-content a:hover {background-color: #ddd;}
 
 /* Show the dropdown menu on hover */
@@ -1445,6 +1639,95 @@ div.checkbox_select .select_input
   transition-duration: 0.3s;
   transform: scale(1.1);
 } 
+
+p.search_text{
+  /* text-indent: 16.5%; */
+  text-indent: 12.5%;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 3%;
+}
+
+.trigger {
+  background: transparent; 
+  border: none !important; 
+  font-size: 0;
+  margin-left: 5rem;
+  float: right;
+}
+
+.trigger:hover {
+  transform: translateY(-8px);
+  transition-duration: 0.3s;
+  transform: scale(1.1);
+}
+
+._1 {
+
+}
+
+
+.trigger2 {
+  background: transparent; 
+  border: none !important; 
+  font-size: 0;
+  margin-left: 5rem;
+  float: right;
+}
+
+.trigger2:hover {
+  transform: translateY(-8px);
+  transition-duration: 0.3s;
+  transform: scale(1.1);
+}
+
+._2 {
+  
+}
+
+
+.trigger3 {
+  background: transparent; 
+  border: none !important; 
+  font-size: 0;
+  margin-left: 5rem;
+  float: right;
+}
+
+.trigger3:hover {
+  transform: translateY(-8px);
+  transition-duration: 0.3s;
+  transform: scale(1.1);
+}
+
+.trigger4 {
+  background: transparent; 
+  border: none !important; 
+  font-size: 0;
+  margin-left: 5rem;
+  float: right;
+}
+
+.trigger4:hover {
+  transform: translateY(-8px);
+  transition-duration: 0.3s;
+  transform: scale(1.1);
+}
+
+.trigger5 {
+  background: transparent; 
+  border: none !important; 
+  font-size: 0;
+  margin-left: 5rem;
+  float: right;
+}
+
+.trigger5:hover {
+  transform: translateY(-8px);
+  transition-duration: 0.3s;
+  transform: scale(1.1);
+}
 
 @media (max-width: 1000px) {
   .small {
@@ -1516,11 +1799,5 @@ div.checkbox_select .select_input
   }
 }
 
-p.search_text{
-  /* text-indent: 16.5%; */
-  text-indent: 12.5%;
-  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
-  font-size: 24px;
-  font-weight: 600;
-  margin-top: 3%;
-}
+
+

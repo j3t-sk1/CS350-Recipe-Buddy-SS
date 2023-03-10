@@ -49,10 +49,12 @@
                     <a href="adding-recipe.html">Add</a>
                 </button>
 
-                <button class="edit" role="button">Edit</button>
+                <button class="edit" role="button">
+                  <a href="editing-recipe.html">Edit</a>
+                </button>
 
                 <button class="delete" role="button">
-                    <a href="delete.html">Delete</a>
+                    <a href="delete2.html">Delete</a>
                 </button>
         </div>
       </header>
@@ -99,11 +101,23 @@
           <div class="col-md-11 no-gutters">
             <div class="rightside">
               <div class="profile_body">
-                <p>My Profile</p>
+                <p>My Recipes</p>
+
+                <div class="dropdown" style="float:right; margin-right:50px; margin-top:5px;">
+                  <button class="add2">Filters</button>
+                  <div class="dropdown-content">
+                    <p style="font-size:small; color:black;">Breakfast<input type=checkbox style="float:right; margin-right:5px;"></p>
+                    <p style="font-size:small; color:black;">Lunch<input type=checkbox style="float:right; margin-right:5px;"></p>
+                    <p style="font-size:small; color:black;">Dinner<input type=checkbox style="float:right; margin-right:5px;"></p>
+                    <p style="font-size:small; color:black;">Snacks<input type=checkbox style="float:right; margin-right:5px;"></p>
+                    <p style="font-size:small; color:black;">Special<input type=checkbox style="float:right; margin-right:5px;"></p>
+                    <p style="font-size:small; color:black;">Allergens<input type=checkbox style="float:right; margin-right:5px;"></p>
+                  </div>
+                </div>
 
                 <div class="user_box">
                   <div class="user_recipes">
-                    <button class="listed_recipes" onclick="window.location.href='favorite1.html';">
+                    <button class="listed_recipes" onclick="window.location.href='editing-recipe.html';">
                       <div class="listed_recipe_image">
                         <p class="listed_text">Recipe Image</p>
                       </div>
@@ -117,7 +131,7 @@
                       <p class="listed_rating">Rating</p>
                     </button>
           
-                  <button class="listed_recipes" onclick="window.location.href='favorite1.html';">
+                  <button class="listed_recipes" onclick="window.location.href='editing-recipe.html';">
                     <div class="listed_recipe_image">
                       <p class="listed_text">Recipe Image</p>
                     </div>
@@ -131,7 +145,7 @@
                     <p class="listed_rating">Rating</p>
                   </button>
           
-                  <button class="listed_recipes" onclick="window.location.href='favorite1.html';">
+                  <button class="listed_recipes" onclick="window.location.href='editing-recipe.html';">
                     <div class="listed_recipe_image">
                       <p class="listed_text">Recipe Image</p>
                     </div>
@@ -145,7 +159,7 @@
                     <p class="listed_rating">Rating</p>
                   </button>
 
-                  <button class="listed_recipes" onclick="window.location.href='favorite1.html';">
+                  <button class="listed_recipes" onclick="window.location.href='editing-recipe.html';">
                     <div class="listed_recipe_image">
                       <p class="listed_text">Recipe Image</p>
                     </div>

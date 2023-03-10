@@ -742,6 +742,7 @@ p.adding-recipe{
   padding-left: 40px;
 }
 
+
 /*-----------------------------------*/
 .main_page {
   width: 100%;
@@ -855,9 +856,10 @@ p.recipe_name {
   display: flex;
   border-radius: .5rem;
   width: 15%;
-  height: 70%;
-  background-color: rgb(180, 180, 180);
+  height: 90%;
+  /*background-color: rgb(180, 180, 180);*/
   margin: auto;
+  margin-top: 17px;
 }
 
 .listed_time {

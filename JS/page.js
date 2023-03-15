@@ -84,6 +84,8 @@ closeButton.addEventListener("click", toggleModal);
 close2.addEventListener("click", toggleModal);
 window.addEventListener("click", windowOnClick); 
 
+
+
 //dropdown
 var options = [];
 

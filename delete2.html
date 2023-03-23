@@ -1,32 +1,4 @@
-<!-- Checklist: -->
-<!-- 1. *CRTIICAL: Add in all other major pages (adding recipes, deleting recipes, user settings, searching results screen, sorting screen, pantry (if time), etc.) -->
-<!-- 5. Get spacing correct for all main boxes for center screen -->
-<!-- 6. Low priority: Media Queries -->
-<!-- 7. Very low priority: Website Logo -->
 
-<!-- Useful commands to know to speed up programing: -->
-<!-- vscode specific: -->
-    <!-- "ctrl /" to comment/uncomment entire line -->
-    <!-- "ctrl shift k" to delete entire line -->
-    <!-- "ctrl tab" to quickly cycle between tabs open -->
-    <!-- "alt up/down arrow key" to move entire line  up or down without affecting other lines -->
-    <!-- "ctrl L" to select entire line-->
-    <!-- "tab" with entire line selected to tab without cursor being at beginning of line -->
-
-<!-- general shortcuts that are useful: -->
-    <!-- "ctrl backspace" to delete an entire word -->
-    <!-- "ctrl x" to cut whatever is highlighted -->
-    <!-- "ctrl z" to undo --> 
-    <!-- 'ctrl y' to redo -->
-    <!-- 'ctrl s' to save the file you're working on -->
-    <!-- 'ctrl r' in a browser to refresh the page, useful for updating changes from vscode quickly -->
-    <!-- 'ctrl t' to open a new tab in a browser -->
-    <!-- 'ctrl w' to delete tab you're currently on in a browser -->
-    
-    <!-- 'F12' to open devtools on any browser for the inspector -->
-
-    <!-- *Note: remember you have to save your files in vscode before you can see the changes in the browser -->    
-    <!-- *Note: remember that using firefox is the most useful browser for front-end dev -->
 
     <!DOCTYPE html>
     <html lang="en-US">
@@ -58,23 +30,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
-    
-    
-      <!-- <head> -->
-        <!-- <meta charset="utf-8"> -->
-        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-        <!-- <title>Chapter 3</title> -->
-        <!-- below 3 links all load google fonts -->
-        <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
-        <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-        <!-- <link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet"> -->
-        <!-- modern normalize for cross-browser compatibility -->
-        <!-- <link href="css/modern-normalize.css" rel="stylesheet"> -->
-        <!-- needs our stylesheet here -->
-        <!-- <link href="css/style.css" rel="stylesheet"> -->
-    
-      </head>
+
       <body>
         <main id="page">
           <nav><!-- main menu -->
@@ -205,11 +161,13 @@
                     <div class="modal">
                       <div class="modal-content">
                         <div class="operation_float_the_x_button_to_the_right">
-                          <span class="close-button">&times;</span>
+                          <div class="close-button">
+                            <div class="close-button_x">&times;</div>
+                          </div>
                         </div>
                         <h1>Are you sure you want to delete?</h1>
-                        <button class="m_button" onclick="location.href='index.html'">Yes</button>
-                        <button class="m_button_2">No</button>
+                        <button class="m_button" onclick="location.href='delete2.html'">Yes</button>
+                        <button class="m_button_2" onclick="location.href='delete2.html'">No</button>
                       </div>
                   </div> 
 
@@ -237,8 +195,8 @@
                     <div class="modal-content">
                       <span class="close-button">&times;</span>
                       <h1>Are you sure you want to delete?</h1>
-                      <button class="m_button" onclick="location.href='index.html'">Yes</button>
-                      <button class="m_button_2">No</button>
+                      <button class="m_button" onclick="location.href='delete2.html'">Yes</button>
+                      <button class="m_button_2" onclick="location.href='delete2.html'">No</button>
                     </div>
                 </div> 
 
@@ -265,10 +223,10 @@
                     </button>
                     <div class="modal">
                         <div class="modal-content">
-                          <span class="close-button">&times;</span>
+                          <span class="close-button"  width="10px">&times;</span>
                           <h1>Are you sure you want to delete?</h1>
-                          <button class="m_button" onclick="location.href='index.html'">Yes</button>
-                          <button class="m_button_2">No</button>
+                          <button class="m_button" onclick="location.href='delete2.html'">Yes</button>
+                          <button class="m_button_2" onclick="location.href='delete2.html'">No</button>
                         </div>
                     </div> 
 
@@ -296,8 +254,8 @@
                         <div class="modal-content">
                           <span class="close-button">&times;</span>
                           <h1>Are you sure you want to delete?</h1>
-                          <button class="m_button" onclick="location.href='index.html'">Yes</button>
-                          <button class="m_button_2">No</button>
+                          <button class="m_button" onclick="location.href='delete2.html'">Yes</button>
+                          <button class="m_button_2" onclick="location.href='delete2.html'">No</button>
                         </div>
                     </div> 
 
@@ -325,8 +283,8 @@
                     <div class="modal-content">
                       <span class="close-button">&times;</span>
                       <h1>Are you sure you want to delete?</h1>
-                      <button class="m_button" onclick="location.href='index.html'">Yes</button>
-                      <button class="m_button_2">No</button>
+                      <button class="m_button" onclick="location.href='delete2.html'">Yes</button>
+                      <button class="m_button_2" onclick="location.href='delete2.html'">No</button>
                     </div>
                 </div> 
 

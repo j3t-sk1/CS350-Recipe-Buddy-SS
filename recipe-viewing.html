@@ -1,32 +1,4 @@
 
-<!-- Checklist: -->
-<!-- 1. *CRTIICAL: Add in all other major pages (adding recipes, deleting recipes, user settings, searching results screen, sorting screen, pantry (if time), etc.) -->
-<!-- 5. Get spacing correct for all main boxes for center screen -->
-<!-- 6. Low priority: Media Queries -->
-<!-- 7. Very low priority: Website Logo -->
-
-<!-- Useful commands to know to speed up programing: -->
-<!-- vscode specific: -->
-<!-- "ctrl /" to comment/uncomment entire line -->
-<!-- "ctrl shift k" to delete entire line -->
-<!-- "ctrl tab" to quickly cycle between tabs open -->
-<!-- "alt up/down arrow key" to move entire line  up or down without affecting other lines -->
-<!-- "ctrl L" to select entire line-->
-<!-- "tab" with entire line selected to tab without cursor being at beginning of line -->
-<!-- general shortcuts that are useful: -->
-<!-- "ctrl backspace" to delete an entire word -->
-<!-- "ctrl x" to cut whatever is highlighted -->
-<!-- "ctrl z" to undo -->
-<!-- 'ctrl y' to redo -->
-<!-- 'ctrl s' to save the file you're working on -->
-<!-- 'ctrl r' in a browser to refresh the page, useful for updating changes from vscode quickly -->
-<!-- 'ctrl t' to open a new tab in a browser -->
-<!-- 'ctrl w' to delete tab you're currently on in a browser -->
-
-<!-- 'F12' to open devtools on any browser for the inspector -->
-
-<!-- *Note: remember you have to save your files in vscode before you can see the changes in the browser -->
-<!-- *Note: remember that using firefox is the most useful browser for front-end dev -->
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
@@ -211,21 +183,21 @@
                   <div class="main_page">
 
                     <p class="adding-recipe" style="color:rgb(231, 228, 28)">
-                      Edit Recipe </p>
+                      View Recipe </p>
                     <div class="add-divbox">
                       <input type="text" class="recipe-name" name="recipename"
-                        placeholder="Pancakes">
+                        placeholder="Recipe Name">
                       <input type="text" class="recipe-rate" name="reciperate"
-                        placeholder="10/10">
+                        placeholder="Rate Recipe">
                       <input type="text" class="oven-temp" name="oventemp"
-                        placeholder="Medium Heat">
+                        placeholder="Oven Temp">
                       <select class="temp-type">
-                        <option value="Clear"></option>
                         <option value="Fahrenheit">°F</option>
                         <option value="Celcius">°C</option>
                       </select>
                       <select class="serv-size">
-                        <option value="title">8</option>
+                        <option value="title"><span class="serv-size-word">Serving
+                            Size</span></option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -238,33 +210,16 @@
                         <option value="10+">10+</option>
                       </select>
                       <textarea class="utensilslist" name="Utensils"
-                      placeholder="pan/griddle,spatula,plate,fork,knife"></textarea>
+                      placeholder="List Utensils and Equipment Used"></textarea>
                       <p class="picturebox">Picture</p>
                     </div>
                     <div class="pantry">
                       <textarea class="ingredientslist" name="Ingredients"
-                      placeholder="Flour
-                                   Baking powder
-                                   Sugar
-                                   Salt
-                                   Milk
-                                   Butter
-                                   Egg
-                      
-                      "></textarea>
+                      placeholder="List Ingredients"></textarea>
                     </div>
                     <div class="instruct-box">
-                      <textarea class="instructions" name="Intruct">
-How to Make Pancakes From Scratch
-It's not hard to make homemade pancakes — you just need a good recipe. That's where we come in! You'll find the step-by-step recipe below, but here's a brief overview of what you can expect:
-
-1. Sift the dry ingredients together.
-2. Make a well, then add the wet ingredients. Stir to combine.
-3. Scoop the batter onto a hot griddle or pan.
-4. Cook for two to three minutes, then flip. 5. Continue cooking until brown on both sides.
-                                                
-When to Flip Pancakes
-Your pancake will tell you when it's ready to flip. Wait until bubbles start to form on the top and the edges look dry and set. This will usually take about two to three minutes on each side.</textarea>
+                      <textarea class="instructions" name="Intruct"
+                        placeholder="Intructions"></textarea>
                     </div>
                     <div class="savebutton">
                       <button class="save">

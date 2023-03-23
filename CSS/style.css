@@ -1326,10 +1326,21 @@ footer {
   margin-top: 0.25rem;
 }
 
-
+.close-button_x {
+  margin-top: -1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  color:rgb(102, 102, 102);
+}
 
 .close-button:hover {
-  /* background-color: darkgray; */
+  background-color:#eee;
+  transform: translateY(-1px);
+}
+
+.close-button:active {
+  background-color:#eee;
+  transform: translateY(3px);
 }
 
 p.search_text{

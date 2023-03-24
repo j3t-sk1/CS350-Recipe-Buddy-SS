@@ -1424,11 +1424,14 @@ div.checkbox_select .select_input
 
 .checkbox_select_dropdown ul
 {
+    display: block; 
+    left: 20px; 
+    top: 0px;
     max-height: 150px;
     overflow-y: scroll;
     overflow-x: hidden;
     padding: 0;
-  margin: 0;
+    margin: 0;
       border: 1px solid #999;
   border-top: 0;
   border-bottom: 0;

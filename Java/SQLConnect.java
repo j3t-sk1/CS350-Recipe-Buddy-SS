@@ -5,7 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.concurrent.Callable;
 
 public class SQLConnect {
     private Connection connect;
@@ -28,11 +30,16 @@ public class SQLConnect {
             //Preped can use variables 
             prepStatement = connect.prepareStatement
             ("insert into feedback.comments values default, ?, ?, ?, ?, ?, ?)");
+            Calendar cal = Calendar.getInstance();
+            cal.set(Calendar.YEAR, 1988);
+            cal.set(Calendar.MONTH, Calendar.JANUARY);
+            cal.set(Calendar.DAY_OF_MONTH, 1);
+            java.sql.Date date = (java.sql.Date) cal.getTime();
             // myuser, webpage, datum, summary, COMMENTS from feeback.comments"
             prepStatement.setString(1, null);
             prepStatement.setString(2, null);
             prepStatement.setString(3, null);
-            prepStatement.setString(4, null);
+            prepStatement.setDate(4, date);
             prepStatement.setString(5, null);
             prepStatement.setString(6, null);
             prepStatement.executeUpdate();

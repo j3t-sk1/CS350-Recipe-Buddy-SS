@@ -1,13 +1,7 @@
 package Java;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.concurrent.Callable;
+import java.sql.*;
+import java.util.*;
+
 
 public class SQLConnect {
     private Connection connect;
@@ -20,7 +14,7 @@ public class SQLConnect {
             Class.forName("com.mysql.jdbc.Driver");
             //Sets up connection
             connect = DriverManager.getConnection
-            ("jdbc:mysql://localhost/feedback?" + "user=root&password=@pingpong");
+            ("jdbc:mysql://localhost/recipebuddy" + "user=root&password=@pingpong");
             //Use this to issue SQL queries
             statement = connect.createStatement();
             //Gets the result of querie
@@ -30,18 +24,23 @@ public class SQLConnect {
             //Preped can use variables 
             prepStatement = connect.prepareStatement
             ("insert into feedback.comments values default, ?, ?, ?, ?, ?, ?)");
+
             Calendar cal = Calendar.getInstance();
-            cal.set(Calendar.YEAR, 1988);
-            cal.set(Calendar.MONTH, Calendar.JANUARY);
-            cal.set(Calendar.DAY_OF_MONTH, 1);
+    
+            cal.set(Calendar.YEAR, 53);
+            cal.set(Calendar.MONTH, Calendar.NOVEMBER);
+            cal.set(Calendar.DAY_OF_MONTH, 26);
+        
             java.sql.Date date = (java.sql.Date) cal.getTime();
+
             // myuser, webpage, datum, summary, COMMENTS from feeback.comments"
-            prepStatement.setString(1, null);
-            prepStatement.setString(2, null);
-            prepStatement.setString(3, null);
+            prepStatement.setString(1, "a");
+            prepStatement.setString(2, "b");
+            prepStatement.setString(3, "c");
             prepStatement.setDate(4, date);
-            prepStatement.setString(5, null);
-            prepStatement.setString(6, null);
+
+            prepStatement.setString(5, "d");
+            prepStatement.setString(6, "e");
             prepStatement.executeUpdate();
 
             prepStatement = connect.prepareStatement
@@ -79,7 +78,7 @@ public class SQLConnect {
             String user = resultSet.getString("myuser");
             String website = resultSet.getString("webpage");
             String summary = resultSet.getString("summary");
-            Date date = resultSet.getDate("datum");
+            java.sql.Date date = resultSet.getDate("datum");
             String comment = resultSet.getString("comments");
             System.out.println("User: " + user);
             System.out.println("Website: " + website);

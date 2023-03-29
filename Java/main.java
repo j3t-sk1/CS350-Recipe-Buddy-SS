@@ -9,19 +9,19 @@ public static void main(String[] args) throws Exception {
         SQLConnect Database = new SQLConnect();
         Database.readDataBase();
         
-        System.out.println("Add Search or User");
-        String input = Userin.nextLine();
-        switch(input) {
-            case "Add": 
-            break;
-            case "Search":
-            System.out.println("Input")
-            search = new Search() 
-            search.input();
-            break;
-            case "User": 
-            break;
-        }
-        Userin.close();
+        // System.out.println("Add Search or User");
+        // String input = Userin.nextLine();
+        // switch(input) {
+        //     case "Add": 
+        //     break;
+        //     case "Search":
+        //     System.out.println("Input")
+        //     search = new Search() 
+        //     search.input();
+        //     break;
+        //     case "User": 
+        //     break;
+        // }
+        // Userin.close();
     }
 }

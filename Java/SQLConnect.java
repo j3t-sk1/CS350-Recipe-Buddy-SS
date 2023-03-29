@@ -18,7 +18,7 @@ public class SQLConnect {
             Class.forName("com.mysql.jdbc.Driver");
             //Sets up connection
             connect = DriverManager.getConnection
-            (null, null, null);
+            ("jdbc:mysql://localhost/feedback?" + "user=root&password=@pingpong");
             //Use this to issue SQL queries
             statement = connect.createStatement();
             //Gets the result of querie

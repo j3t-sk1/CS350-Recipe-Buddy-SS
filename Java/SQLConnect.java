@@ -14,16 +14,16 @@ public class SQLConnect {
             Class.forName("com.mysql.jdbc.Driver");
             //Sets up connection
             connect = DriverManager.getConnection
-            ("jdbc:mysql://localhost/recipebuddy" + "user=root&password=@pingpong");
+            ("jdbc:mysql://localhost/recipebuddy", "root", "@pingpong");
             //Use this to issue SQL queries
             statement = connect.createStatement();
             //Gets the result of querie
             resultSet = statement.executeQuery
-            ("select * from feedback.comments");
+            ("select * recipebuddy.comments");
             writeResultSet(resultSet);
             //Preped can use variables 
             prepStatement = connect.prepareStatement
-            ("insert into feedback.comments values default, ?, ?, ?, ?, ?, ?)");
+            ("insert into recipebuddy.comments values (default, ?, ?, ?, ?, ?, ?)");
 
             Calendar cal = Calendar.getInstance();
     
@@ -44,17 +44,17 @@ public class SQLConnect {
             prepStatement.executeUpdate();
 
             prepStatement = connect.prepareStatement
-            ("SELECT myuser, webpage, datum, summary, COMMENTS from feedback.comments");
+            ("SELECT myuser, webpage, datum, summary, COMMENTS from recipebuddy.comments");
             resultSet = prepStatement.executeQuery();
             writeResultSet(resultSet);
 
             prepStatement = connect.prepareStatement
-            ("delete from feedback.comments where myuser= ? ; ");
+            ("delete from recipebuddy.comments where myuser= ? ; ");
             prepStatement.setString(1, "Test");
             prepStatement.executeUpdate();
 
             resultSet = statement.executeQuery
-            ("select * from feedback.comments");
+            ("select * from recipebuddy.comments");
             writeMetaData(resultSet);
         } catch (Exception e) {
             throw e;

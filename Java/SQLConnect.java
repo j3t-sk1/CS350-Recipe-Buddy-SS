@@ -18,30 +18,29 @@ public class SQLConnect {
             //Use this to issue SQL queries
             statement = connect.createStatement();
             //Gets the result of querie
-            resultSet = statement.executeQuery
-            ("select * recipebuddy.comments");
-            writeResultSet(resultSet);
+            //resultSet = statement.executeQuery
+            //("select * recipebuddy.comments");
+            //writeResultSet(resultSet);
             //Preped can use variables 
-            prepStatement = connect.prepareStatement
-            ("insert into recipebuddy.comments values (default, ?, ?, ?, ?, ?, ?)");
+            //prepStatement = connect.prepareStatement
+            //("insert into recipebuddy.comments values (default, null, null, null, null, null, null)");
 
             Calendar cal = Calendar.getInstance();
-    
-            cal.set(Calendar.YEAR, 53);
+            cal.set(Calendar.YEAR, 1953);
             cal.set(Calendar.MONTH, Calendar.NOVEMBER);
             cal.set(Calendar.DAY_OF_MONTH, 26);
-        
-            java.sql.Date date = (java.sql.Date) cal.getTime();
-
+            
+            java.util.Date utilDate = cal.getTime();
+            java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+            
             // myuser, webpage, datum, summary, COMMENTS from feeback.comments"
             prepStatement.setString(1, "a");
             prepStatement.setString(2, "b");
             prepStatement.setString(3, "c");
-            prepStatement.setDate(4, date);
-
+            prepStatement.setDate(4, sqlDate);
             prepStatement.setString(5, "d");
             prepStatement.setString(6, "e");
-            prepStatement.executeUpdate();
+            prepStatement.executeUpdate(); 
 
             prepStatement = connect.prepareStatement
             ("SELECT myuser, webpage, datum, summary, COMMENTS from recipebuddy.comments");

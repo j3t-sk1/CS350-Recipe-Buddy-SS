@@ -18,28 +18,35 @@ public class SQLConnect {
             //Use this to issue SQL queries
             statement = connect.createStatement();
             //Gets the result of querie
-            //resultSet = statement.executeQuery
-            //("select * recipebuddy.comments");
-            //writeResultSet(resultSet);
+            resultSet = statement.executeQuery
+            ("select * from recipebuddy.comments");
+            writeResultSet(resultSet);
             //Preped can use variables 
-            //prepStatement = connect.prepareStatement
-            //("insert into recipebuddy.comments values (default, null, null, null, null, null, null)");
-
-            Calendar cal = Calendar.getInstance();
-            cal.set(Calendar.YEAR, 1953);
-            cal.set(Calendar.MONTH, Calendar.NOVEMBER);
-            cal.set(Calendar.DAY_OF_MONTH, 26);
-            
-            java.util.Date utilDate = cal.getTime();
-            java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+            prepStatement = connect.prepareStatement
+            //("insert into recipebuddy.recipes values (default)");
+            ("insert into recipebuddy.comments (myuser, webpage, datum, summary, COMMENTS) values (?, ?, ?, ?, ?)");
+//            ("insert into recipebuddy.comments values (default, ?, ?, ?, ?, ?, ?)");
             
             // myuser, webpage, datum, summary, COMMENTS from feeback.comments"
-            prepStatement.setString(1, "a");
-            prepStatement.setString(2, "b");
-            prepStatement.setString(3, "c");
-            prepStatement.setDate(4, sqlDate);
-            prepStatement.setString(5, "d");
-            prepStatement.setString(6, "e");
+            prepStatement.setString(1, "a"); //1st arg.
+            prepStatement.setString(2, "b"); //2nd arg.
+
+            //Calendar cal = Calendar.getInstance();
+            //cal.set(Calendar.YEAR, 1953);
+            //cal.set(Calendar.MONTH, Calendar.NOVEMBER);
+            //cal.set(Calendar.DAY_OF_MONTH, 26);
+            
+            //java.util.Date utilDate = cal.getTime();
+            //java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+
+            java.sql.Date sqlDate = java.sql.Date.valueOf("2022-03-31");
+
+            prepStatement.setDate(3, sqlDate); //3rd arg.
+            prepStatement.setString(4, "d"); //4th arg.
+            //prepStatement.setDate(4, sqlDate);
+            prepStatement.setString(5, "e"); //5th arg.
+            //prepStatement.setString(5, "d");
+            //prepStatement.setString(6, "e");
             prepStatement.executeUpdate(); 
 
             prepStatement = connect.prepareStatement
@@ -63,12 +70,12 @@ public class SQLConnect {
     }
 
     private void writeMetaData(ResultSet resultSet) throws SQLException {
-        System.out.println("The colums in the table are: ");
+        System.out.println("The columns in the table are: ");
 
         System.out.println("Table: " + resultSet.getMetaData().getTableName(1));
         for (int i = 1; i <= resultSet.getMetaData().getColumnCount(); i++){
             System.out.println
-            ("Colum " + i + " " + resultSet.getMetaData().getColumnName(i));
+            ("Column " + i + " " + resultSet.getMetaData().getColumnName(i));
         }
     }
 

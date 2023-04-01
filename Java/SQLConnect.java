@@ -54,6 +54,9 @@ public class SQLConnect {
             resultSet = prepStatement.executeQuery();
             writeResultSet(resultSet);
 
+            //String sql = "INSERT INTO comments (myuser, webpage, datum, summary, COMMENTS) VALUES ('John', 'www.ex.com', '2023-03-31', 'my_summary', 'my_comment')";
+            //prepStatement.executeUpdate(sql);
+
             prepStatement = connect.prepareStatement
             ("delete from recipebuddy.comments where myuser= ? ; ");
             prepStatement.setString(1, "Test");

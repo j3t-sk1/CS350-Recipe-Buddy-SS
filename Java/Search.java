@@ -15,7 +15,7 @@ public class Search {
       String [] rNames, Usnames, Ing, Ut;
       Integer [] prep;  
       Statement st = connect.createStatement();
-      ResultSet rs = st.executeQuery("SELECT * recipebuddy.recipe");
+      ResultSet rs = st.executeQuery("SELECT * recipebuddy.recipes");
       
       while (rs.next()){
         //rNames.push(rs.getString("recipename")); 

@@ -5,21 +5,28 @@ import java.util.*;
 public class Search {
     private String searchInput = null;
     Connection connect = null; 
-    Search(String in){
+    
+    public Search(Connection c, String input){
+      this.connect = c;
+      this.searchInput = input; 
+    }
+    void input(){}
+    void fSearch(){
         try{
-        this.searchInput = in;
-        String query = "SELECT * FROM recipebuddy WHERE ingredients IN ('" + in + "')"; 
+        String query = "SELECT * FROM comments WHERE myuser IN ('" + searchInput + "')"; 
         Statement st = connect.createStatement();
         ResultSet rs = st.executeQuery(query);
         
         while (rs.next())
       {
-        int id = rs.getInt("id");
         //Needs more getStrings and the like
-        String Info = rs.getString("info");
+        String info = rs.getString("info");
         
+        //Delimiter example
+        //info.split("");
+
         // print the results
-        System.out.format("%s\n", Info);
+        System.out.format("%s\n", info);
       }
       st.close();
     } catch (Exception e)
@@ -27,4 +34,5 @@ public class Search {
       System.err.println(e.getMessage());
     }
 }
+
 }

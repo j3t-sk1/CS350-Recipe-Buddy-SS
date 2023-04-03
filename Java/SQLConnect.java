@@ -96,7 +96,10 @@ public class SQLConnect {
             System.out.println("Comment: " + comment);
         }
     }
-
+    public Connection getConn() {
+        return connect;
+    }
+    
     private void close() {
         try {
             if (resultSet != null) {

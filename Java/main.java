@@ -9,6 +9,8 @@ public static void main(String[] args) throws Exception {
         SQLConnect Database = new SQLConnect();
         Database.readDataBase();
         
+        search = new Search(Database.getConn(), "John");
+        search.fSearch();
         // System.out.println("Add Search or User");
         // String input = Userin.nextLine();
         // switch(input) {

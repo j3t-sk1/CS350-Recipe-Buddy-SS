@@ -10,7 +10,7 @@ public static void main(String[] args) throws Exception {
         Database.ConnectDB();
         
         search = new Search(Database.getConn(), "Pizza");
-        search.fSearch();
+        search.fSearch("Ingredients");
         // System.out.println("Add Search or User");
         // String input = Userin.nextLine();
         // switch(input) {

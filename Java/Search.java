@@ -34,9 +34,9 @@ public class Search {
         throw e;
       }
     }
-    void fSearch(){
+    void fSearch(String s){
         try{
-        String query = "SELECT * FROM recipebuddy.recipe WHERE ingredient IN ('" + searchInput + "')"; 
+        String query = "SELECT * FROM recipebuddy.recipe WHERE" + s + "IN ('" + searchInput + "')"; 
         Statement st = connect.createStatement();
         ResultSet rs = st.executeQuery(query);
         

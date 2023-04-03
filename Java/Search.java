@@ -21,7 +21,7 @@ public class Search {
         while (rs.next())
       {
         //Needs more getStrings and the like
-        String info = rs.getString("");
+        String info = rs.getString("myuser");
         
         //Delimiter example
         //info.split("");

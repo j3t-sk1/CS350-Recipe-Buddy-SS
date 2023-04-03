@@ -13,8 +13,7 @@ public class Search {
     void input(){}
     void fSearch(){
         try{
-        String query = "SELECT * FROM recipebuddy.comments"; 
-        //WHERE myuser IN ('" + searchInput + "')"; 
+        String query = "SELECT * FROM recipebuddy.comments WHERE myuser IN ('" + searchInput + "')"; 
         Statement st = connect.createStatement();
         ResultSet rs = st.executeQuery(query);
         

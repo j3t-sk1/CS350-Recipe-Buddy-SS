@@ -28,33 +28,7 @@ public class SQLConnect {
             resultSet = statement.executeQuery
             ("select * from recipebuddy.comments");
             writeResultSet(resultSet);
-            prepStatement = connect.prepareStatement
-            //("insert into recipebuddy.recipes values (default)");
-            ("insert into recipebuddy.comments (myuser, webpage, datum, summary, COMMENTS) values (?, ?, ?, ?, ?)");
-            //("insert into recipebuddy.comments values (default, ?, ?, ?, ?, ?, ?)");
-            
-            // myuser, webpage, datum, summary, COMMENTS from feeback.comments"
-            prepStatement.setString(1, "a"); //1st arg.
-            prepStatement.setString(2, "b"); //2nd arg.
-            java.sql.Date sqlDate = java.sql.Date.valueOf("2022-03-31");
-            prepStatement.setDate(3, sqlDate); //3rd arg.
-            prepStatement.setString(4, "d"); //4th arg.
-            prepStatement.setString(5, "e"); //5th arg.
-            prepStatement.executeUpdate(); 
-
-            prepStatement = connect.prepareStatement
-            ("SELECT myuser, webpage, datum, summary, COMMENTS from recipebuddy.comments");
-            resultSet = prepStatement.executeQuery();
-            writeResultSet(resultSet);
-
-            //String sql = "INSERT INTO comments (myuser, webpage, datum, summary, COMMENTS) VALUES ('John', 'www.ex.com', '2023-03-31', 'my_summary', 'my_comment')";
-            //prepStatement.executeUpdate(sql);
-
-            prepStatement = connect.prepareStatement
-            ("delete from recipebuddy.comments where myuser= ? ; ");
-            prepStatement.setString(1, "Test");
             prepStatement.executeUpdate();
-
             resultSet = statement.executeQuery
             ("select * from recipebuddy.comments");
             writeMetaData(resultSet);
@@ -88,6 +62,20 @@ public class SQLConnect {
             System.out.println("Date: " + date);
             System.out.println("Comment: " + comment);
         }
+    }
+    public void testIn() throws SQLException{
+        prepStatement = connect.prepareStatement
+        ("insert into recipebuddy.comments (recipename, ingredients, datum, summary) values (?, ?, ?, ?)");
+        java.sql.Date sqlDate = java.sql.Date.valueOf("2022-03-31");
+        prepStatement.setString(1, "a"); //1st arg.
+        prepStatement.setString(2, "b"); //2nd arg.
+        prepStatement.setDate(3, sqlDate); //3rd arg.
+        prepStatement.setString(4, "d"); //4th arg.
+        prepStatement.executeUpdate(); 
+
+        prepStatement = connect.prepareStatement
+        ("SELECT myuser, webpage, datum, summary, COMMENTS from recipebuddy.comments");
+        resultSet = prepStatement.executeQuery();
     }
     public Connection getConn() {
         return connect;

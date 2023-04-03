@@ -10,17 +10,40 @@ public class Search {
       this.connect = c;
       this.searchInput = input; 
     }
-    void input(){}
+    void input() throws Exception{
+      try{
+      String [] rNames, Usnames, Ing, Ut;
+      Integer [] prep;  
+      Statement st = connect.createStatement();
+      ResultSet rs = st.executeQuery("SELECT * recipebuddy.recipe");
+      
+      while (rs.next()){
+        //rNames.push(rs.getString("recipename")); 
+      }
+      //Takes input from text bar and splits per word
+      String [] words = searchInput.split(" ");
+      for (String s : words){
+        //Recipe name
+        //if (s = ){}
+        //User
+        //Ingredients
+        //Utensils
+        //Prep time
+      } 
+    }catch(Exception e) {
+        throw e;
+      }
+    }
     void fSearch(){
         try{
-        String query = "SELECT * FROM recipebuddy.comments WHERE myuser IN ('" + searchInput + "')"; 
+        String query = "SELECT * FROM recipebuddy.recipe WHERE ingredient IN ('" + searchInput + "')"; 
         Statement st = connect.createStatement();
         ResultSet rs = st.executeQuery(query);
         
         while (rs.next())
       {
         //Needs more getStrings and the like
-        String info = rs.getString("myuser");
+        String info = rs.getString(3);
         
         //Delimiter example
         //info.split("");

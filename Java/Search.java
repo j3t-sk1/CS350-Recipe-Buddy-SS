@@ -13,14 +13,15 @@ public class Search {
     void input(){}
     void fSearch(){
         try{
-        String query = "SELECT * FROM comments WHERE myuser IN ('" + searchInput + "')"; 
+        String query = "SELECT * FROM recipebuddy.comments"; 
+        //WHERE myuser IN ('" + searchInput + "')"; 
         Statement st = connect.createStatement();
         ResultSet rs = st.executeQuery(query);
         
         while (rs.next())
       {
         //Needs more getStrings and the like
-        String info = rs.getString("info");
+        String info = rs.getString("");
         
         //Delimiter example
         //info.split("");

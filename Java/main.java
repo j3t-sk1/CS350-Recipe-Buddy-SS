@@ -7,7 +7,7 @@ public static void main(String[] args) throws Exception {
         Scanner Userin = new Scanner(System.in);
         Search search = null;
         SQLConnect Database = new SQLConnect();
-        Database.readDataBase();
+        Database.ConnectDB();
         
         search = new Search(Database.getConn(), "John");
         search.fSearch();
@@ -24,6 +24,6 @@ public static void main(String[] args) throws Exception {
         //     case "User": 
         //     break;
         // }
-        // Userin.close();
+        //Userin.close();
     }
 }

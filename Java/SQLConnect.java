@@ -9,44 +9,37 @@ public class SQLConnect {
     private PreparedStatement prepStatement;
     private ResultSet resultSet;
 
+    public void ConnectDB() throws Exception {
+        try{
+        Class.forName("com.mysql.jdbc.Driver");
+        //Sets up connection
+        connect = DriverManager.getConnection
+        ("jdbc:mysql://localhost/recipebuddy", "root", "@pingpong");
+        this.statement = connect.createStatement();
+        this.resultSet = statement.executeQuery
+        ("select * from recipebuddy.comments");
+        } catch (Exception e) {
+            throw e;
+        }
+    }
     public void readDataBase() throws Exception {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            //Sets up connection
-            connect = DriverManager.getConnection
-            ("jdbc:mysql://localhost/recipebuddy", "root", "@pingpong");
-            //Use this to issue SQL queries
             statement = connect.createStatement();
-            //Gets the result of querie
             resultSet = statement.executeQuery
             ("select * from recipebuddy.comments");
             writeResultSet(resultSet);
-            //Preped can use variables 
             prepStatement = connect.prepareStatement
             //("insert into recipebuddy.recipes values (default)");
             ("insert into recipebuddy.comments (myuser, webpage, datum, summary, COMMENTS) values (?, ?, ?, ?, ?)");
-//            ("insert into recipebuddy.comments values (default, ?, ?, ?, ?, ?, ?)");
+            //("insert into recipebuddy.comments values (default, ?, ?, ?, ?, ?, ?)");
             
             // myuser, webpage, datum, summary, COMMENTS from feeback.comments"
             prepStatement.setString(1, "a"); //1st arg.
             prepStatement.setString(2, "b"); //2nd arg.
-
-            //Calendar cal = Calendar.getInstance();
-            //cal.set(Calendar.YEAR, 1953);
-            //cal.set(Calendar.MONTH, Calendar.NOVEMBER);
-            //cal.set(Calendar.DAY_OF_MONTH, 26);
-            
-            //java.util.Date utilDate = cal.getTime();
-            //java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
-
             java.sql.Date sqlDate = java.sql.Date.valueOf("2022-03-31");
-
             prepStatement.setDate(3, sqlDate); //3rd arg.
             prepStatement.setString(4, "d"); //4th arg.
-            //prepStatement.setDate(4, sqlDate);
             prepStatement.setString(5, "e"); //5th arg.
-            //prepStatement.setString(5, "d");
-            //prepStatement.setString(6, "e");
             prepStatement.executeUpdate(); 
 
             prepStatement = connect.prepareStatement

@@ -9,7 +9,7 @@ public class Add {
   private int id;
   private String recipeName;
   private List<String> ingredients;
-  private String instructions;
+  private List<String> instructions;
   private List<String> utensils;
   private int chefRate;
   private int prepTime;
@@ -17,7 +17,7 @@ public class Add {
   private int oTemp;
   private String pic;
 
-  public Add(int id, String recipeName, List<String> ingredients, String instructions, List<String> utensils, int chefRate, int prepTime, int serveSize, int oTemp, String pic) {
+  public Add(int id, String recipeName, List<String> ingredients, List<String> instructions, List<String> utensils, int chefRate, int prepTime, int serveSize, int oTemp, String pic) {
       this.id = id;
       this.recipeName = recipeName;
       this.ingredients = ingredients;
@@ -38,7 +38,7 @@ public class Add {
         statement.setInt(1, id);
         statement.setString(2, recipeName);
         statement.setString(3, String.join(",", ingredients));
-        statement.setString(4, instructions);
+        statement.setString(4, String.join(",",instructions));
         statement.setString(5, String.join(",", utensils));
         statement.setInt(6, prepTime);
         statement.setInt(7,oTemp);
@@ -51,7 +51,7 @@ public class Add {
         }
   }
 
-  public Add(String recipeName, List<String> ingredients, String instructions, List<String> utensils, int chefRate, int prepTime, int serveSize, int oTemp) {
+  public Add(String recipeName, List<String> ingredients, List<String> instructions, List<String> utensils, int chefRate, int prepTime, int serveSize, int oTemp) {
     this.recipeName = recipeName;
     this.ingredients = ingredients;
     this.instructions = instructions;
@@ -68,7 +68,7 @@ public class Add {
 
       statement.setString(2, recipeName);
       statement.setString(3, String.join(",", ingredients));
-      statement.setString(4, instructions);
+      statement.setString(4, String.join(",", instructions));
       statement.setString(5, String.join(",", utensils));
       statement.setInt(6, prepTime);
       statement.setInt(7,oTemp);
@@ -92,7 +92,7 @@ public class Add {
   public List<String> getIngredients() {
     return ingredients;
   }
-  public String getInstructions() {
+  public List<String> getInstructions() {
     return instructions;
   }
   public List<String> getUtensils() {
@@ -124,7 +124,7 @@ public class Add {
   public void setIngredients(List<String> ingredients) {
     this.ingredients = ingredients;
   }
-  public void setInstructions(String instructions) {
+  public void setInstructions(List<String> instructions) {
       this.instructions = instructions;
   }
   public void setUtensils(List<String> utensils) {
@@ -149,7 +149,7 @@ public class Add {
     sb.append("Recipe ID: ").append(this.id).append("\n");
     sb.append("Name: ").append(this.recipeName).append("\n");
     sb.append("Ingredients: ").append(String.join(", ", this.ingredients)).append("\n");
-    sb.append("Instructions: ").append(String.join(this.instructions)).append("\n");
+    sb.append("Instructions: ").append(String.join("\n",this.instructions)).append("\n");
     sb.append("Utensils: ").append(String.join("\n", this.utensils)).append("\n");
     sb.append("Rating: ").append(this.chefRate).append("/10\n");
     sb.append("Preparation Time: ").append(this.prepTime).append(" minutes\n");

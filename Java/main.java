@@ -43,15 +43,20 @@ public static void main(String[] args) throws Exception {
         }
 
         // Get instructions
-        System.out.print("Enter recipe name: ");
-        String instructions = scanner.nextLine();
+        List<String> instructions = new ArrayList<>();
+        System.out.print("Enter instructions(enter 'done' when finished): ");
+        String instruction = scanner.nextLine();
+        while(!instruction.equals("done")){
+            instructions.add(instruction);
+            instruction = scanner.nextLine();
+        }
         
 
         // Get utensils
         List<String> utensils = new ArrayList<>();
         System.out.println("Enter kitchenware (one per line, enter 'done' to finish):");
         String utensil = scanner.nextLine();
-        while (!ingredient.equals("done")) {
+        while (!utensil.equals("done")) {
             utensils.add(utensil);
             utensil = scanner.nextLine();
         }
@@ -85,6 +90,6 @@ public static void main(String[] args) throws Exception {
         System.out.println("Recipe added:");
         System.out.println(recipe.toString());
     }
-    
+
     //Add^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 }

@@ -77,20 +77,20 @@ public class SQLConnect {
         ("SELECT myuser, webpage, datum, summary, COMMENTS from recipebuddy.comments");
         resultSet = prepStatement.executeQuery();
     }
-
+//AddVVVVVV
     public boolean addRecipe(Add recipe) {
         String query = "INSERT INTO recipes (name, serving size, prep time, ingredients, instructions, utensils, rating, oven temp) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement statement = connect.prepareStatement(query);
             statement.setString(1, recipe.getRecipeName());
-            statement.setInt(2, recipe.getServingSize());
-            statement.setString(3, String.join(",", recipe.getIngredients()));
+            statement.setString(2, String.join(",", recipe.getIngredients()));
+            statement.setString(3, String.join(",", recipe.getInstructions()));
             statement.setString(4, String.join(",", recipe.getUtensils()));
             statement.setInt(5, recipe.getChefRate());
             statement.setInt(6, recipe.getPrepTime());
             statement.setInt(7, recipe.getServingSize());
-            statement.setInt(7,recipe.getOTemp());
+            statement.setInt(8,recipe.getOTemp());
             statement.executeUpdate();
             return true;
         } catch (SQLException e) {
@@ -98,6 +98,9 @@ public class SQLConnect {
             return false;
         }
     }
+    //Add^^^^^^^
+
+    
     public Connection getConn() {
         return connect;
     }

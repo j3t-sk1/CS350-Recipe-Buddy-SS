@@ -6,6 +6,7 @@ import java.util.*;
 public class Add{
     Connection connect = null;
     //Recipe atributes 
+    //private int id; //new
     private String recipeName;
     private List<String> ingredients;
     private String instructions;
@@ -14,10 +15,10 @@ public class Add{
     private int prepTime;
     private int serveSize;
     private int oTemp;
-    //private String pic;
+    private String pic; //new
 
     public Add(Connection c, String rN, List<String> iG, 
-    String iN, List<String> uT, int cR, int pT, int sS, int oT){
+    String iN, List<String> uT, int cR, int pT, int sS, int oT, String pC){ //added pC (pic)
         this.connect = c;
         this.recipeName = rN;
         this.ingredients = iG;
@@ -27,12 +28,15 @@ public class Add{
         this.prepTime = pT;
         this.serveSize = sS;
         this.oTemp = oT;
+        this.pic = pC;
     }
 
     void Create() throws SQLException {
         try {
             PreparedStatement ps = connect.prepareStatement
-            ("insert into recipebuddy.recipies (recipename, ingredients, instructions, utensils, chefrate, preptime, servesize, ovent) values (?, ?, ?, ?, ?, ?, ?, ?)");
+            //("insert into recipebuddy.recipes (recipeName, ingredients, instructions, utensils, chefRate, prepTime, serveSize, ovent) values (?, ?, ?, ?, ?, ?, ?, ?)");
+            ("insert into recipebuddy.recipes (recipeName, ingredients, instructions, utensils, chefRate, prepTime, serveSize, oTemp, pic) values (?, ?, ?, ?, ?, ?, ?, ?, ?)"); //modified
+            ///ps.setInt(1, id); //new, set this pI to 1
             ps.setString(1, recipeName);
             ps.setString(2, String.join(" ", ingredients));
             ps.setString(3, instructions);
@@ -41,6 +45,7 @@ public class Add{
             ps.setInt(6, prepTime);
             ps.setInt(7, serveSize);
             ps.setInt(8, oTemp);
+            ps.setString(9, pic); //new
             ps.executeUpdate();
 
             ps.close();

@@ -21,7 +21,7 @@ public static void main(String[] args) throws Exception {
         uT.add("Rolling_pin");
         uT.add("Oven");
         add = new Add(Database.getConn(), "Pizza", iG, "Toss dough, add tomatoe paste, add toppings",
-        uT, 5, 40, 3, 400);
+        uT, 5, 40, 3, 400, "temp1");
         //Wait for enter to add pizza
         Userin.nextLine();
         add.Create();
@@ -34,7 +34,7 @@ public static void main(String[] args) throws Exception {
         uT.add("Stovetop");
         uT.add("Pot");
         add = new Add(Database.getConn(), "Pasta", iG, "Put noodles in pot and boil for 20 minutes",
-        uT, 2, 30, 2, 0);
+        uT, 2, 30, 2, 0, "temp2");
         //Wait for enter to add pasta
         Userin.nextLine();
         add.Create();

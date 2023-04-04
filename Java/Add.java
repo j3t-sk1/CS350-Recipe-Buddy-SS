@@ -51,8 +51,8 @@ public class Add{
             ps.executeUpdate();
 
             //Print
-            ResultSet rs = ps.getResultSet();
-            database.writeResultSet(rs);
+            // ResultSet rs = ps.getResultSet();
+            // database.writeResultSet(rs);
             //this.print(rs);
            
             

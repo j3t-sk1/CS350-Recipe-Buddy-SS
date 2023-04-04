@@ -41,7 +41,7 @@ public class Search {
         // ResultSet rs = st.executeQuery(query);
         
         PreparedStatement ps = connect.prepareStatement
-        ("select * from recipebuddy.recipes where" + s + "in" + searchInput);
+        ("select * from recipebuddy.recipes where ingredients in" + searchInput);
         ResultSet rs = ps.executeQuery();
         while (rs.next())
       {

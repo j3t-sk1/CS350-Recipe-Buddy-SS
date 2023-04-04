@@ -23,7 +23,7 @@ public class SQLConnect {
         try {
             statement = connect.createStatement();
             resultSet = statement.executeQuery
-            ("select * from recipebuddy.comments");
+            ("select * from recipebuddy.recipes");
             writeResultSet(resultSet);
             prepStatement.executeUpdate();
             resultSet = statement.executeQuery
@@ -46,18 +46,26 @@ public class SQLConnect {
         }
     }
 
-    private void writeResultSet(ResultSet resultSet) throws SQLException {
+    public void writeResultSet(ResultSet resultSet) throws SQLException {
         while (resultSet.next()) {
-            String user = resultSet.getString("myuser");
-            String website = resultSet.getString("webpage");
-            String summary = resultSet.getString("summary");
-            java.sql.Date date = resultSet.getDate("datum");
-            String comment = resultSet.getString("comments");
-            System.out.println("User: " + user);
-            System.out.println("Website: " + website);
-            System.out.println("summary: " + summary);
-            System.out.println("Date: " + date);
-            System.out.println("Comment: " + comment);
+            String rName = resultSet.getString(1);
+            String iG = resultSet.getString(2);
+            String iN = resultSet.getString(3);
+            String uT = resultSet.getString(4);
+            Integer cR = resultSet.getInt(5);
+            Integer pT = resultSet.getInt(6);
+            Integer sS = resultSet.getInt(7);
+            Integer oT = resultSet.getInt(8);
+            String pic = resultSet.getString(9);
+            System.out.println("RecipeName: " + rName);
+            System.out.println("Ingredients: " + iG);
+            System.out.println("Instructions: " + iN);
+            System.out.println("Utensils " + uT);
+            System.out.println("Rating: " + cR);
+            System.out.println("PrepTime: " + pT);
+            System.out.println("ServingSize: " + sS);
+            System.out.println("OvenTemp: " + oT);
+            System.out.println("PictureUrl: " + pic);
         }
     }
     public void testIn() throws SQLException{

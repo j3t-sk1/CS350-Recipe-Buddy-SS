@@ -46,13 +46,13 @@ public class Search {
         while (rs.next())
       {
         //Needs more getStrings and the like
-        String info = rs.getString(3);
-        
+        String recipeName = rs.getString(1);
+        String ingredients = rs.getString(2);
         //Delimiter example
         //info.split("");
 
         // print the results
-        System.out.format("%s\n", info);
+        System.out.format("%s %s\n", recipeName, ingredients);
       }
       ps.close();
     } catch (Exception e)

@@ -15,7 +15,7 @@ public class Edit {
       }
   }
 
-  public boolean updateRecipe(int id, String recipe_name, List<String> ingredients, String instructions, int prep_time, List<String> utensils) {
+  public boolean editRecipe(int id, String recipe_name, List<String> ingredients, String instructions, int prep_time, List<String> utensils) {
       try {
           String sql = "Edit recipes SET name=?, ingredients=?, instructions=?, preparation_time=? id=?";
           PreparedStatement statement = conn.prepareStatement(sql);

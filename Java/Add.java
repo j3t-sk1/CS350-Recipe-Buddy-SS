@@ -48,14 +48,45 @@ public class Add {
         conn.close();
       } catch (SQLException sqle) {
           sqle.printStackTrace();
-      }
+        }
   }
+
+  public Add(String recipeName, List<String> ingredients, String instructions, List<String> utensils, int chefRate, int prepTime, int serveSize, int oTemp) {
+    this.recipeName = recipeName;
+    this.ingredients = ingredients;
+    this.instructions = instructions;
+    this.utensils = utensils;
+    this.chefRate = chefRate;
+    this.prepTime = prepTime;
+    this.serveSize = serveSize;
+    this.oTemp = oTemp;
+
+    try {
+      Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/recipebuddy.recipes", "root", "@pingpong");
+      String sql = "RecipeBuddy"; 
+      PreparedStatement statement = conn.prepareStatement(sql);
+
+      statement.setString(2, recipeName);
+      statement.setString(3, String.join(",", ingredients));
+      statement.setString(4, instructions);
+      statement.setString(5, String.join(",", utensils));
+      statement.setInt(6, prepTime);
+      statement.setInt(7,oTemp);
+      //statement.setString(8,pic);
+
+      statement.executeUpdate();
+      conn.close();
+    } catch (SQLException sqle) {
+        sqle.printStackTrace();
+      }
+    }
+
 //Recipe.recipes
 
   public int getId() {
     return id;
   }
-  public String getrecipeName() {
+  public String getRecipeName() {
       return recipeName;
   }
   public List<String> getIngredients() {
@@ -128,5 +159,5 @@ public class Add {
 }
   //NICEEEEEEEEE
 
-}
+} 
 

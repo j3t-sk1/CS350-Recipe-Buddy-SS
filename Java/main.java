@@ -4,92 +4,52 @@ import java.util.*;
 
 public class main{
 public static void main(String[] args) throws Exception {
+        //Setup
         Scanner Userin = new Scanner(System.in);
+        Add add = null;
         Search search = null;
         SQLConnect Database = new SQLConnect();
         Database.ConnectDB();
         
+        //Add Pizza
+        //Initialize ingredients
+        List<String> iG;
+        iG.add("Cheese");
+        iG.add("Tomato");
+        //Initialize utensils
+        List<String> uT;
+        uT.add("Rolling_pin");
+        uT.add("Oven");
+        add = new Add(Database.getConn(), "Pizza", iG, "Toss dough, add tomatoe paste, add toppings",
+        uT, 5, 40, 3, 400);
+        //Wait for enter to add pizza
+        Userin.nextLine();
+        add.Create();
+
+        //Clear variables
+        add.clear();
+        iG.remove("Cheese");
+        iG.add("Pasta_Noodles");
+        uT.clear();
+        uT.add("Stovetop");
+        uT.add("Pot");
+        add = new Add(Database.getConn(), "Pasta", iG, "Put noodles in pot and boil for 20 minutes",
+        uT, 2, 30, 2, 0);
+        //Wait for enter to add pasta
+        Userin.nextLine();
+        add.Create();
+
+        //Wait for enter to search for recipename pizza
+        Userin.nextLine();
         search = new Search(Database.getConn(), "Pizza");
-        search.fSearch("Ingredients");
-        // System.out.println("Add Search or User");
-        // String input = Userin.nextLine();
-        // switch(input) {
-        //     case "Add": 
-        //     break;
-        //     case "Search":
-        //     System.out.println("Input")
-        //     search = new Search() 
-        //     search.input();
-        //     break;
-        //     case "User": 
-        //     break;
-        // }
-        //Userin.close();
+        search.fSearch("recipename");
 
-        //Addvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-        Scanner scanner = new Scanner(System.in);
+        //Wait for enter to search for ingredient Tomato
+        Userin.nextLine();
+        search = new Search(Database.getConn(), "Tomato");
+        search.fSearch("ingredients");
 
-        // Get recipe name
-        System.out.print("Enter recipe name: ");
-        String recipeName = scanner.nextLine();
 
-        // Get ingredients
-        List<String> ingredients = new ArrayList<>();
-        System.out.println("Enter ingredients (one per line, enter 'done' to finish):");
-        String ingredient = scanner.nextLine();
-        while (!ingredient.equals("done")) {
-            ingredients.add(ingredient);
-            ingredient = scanner.nextLine();
-        }
 
-        // Get instructions
-        List<String> instructions = new ArrayList<>();
-        System.out.print("Enter instructions(enter 'done' when finished): ");
-        String instruction = scanner.nextLine();
-        while(!instruction.equals("done")){
-            instructions.add(instruction);
-            instruction = scanner.nextLine();
-        }
-        
-
-        // Get utensils
-        List<String> utensils = new ArrayList<>();
-        System.out.println("Enter kitchenware (one per line, enter 'done' to finish):");
-        String utensil = scanner.nextLine();
-        while (!utensil.equals("done")) {
-            utensils.add(utensil);
-            utensil = scanner.nextLine();
-        }
-
-        // Get Rating
-        System.out.print("Enter personal rating: ");
-        int chefRate = scanner.nextInt();
-
-        // Get preparation time
-        System.out.print("Enter preparation time (in minutes): ");
-        int prepTime = scanner.nextInt();
-        
-        // Get servings
-        System.out.print("Enter number of servings: ");
-        int serveSize = scanner.nextInt();
-
-        // Get cook time
-        System.out.print("Enter oven tmeperature: ");
-        int oTemp = scanner.nextInt();
-
-        scanner.nextLine();
-        
-        // Create Recipe object
-        Add recipe = new Add(recipeName, ingredients, instructions, utensils, chefRate, prepTime, serveSize, oTemp);
-            
-        // Store recipe in database
-        SQLConnect SQLConnect = new SQLConnect();
-        SQLConnect.addRecipe(recipe);
-            
-        // Print recipe details
-        System.out.println("Recipe added:");
-        System.out.println(recipe.toString());
     }
-
-    //Add^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 }

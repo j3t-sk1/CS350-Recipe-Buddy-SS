@@ -1,163 +1,58 @@
 package Java;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.List;
 
-public class Add {
-  private int id;
-  private String recipeName;
-  private List<String> ingredients;
-  private List<String> instructions;
-  private List<String> utensils;
-  private int chefRate;
-  private int prepTime;
-  private int serveSize;
-  private int oTemp;
-  private String pic;
+import java.sql.*;
+import java.util.*;
 
-  public Add(int id, String recipeName, List<String> ingredients, List<String> instructions, List<String> utensils, int chefRate, int prepTime, int serveSize, int oTemp, String pic) {
-      this.id = id;
-      this.recipeName = recipeName;
-      this.ingredients = ingredients;
-      this.instructions = instructions;
-      this.utensils = utensils;
-      this.chefRate = chefRate;
-      this.prepTime = prepTime;
-      this.serveSize = serveSize;
-      this.oTemp = oTemp;
-      this.pic = pic;
+public class Add{
+    Connection connect = null;
+    //Recipe atributes 
+    private String recipeName;
+    private List<String> ingredients;
+    private List<String> instructions;
+    private List<String> utensils;
+    private int chefRate;
+    private int prepTime;
+    private int serveSize;
+    private int oTemp;
+    //private String pic;
 
-
-      try {
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/recipebuddy.recipes", "root", "@pingpong");
-        String sql = "RecipeBuddy"; 
-        PreparedStatement statement = conn.prepareStatement(sql);
-
-        statement.setInt(1, id);
-        statement.setString(2, recipeName);
-        statement.setString(3, String.join(",", ingredients));
-        statement.setString(4, String.join(",",instructions));
-        statement.setString(5, String.join(",", utensils));
-        statement.setInt(6, prepTime);
-        statement.setInt(7,oTemp);
-        statement.setString(8,pic);
-
-        statement.executeUpdate();
-        conn.close();
-      } catch (SQLException sqle) {
-          sqle.printStackTrace();
-        }
-  }
-
-  public Add(String recipeName, List<String> ingredients, List<String> instructions, List<String> utensils, int chefRate, int prepTime, int serveSize, int oTemp) {
-    this.recipeName = recipeName;
-    this.ingredients = ingredients;
-    this.instructions = instructions;
-    this.utensils = utensils;
-    this.chefRate = chefRate;
-    this.prepTime = prepTime;
-    this.serveSize = serveSize;
-    this.oTemp = oTemp;
-
-    try {
-      Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/recipebuddy.recipes", "root", "@pingpong");
-      String sql = "RecipeBuddy"; 
-      PreparedStatement statement = conn.prepareStatement(sql);
-
-      statement.setString(2, recipeName);
-      statement.setString(3, String.join(",", ingredients));
-      statement.setString(4, String.join(",", instructions));
-      statement.setString(5, String.join(",", utensils));
-      statement.setInt(6, prepTime);
-      statement.setInt(7,oTemp);
-      //statement.setString(8,pic);
-
-      statement.executeUpdate();
-      conn.close();
-    } catch (SQLException sqle) {
-        sqle.printStackTrace();
-      }
+    public Add(Connection c) {
+        this.connect = c;
+        st = connect.creatatemteSent();
+    }
+    public Add(Connection c, String rN, List<String> iG, 
+    String iN, List<String> uT, int cR, int pT, int sS, int oT){
+        this.connection = c;
+        this.recipeName = rN;
+        this.ingredients = iG;
+        this.instructions = iN;
+        this.utensils = uT;
+        this.chefRate = cR;
+        this.prepTime = pT;
+        this.serveSize = sT;
+        this.oTemp = oT;
     }
 
-//Recipe.recipes
+    void Create() throws SQLException {
+        try {
+            PreparedStatement ps = connect.prepareStatement
+            ("instert into recipebuddy.recipies 
+            (recipename, ingredients, instructions, utensils, chefrate, preptime, servesize, ovent) 
+            values (?, ?, ?, ?, ?, ?, ?, ?)");
+            ps.setString(1, recipeName);
+            ps.setString(2, String.join(" ", ingredients));
+            ps.setString(3, instructions);
+            ps.setString(4, String.join(" ", utensils));
+            ps.setInt(5, chefRate);
+            ps.setInt(6, prepTime);
+            ps.setInt(7, serveSize);
+            ps.setInt(8, oTemp);
+            ps.executeUpdate();
 
-  public int getId() {
-    return id;
-  }
-  public String getRecipeName() {
-      return recipeName;
-  }
-  public List<String> getIngredients() {
-    return ingredients;
-  }
-  public List<String> getInstructions() {
-    return instructions;
-  }
-  public List<String> getUtensils() {
-    return utensils;
-  } 
-  public int getChefRate(){
-    return chefRate;
-  }
-  public int getPrepTime() {
-    return prepTime;
-  }
-  public int getServingSize() {
-    return serveSize;
-  }
-  public int getOTemp() {
-    return oTemp;
-  }
-  public String getPicture() {
-    return pic;
-  }
-  
+            ps.close();
+        } catch (Exception e){
+            System.out.println(e.toString(););
+        }
+    }
 
-  public void setId(int id) {
-    this.id = id;
-  }
-  public void setRecipeName(String recipeName) {
-      this.recipeName = recipeName;
-  }
-  public void setIngredients(List<String> ingredients) {
-    this.ingredients = ingredients;
-  }
-  public void setInstructions(List<String> instructions) {
-      this.instructions = instructions;
-  }
-  public void setUtensils(List<String> utensils) {
-    this.utensils = utensils;
-  }
-  public void setChefRate(int chefRate){
-    this.chefRate = chefRate;
-  }
-  public void setPrepTime(int prepTime) {
-    this.prepTime = prepTime;
-  }
-  public void setServingSize(int serveSize) {
-    this.serveSize = serveSize;
-  }
-  public void setOTemp(int oTemp) {
-    this.oTemp = oTemp;
-  }
-
-
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("Recipe ID: ").append(this.id).append("\n");
-    sb.append("Name: ").append(this.recipeName).append("\n");
-    sb.append("Ingredients: ").append(String.join(", ", this.ingredients)).append("\n");
-    sb.append("Instructions: ").append(String.join("\n",this.instructions)).append("\n");
-    sb.append("Utensils: ").append(String.join("\n", this.utensils)).append("\n");
-    sb.append("Rating: ").append(this.chefRate).append("/10\n");
-    sb.append("Preparation Time: ").append(this.prepTime).append(" minutes\n");
-    sb.append("Serves: ").append(this.serveSize).append(" plates\n");
-    sb.append("Oven Temp: ").append(this.oTemp).append("\n");
-    return sb.toString();
 }
-  //NICEEEEEEEEE
-
-} 
-

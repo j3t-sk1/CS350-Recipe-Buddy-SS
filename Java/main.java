@@ -43,13 +43,5 @@ public static void main(String[] args) throws Exception {
         Userin.nextLine();
         search = new Search(Database.getConn(), "Pizza");
         search.fSearch("recipename");
-
-        //Wait for enter to search for ingredient Tomato
-        Userin.nextLine();
-        search = new Search(Database.getConn(), "Tomato");
-        search.fSearch("ingredients");
-
-
-
     }
 }

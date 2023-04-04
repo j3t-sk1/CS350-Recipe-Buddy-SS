@@ -40,8 +40,13 @@ public class Search {
         // Statement st = connect.createStatement();
         // ResultSet rs = st.executeQuery(query);
         
+   //     PreparedStatement ps = connect.prepareStatement
+        //("select * from recipebuddy.recipes where ingredients in " + searchInput);
+        //("select * from recipebuddy.recipes where ingredients in (" + searchInput + ")");
         PreparedStatement ps = connect.prepareStatement
-        ("select * from recipebuddy.recipes where ingredients in" + searchInput);
+        //("select * from recipebuddy.recipes where recipeName in (Pizza)");
+        ("select * from recipebuddy.recipes where recipeName like 'pizza'");
+
         ResultSet rs = ps.executeQuery();
         while (rs.next())
       {
@@ -52,7 +57,8 @@ public class Search {
         //info.split("");
 
         // print the results
-        System.out.format("%s %s\n", recipeName, ingredients);
+        System.out.println("Search results when searching for 'Pizza'");
+        System.out.format("%s \n", recipeName);//, ingredients);
       }
       ps.close();
     } catch (Exception e)

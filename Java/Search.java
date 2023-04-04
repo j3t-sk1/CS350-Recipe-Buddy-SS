@@ -58,7 +58,7 @@ public class Search {
 
         // print the results
         System.out.println("Search results when searching for 'Pizza'");
-        System.out.format("%s \n", recipeName);//, ingredients);
+        System.out.format("%s \n", recipeName);//, ingredients); //
       }
       ps.close();
     } catch (Exception e)

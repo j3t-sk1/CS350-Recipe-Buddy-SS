@@ -7,6 +7,7 @@ public class Add{
     Connection connect = null;
     //Recipe atributes 
     //private int id; //new
+    private SQLConnect database;
     private String recipeName;
     private List<String> ingredients;
     private String instructions;
@@ -17,9 +18,9 @@ public class Add{
     private int oTemp;
     private String pic; //new
 
-    public Add(Connection c, String rN, List<String> iG, 
+    public Add(SQLConnect Data, String rN, List<String> iG, 
     String iN, List<String> uT, int cR, int pT, int sS, int oT, String pC){ //added pC (pic)
-        this.connect = c;
+        this.database = Data;
         this.recipeName = rN;
         this.ingredients = iG;
         this.instructions = iN;
@@ -48,6 +49,9 @@ public class Add{
             ps.setString(9, pic); //new
             ps.executeUpdate();
 
+            //Print
+            ResultSet rs = ps.getResultSet();
+            database.writeResultSet(rs);
             ps.close();
         } catch (Exception e){
             System.out.println(e.toString());

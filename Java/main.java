@@ -13,11 +13,11 @@ public static void main(String[] args) throws Exception {
         
         //Add Pizza
         //Initialize ingredients
-        List<String> iG;
+        List<String> iG = new ArrayList<String>();
         iG.add("Cheese");
         iG.add("Tomato");
         //Initialize utensils
-        List<String> uT;
+        List<String> uT = new ArrayList<String>();
         uT.add("Rolling_pin");
         uT.add("Oven");
         add = new Add(Database.getConn(), "Pizza", iG, "Toss dough, add tomatoe paste, add toppings",
@@ -27,7 +27,7 @@ public static void main(String[] args) throws Exception {
         add.Create();
 
         //Clear variables
-        add.clear();
+        add = null;
         iG.remove("Cheese");
         iG.add("Pasta_Noodles");
         uT.clear();

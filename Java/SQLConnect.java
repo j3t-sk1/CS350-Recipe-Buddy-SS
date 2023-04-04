@@ -15,9 +15,6 @@ public class SQLConnect {
         //Sets up connection
         connect = DriverManager.getConnection
         ("jdbc:mysql://localhost/recipebuddy", "root", "@pingpong");
-        this.statement = connect.createStatement();
-        this.resultSet = statement.executeQuery
-        ("select * from recipebuddy.comments");
         } catch (Exception e) {
             throw e;
         }

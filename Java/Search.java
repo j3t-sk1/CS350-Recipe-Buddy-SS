@@ -36,10 +36,13 @@ public class Search {
     }
     void fSearch(String s){
         try{
-        String query = "SELECT * FROM recipebuddy.recipe WHERE" + s + "IN ('" + searchInput + "')"; 
-        Statement st = connect.createStatement();
-        ResultSet rs = st.executeQuery(query);
+        // String query = "SELECT * FROM recipebuddy.recipe WHERE" + s + "IN (" + searchInput + ")"; 
+        // Statement st = connect.createStatement();
+        // ResultSet rs = st.executeQuery(query);
         
+        PreparedStatement ps = connect.prepareStatement
+        ("select * from recipebuddy.recipes where" + s + "in" + searchInput);
+        ResultSet rs = ps.executeQuery();
         while (rs.next())
       {
         //Needs more getStrings and the like
@@ -51,7 +54,7 @@ public class Search {
         // print the results
         System.out.format("%s\n", info);
       }
-      st.close();
+      ps.close();
     } catch (Exception e)
     {
       System.err.println(e.getMessage());

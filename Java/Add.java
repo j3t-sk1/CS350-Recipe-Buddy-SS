@@ -21,6 +21,7 @@ public class Add{
     public Add(SQLConnect Data, String rN, List<String> iG, 
     String iN, List<String> uT, int cR, int pT, int sS, int oT, String pC){ //added pC (pic)
         this.database = Data;
+        connect = database.getConn();
         this.recipeName = rN;
         this.ingredients = iG;
         this.instructions = iN;
@@ -52,10 +53,34 @@ public class Add{
             //Print
             ResultSet rs = ps.getResultSet();
             database.writeResultSet(rs);
+            //this.print(rs);
+           
+            
+            
             ps.close();
         } catch (Exception e){
             System.out.println(e.toString());
         }
     }
-
+    void print(ResultSet rs){
+        String rName = rs.getString(1);
+        String iG = rs.getString(2);
+        String iN = rs.getString(3);
+        String uT = rs.getString(4);
+        Integer cR = rs.getInt(5);
+        Integer pT = rs.getInt(6);
+        Integer sS = rs.getInt(7);
+        Integer oT = rs.getInt(8);
+        String pic = rs.getString(9);
+        System.out.println("RecipeName: " + rName);
+        System.out.println("Ingredients: " + iG);
+        System.out.println("Instructions: " + iN);
+        System.out.println("Utensils " + uT);
+        System.out.println("Rating: " + cR);
+        System.out.println("PrepTime: " + pT);
+        System.out.println("ServingSize: " + sS);
+        System.out.println("OvenTemp: " + oT);
+        System.out.println("PictureUrl: " + pic);
+    }
+    } 
 }

@@ -12,19 +12,21 @@ public class Search {
     }
     void input() throws Exception{
       try{
-      String [] rNames, Usnames, Ing, Ut;
+      ArrayList<String> rNames = new ArrayList<String>(); 
+      //Usnames, Ing, Ut;
       Integer [] prep;  
       Statement st = connect.createStatement();
       ResultSet rs = st.executeQuery("SELECT * recipebuddy.recipes");
       
       while (rs.next()){
-        //rNames.push(rs.getString("recipename")); 
+        rNames.add(rs.getString("recipename")); 
       }
       //Takes input from text bar and splits per word
       String [] words = searchInput.split(" ");
       for (String s : words){
         //Recipe name
-        //if (s = ){}
+        int temp = rNames.indexOf(s);
+        if (temp >= 0){}
         //User
         //Ingredients
         //Utensils
@@ -34,17 +36,12 @@ public class Search {
         throw e;
       }
     }
+    private <T> Indexes(T search){
+      return search;
+    } 
     void fSearch(String s){
         try{
-        // String query = "SELECT * FROM recipebuddy.recipe WHERE" + s + "IN (" + searchInput + ")"; 
-        // Statement st = connect.createStatement();
-        // ResultSet rs = st.executeQuery(query);
-        
-   //     PreparedStatement ps = connect.prepareStatement
-        //("select * from recipebuddy.recipes where ingredients in " + searchInput);
-        //("select * from recipebuddy.recipes where ingredients in (" + searchInput + ")");
         PreparedStatement ps = connect.prepareStatement
-        //("select * from recipebuddy.recipes where recipeName in (Pizza)");
         ("select * from recipebuddy.recipes where recipeName like 'pizza'");
 
         ResultSet rs = ps.executeQuery();
@@ -53,8 +50,6 @@ public class Search {
         //Needs more getStrings and the like
         String recipeName = rs.getString(1);
         String ingredients = rs.getString(2);
-        //Delimiter example
-        //info.split("");
 
         // print the results
         System.out.println("Search results when searching for 'Pizza':");

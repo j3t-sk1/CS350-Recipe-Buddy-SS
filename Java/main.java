@@ -11,39 +11,6 @@ public static void main(String[] args) throws Exception {
         SQLConnect Database = new SQLConnect();
         Database.ConnectDB();
         
-        //Add Pizza
-        //Initialize ingredients
-        List<String> iG = new ArrayList<String>();
-        iG.add("Cheese");
-        iG.add("Tomato");
-        //Initialize utensils
-        List<String> uT = new ArrayList<String>();
-        uT.add("Rolling_pin");
-        uT.add("Oven");
-        System.out.println("Adding 'Pizza' into database...");
-        add = new Add(Database, "Pizza", iG, "Toss dough, add tomatoe paste, add toppings",
-        uT, 5, 40, 3, 400, "temp1");
-        //Wait for enter to add pizza
-        Userin.nextLine();
-        add.Create();
-
-        //Clear variables
-        add = null;
-        iG.remove("Cheese");
-        iG.add("Pasta_Noodles");
-        uT.clear();
-        uT.add("Stovetop");
-        uT.add("Pot");
-        System.out.println("Adding 'Pasta' into database...");
-        add = new Add(Database, "Pasta", iG, "Put noodles in pot and boil for 20 minutes",
-        uT, 2, 30, 2, 0, "temp2");
-        //Wait for enter to add pasta
-        Userin.nextLine();
-        add.Create();
-
-        //Wait for enter to search for recipename pizza
-        Userin.nextLine();
-        search = new Search(Database.getConn(), "Pizza");
-        search.fSearch("recipename");
+      
     }
 }

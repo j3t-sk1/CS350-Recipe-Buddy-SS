@@ -71,11 +71,11 @@ public class Test {
         }
     }
     public static void resetDB() throws SQLException{
-        PreparedStatement ps = Database.getConn().prepareStatement
-        ("DELETE FROM table_name WHERE recipeName <> ''");
-//        ("delete * from recipebuddy.recipes where ");
-        
-        ps.executeQuery();
+        PreparedStatement ps = Database.getConn().prepareStatement("DELETE FROM recipes WHERE recipeName <> ''");
+        ps.executeUpdate();
+
+        System.out.println("Removing testing values from recipes table in database...");
+
         printDB();
     }
 }

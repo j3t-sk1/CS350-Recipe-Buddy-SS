@@ -6,11 +6,15 @@ import com.mysql.cj.util.StringUtils;
 
 public class Search {
     private String searchInput = null;
+    private ArrayList<String> allergens = new ArrayList<>();
+    private ArrayList<String> utensils = new ArrayList<>();
     Connection connect = null; 
     
-    public Search(Connection c, String input){
+    public Search(Connection c, String input, ArrayList<String> a, ArrayList<String> u){
       this.connect = c;
       this.searchInput = input; 
+      this.allergens = a;
+      this.utensils = u;
     }
     
     ArrayList<Integer> getindx() throws Exception{
@@ -59,29 +63,54 @@ public class Search {
         list.addAll(set);
         return list;
     }
-  
-    void fSearch(String s){
+    public static String ListIntToString(ArrayList<Integer> list)
+    {
+      String result = null;
+      for(Integer i : list){
+        result += ',' + i.toString();
+      }
+      return result;
+    }
+    void fSearch(String s, Boolean allerg, Boolean uten){
         try{
+        //Get indexes of all recipies with matching strings/ints
         ArrayList<Integer> indx = removeDuplicates(getindx());
         PreparedStatement ps = connect.prepareStatement
-        ("select * from recipebuddy.recipes where id like " + indx);
+        ("select * from recipebuddy.recipes where id in (" + ListIntToString(indx) + ")");
         ResultSet rs = ps.executeQuery();
-        while (rs.next())
-        while (rs.next())
-      {
+        
+        //Filter Allergens and Utensils
+        if(allerg || uten){
+        while (rs.next()){
+          if(allerg){
+          for(String a :allergens){
+            if((rs.getString("ingredients")).contains(a)){rs.deleteRow();}
+          }
+        }
+          if(uten){
+            for(String u : utensils){
+              if(!(rs.getString("utensils")).contains(u)){rs.deleteRow();}
+          }
+        }
+      }
+    }
+      //End Filter
+
+      //Run through and output
+        while (rs.next()){
         //Needs more getStrings and the like
         String recipeName = rs.getString(1);
-        String ingredients = rs.getString(2);
+        Integer prepTime = rs.getInt(6);
 
         // print the results
-        System.out.println("Search results when searching for 'Pizza':");
-        System.out.format("%s \n", recipeName);//, ingredients); //
+        System.out.println("Search results");
+        System.out.format("%s %d \n", recipeName, prepTime);
       }
       ps.close();
     } catch (Exception e)
     {
       System.err.println(e.getMessage());
     }
+  }
 }
 
-}

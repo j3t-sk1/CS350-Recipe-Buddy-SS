@@ -23,7 +23,7 @@ public class Search {
       ArrayList<Integer> prepT = new ArrayList<>(); 
       //Usnames, Ing, Ut; 
       Statement st = connect.createStatement();
-      ResultSet rs = st.executeQuery("SELECT * recipebuddy.recipes");
+      ResultSet rs = st.executeQuery("SELECT * from recipebuddy.recipes");
       
       while (rs.next()){
         rNames.add(rs.getString("recipename")); 

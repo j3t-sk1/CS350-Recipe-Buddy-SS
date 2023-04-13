@@ -13,7 +13,7 @@ public class Test {
 
     public static void testadd() throws SQLException{
         PreparedStatement ps = Database.getConn().prepareStatement
-        ("select count(*) from recipebuddy.recipies");
+        ("select count(*) from recipebuddy.recipes");
         ResultSet rs = ps.executeQuery();
         rs.next();
         int count = rs.getInt(1);
@@ -72,7 +72,9 @@ public class Test {
     }
     public static void resetDB() throws SQLException{
         PreparedStatement ps = Database.getConn().prepareStatement
-        ("delete from recipebuddy.recipes");
+        ("DELETE FROM table_name WHERE recipeName <> ''");
+//        ("delete * from recipebuddy.recipes where ");
+        
         ps.executeQuery();
         printDB();
     }

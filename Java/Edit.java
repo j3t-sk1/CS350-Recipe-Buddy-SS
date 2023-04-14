@@ -15,8 +15,9 @@ public class Edit {
     private int serveSize;
     private int oTemp;
     private String pic;
+    private int recipeID;
 
-    public Edit(SQLConnect Data, String rN, List<String> iG, String iN, List<String> uT, int cR, int pT, int sS, int oT, String pC) {
+    public Edit(SQLConnect Data, int rID,String rN, List<String> iG, String iN, List<String> uT, int cR, int pT, int sS, int oT, String pC) {
         this.database = Data;
         this.connect = database.getConn();
         this.recipeName = rN;
@@ -28,11 +29,12 @@ public class Edit {
         this.serveSize = sS;
         this.oTemp = oT;
         this.pic = pC;
+        this.recipeID = rID;
     }
 
     public void Update() throws SQLException {
         try {
-            PreparedStatement ps = connect.prepareStatement("UPDATE recipebuddy.recipes (recipeName, ingredients, instructions, utensils, chefRate, prepTime, serveSize, oTemp, pic) values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            PreparedStatement ps = connect.prepareStatement("UPDATE recipebuddy.recipes  SET recipeName = ?, ingredients = ?, instructions = ?, utensils = ?, chefRate = ?, prepTime = ?, serveSize = ?, oTemp = ?, pic =? WHERE id = ?");
             ps.setString(1, recipeName);
             ps.setString(2, String.join(" ", ingredients));
             ps.setString(3, instructions);
@@ -42,6 +44,7 @@ public class Edit {
             ps.setInt(7, serveSize);
             ps.setInt(8, oTemp);
             ps.setString(9, pic);
+            ps.setInt(10, recipeID);
             ps.executeUpdate();
             ps.close();
         } catch (SQLException e) {

@@ -9,9 +9,9 @@ public class Add{
     private SQLConnect database;
     private String recipeName;
     private int size; 
-    private ArrayList<String> ingredients;
+    private List<String> ingredients;
     private String instructions;
-    private ArrayList<String> utensils;
+    private List<String> utensils;
     private int chefRate;
     private int prepTime;
     private int serveSize;
@@ -21,6 +21,21 @@ public class Add{
     public Add(){}
     public Add(SQLConnect Data, String rN, ArrayList<String> iG, 
     String iN, ArrayList<String> uT, int cR, int pT, int sS, int oT, String pC){ //added pC (pic)
+        this.database = Data;
+        connect = database.getConn();
+        this.recipeName = rN;
+        this.ingredients = iG;
+        this.instructions = iN;
+        this.utensils = uT;
+        this.chefRate = cR;
+        this.prepTime = pT;
+        this.serveSize = sS;
+        this.oTemp = oT;
+        this.pic = pC;
+    }
+    
+    public Add(SQLConnect Data, String rN, List<String> iG,
+     String iN, List<String> uT, int cR, int pT, int sS, int oT, String pC) {
         this.database = Data;
         connect = database.getConn();
         this.recipeName = rN;

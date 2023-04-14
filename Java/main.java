@@ -26,8 +26,6 @@ public static void main(String[] args) throws Exception {
         Test.search("Name", false, true);
         Test.resetDB();
 
-        //Test for endTime
-
         // Define the updated recipe information
         String updatedRecipeName = "Spaghet";
         List<String> updatedIngredients = Arrays.asList("spaghet", "meatbol", "sauce", "onion", "garlic");
@@ -35,12 +33,12 @@ public static void main(String[] args) throws Exception {
         List<String> updatedUtensils = Arrays.asList("large pan", "spatula", "pot");
         int updatedChefRate = 4;
         int updatedPrepTime = 20;
-        int updatedServeSize = 4;
-        int updatedOTemp = 0;
-        //String updatedPic = "spaghet.jpg";
+        int updatedServeSize = 6;
+        int updatedOTemp = 9;
+        String updatedPic = "spaghet.jpg";
     
         // Create an instance of the Edit class and update the recipe in the database
-        Edit edit = new Edit(Database, updatedRecipeName, updatedIngredients, updatedInstructions, updatedUtensils, updatedChefRate, updatedPrepTime, updatedServeSize, updatedOTemp);
+        Edit edit = new Edit(Database, updatedRecipeName, updatedIngredients, updatedInstructions, updatedUtensils, updatedChefRate, updatedPrepTime, updatedServeSize, updatedOTemp, updatedPic);
         edit.Update();
     }
 }

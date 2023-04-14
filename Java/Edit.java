@@ -14,9 +14,9 @@ public class Edit {
     private int prepTime;
     private int serveSize;
     private int oTemp;
-    //private String pic;
+    private String pic;
 
-    public Edit(SQLConnect Data, String rN, List<String> iG, String iN, List<String> uT, int cR, int pT, int sS, int oT/*, String pC*/) {
+    public Edit(SQLConnect Data, String rN, List<String> iG, String iN, List<String> uT, int cR, int pT, int sS, int oT, String pC) {
         this.database = Data;
         this.connect = database.getConn();
         this.recipeName = rN;
@@ -27,7 +27,7 @@ public class Edit {
         this.prepTime = pT;
         this.serveSize = sS;
         this.oTemp = oT;
-        //this.pic = pC;
+        this.pic = pC;
     }
 
     public void Update() throws SQLException {
@@ -41,7 +41,7 @@ public class Edit {
             ps.setInt(6, prepTime);
             ps.setInt(7, serveSize);
             ps.setInt(8, oTemp);
-            //ps.setString(9, pic);
+            ps.setString(9, pic);
             ps.executeUpdate();
             ps.close();
         } catch (SQLException e) {

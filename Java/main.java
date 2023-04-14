@@ -19,13 +19,6 @@ public static void main(String[] args) throws Exception {
         //Test.testadd(testaddS);
         Test.printDB();
 
-        //Search string, allergens, utensils
-        Test.search("Name", false, false); 
-        Test.search("20", false, false);
-        Test.search("Name", true, false);
-        Test.search("Name", false, true);
-        Test.resetDB();
-
         //Doing Add before edit
         String addrecipeName = "Pizza";
         List<String> addingredients = Arrays.asList("Dough", "Tomato sauce", "Mozzarella cheese", "Love");
@@ -39,20 +32,12 @@ public static void main(String[] args) throws Exception {
         
         Add pizzaRecipe = new Add(Database, addrecipeName, addingredients, addinstructions, addutensils, addchefRate, addprepTime, addserveSize, addoTemp, addpic);
         
-        try {
-            pizzaRecipe.Create(4);
-            System.out.println("Pizza recipe added to the database!");
-        } catch (Exception e) {
-            System.out.println("Error adding pizza recipe: " + e);
-        }
-
-
-
-
+        int newRecipeID = pizzaRecipe.Create();
+        System.out.println("Pizza recipe added to the database with ID: " + newRecipeID);
 
         //Test for edit
         // Define the updated recipe information
-        int recipeID = 4;
+        //int recipeID = newRecipeID;
         String updatedRecipeName = "Spaghet";
         List<String> updatedIngredients = Arrays.asList("spaghet", "meatbol", "sauce", "onion", "garlic");
         String updatedInstructions = "1. Cook spaghet\n2. In a large pan, add onion and garlic. \n3. Add meatbol. \n4. Add sauce. \n5. Serve spaghet.";
@@ -63,7 +48,8 @@ public static void main(String[] args) throws Exception {
         int updatedOTemp = 9;
         String updatedPic = "spaghet.jpg";
         // Create an instance of the Edit class and update the recipe in the database
-        Edit edit = new Edit(Database, recipeID, updatedRecipeName, updatedIngredients, updatedInstructions, updatedUtensils, updatedChefRate, updatedPrepTime, updatedServeSize, updatedOTemp, updatedPic);
+        Edit edit = new Edit(Database, newRecipeID, updatedRecipeName, updatedIngredients, updatedInstructions, updatedUtensils, updatedChefRate, updatedPrepTime, updatedServeSize, updatedOTemp, updatedPic);
         edit.Update();
     }
 }
+

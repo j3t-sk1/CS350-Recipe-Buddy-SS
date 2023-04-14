@@ -69,4 +69,25 @@ public class Add{
             System.out.println(e.toString());
         }
     }
-    } 
+    public int Create() throws SQLException {
+        String query = "INSERT INTO recipebuddy.recipes (recipeName, ingredients, instructions, utensils, chefRate, prepTime, serveSize, oTemp, pic) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        PreparedStatement pstmt = connect.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+        pstmt.setString(1, recipeName);
+        pstmt.setString(2, String.join(",", ingredients));
+        pstmt.setString(3, instructions);
+        pstmt.setString(4, String.join(",", utensils));
+        pstmt.setInt(5, chefRate);
+        pstmt.setInt(6, prepTime);
+        pstmt.setInt(7, serveSize);
+        pstmt.setInt(8, oTemp);
+        pstmt.setString(9, pic);
+        pstmt.executeUpdate();
+        ResultSet keys = pstmt.getGeneratedKeys();
+        int newRecipeID = 0;
+        if (keys.next()) {
+            newRecipeID = keys.getInt(1);
+        }
+        return newRecipeID;
+    }
+    
+} 

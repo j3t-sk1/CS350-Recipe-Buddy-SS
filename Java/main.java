@@ -24,7 +24,7 @@ public static void main(String[] args) throws Exception {
         Test.printDB();
         
 
-        Test.resetDB();
+        // Test.resetDB();
     }
 }
 //String updatedRecipeName = "Spaghet";

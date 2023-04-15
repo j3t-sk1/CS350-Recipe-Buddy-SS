@@ -88,6 +88,34 @@ public class Test {
             System.out.println("PictureUrl: " + pic);
         }
     }
+
+    public static void printDBU() throws SQLException{
+        PreparedStatement ps = Database.getConn().prepareStatement
+        ("select * from recipebuddy.users");
+        ResultSet rs = ps.executeQuery();
+        
+        System.out.println("The columns in the table are: ");
+        System.out.println("Table: " + rs.getMetaData().getTableName(1));
+        for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++){
+            System.out.println
+            ("Column " + i + " " + rs.getMetaData().getColumnName(i));
+        }
+
+        while (rs.next()) {
+            boolean fav = rs.getBoolean(1);
+            String uN = rs.getString(2);
+            String uB = rs.getString(3);
+            String uP = rs.getString(4);
+            String uR = rs.getString(5);
+            String pT = rs.getString(6);
+            System.out.println("Favorite: " + fav);
+            System.out.println("Username: " + uN);
+            System.out.println("Bio: " + uB);
+            System.out.println("Pic: " + uP);
+            System.out.println("Recipes: " + uR);
+            System.out.println("Pantry: " + pT);
+        }
+    }
     public static void resetDB() throws SQLException{
         PreparedStatement ps = Database.getConn().prepareStatement("DELETE FROM recipes WHERE recipeName <> ''");
         ps.executeUpdate();

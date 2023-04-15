@@ -17,7 +17,7 @@ public static void main(String[] args) throws Exception {
         String testaddS = "Pizza (Cheese Tomato) (cook lol) (rolling_pin oven) 5 40 2 400 html";
         Test.testadd();
         // Test.testadd(testaddS);
-        Test.printDB();
+        //Test.printDB();
 
         Test.search("default", false, false);
         Test.search("default", true, false);

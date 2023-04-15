@@ -21,7 +21,7 @@ public class User {
         this.pantry = p;
     }
 
-    public void Create(int size) throws SQLException {
+    public void Create() throws SQLException {
         try {
             PreparedStatement ps = connect.prepareStatement
             ("insert into recipebuddy.users (favorite, user_name, user_bio, user_picture, user_recipes, pantry) values (?, ?, ?, ?, ?, ?)");

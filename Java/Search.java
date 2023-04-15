@@ -76,23 +76,21 @@ public class Search {
       ResultSet rs = ps.executeQuery();
       rs.next();
       int lowestid = rs.getInt(10);
+      System.out.println(lowestid);
       for(int i : list){
-        i += lowestid - 1;
+        i += lowestid;
+        System.out.println("I:" + i);
       }
       return list;
     } 
     void fSearch(String s, Boolean allerg, Boolean uten){
         try{
         //Get indexes of all recipies with matching strings/ints
-        System.out.println("Here 1");
         ArrayList<Integer> indx = removeDuplicates(getindx()); 
-        System.out.println("Here 2");
         indx = IndxScale(indx);
-        System.out.println("Here 3");
         PreparedStatement ps = connect.prepareStatement
         ("select * from recipebuddy.recipes where id in (" + ListIntToString(indx) + ")");
         ResultSet rs = ps.executeQuery();
-        System.out.println("Here 4");
         //Filter Allergens and Utensils
         if(allerg || uten){
         while (rs.next()){

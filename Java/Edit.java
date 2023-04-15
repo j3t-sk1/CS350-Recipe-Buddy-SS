@@ -30,6 +30,7 @@ public class Edit {
         this.oTemp = oT;
         this.pic = pC;
         this.recipeID = rID;
+        System.out.println("Edit constructor called with ID: " + rID);
     }
 
     public void Update() throws SQLException {

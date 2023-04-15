@@ -85,12 +85,12 @@ public class Search {
     } 
     void fSearch(String s, Boolean allerg, Boolean uten){
         try{
-        //Get indexes of all recipies with matching strings/ints
+        //Get indexes of all recipies with matching strings/intsc
         ArrayList<Integer> indx = removeDuplicates(getindx()); 
         indx = IndxScale(indx);
         System.out.println(indx);
         PreparedStatement ps = connect.prepareStatement
-        ("select * from recipebuddy.recipes where id in (" + ListIntToString(indx) + ")");
+        ("select * from recipebuddy.recipes where id in (" + ListIntToString(indx) + ")", ResultSet.CONCUR_UPDATABLE);
         ResultSet rs = ps.executeQuery();
         //Filter Allergens and Utensils
         if(allerg || uten){

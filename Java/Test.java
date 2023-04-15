@@ -122,6 +122,6 @@ public class Test {
 
         System.out.println("Removing testing values from recipes table in database...");
 
-        printDB();
+       // printDB();
     }
 }

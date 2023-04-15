@@ -19,9 +19,11 @@ public static void main(String[] args) throws Exception {
         // Test.testadd(testaddS);
         Test.printDB();
 
+        Test.search("default", false, false);
+        Test.search("default", true, false);
         //Edit Test
-        Test.testedit();
-        Test.printDB();
+        // Test.testedit();
+        // Test.printDB();
         
 
         // Test.resetDB();

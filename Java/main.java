@@ -19,19 +19,20 @@ public static void main(String[] args) throws Exception {
         // Test.testadd(testaddS);
         Test.printDB();
 
+        Test.search("default", false, false);
+        Test.search("default", true, false);
         //Edit Test
-        Test.testedit();
-        Test.printDB();
+        // Test.testedit();
+        // Test.printDB();
         
         //User Test
         //String testUserString = "true username exampleBio picture (pizza pasta) (utensils allergens)";
         Test.testUser();
         
         Test.printDB();
+        
 
-
-        Test.resetDB();
-
+        // Test.resetDB();
     }
 }
 //String updatedRecipeName = "Spaghet";

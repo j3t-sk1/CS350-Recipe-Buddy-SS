@@ -52,7 +52,7 @@ public class Add{
     public void Create() throws SQLException {
         try {
             PreparedStatement ps = connect.prepareStatement
-            ("insert into recipebuddy.recipes (recipeName, ingredients, instructions, utensils, chefRate, prepTime, serveSize, oTemp, pic, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?)"); //modified
+            ("insert into recipebuddy.recipes (recipeName, ingredients, instructions, utensils, chefRate, prepTime, serveSize, oTemp, pic) values (?, ?, ?, ?, ?, ?, ?, ?, ?)"); //modified
             ps.setString(1, recipeName);
             ps.setString(2, String.join(" ", ingredients));
             ps.setString(3, instructions);

@@ -51,9 +51,8 @@ public class Add{
 
     public void Create() throws SQLException {
         try {
-            int size = database.getSize();
             PreparedStatement ps = connect.prepareStatement
-            ("insert into recipebuddy.recipes (recipeName, ingredients, instructions, utensils, chefRate, prepTime, serveSize, oTemp, pic, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"); //modified
+            ("insert into recipebuddy.recipes (recipeName, ingredients, instructions, utensils, chefRate, prepTime, serveSize, oTemp, pic) values (?, ?, ?, ?, ?, ?, ?, ?, ?)"); //modified
             ps.setString(1, recipeName);
             ps.setString(2, String.join(" ", ingredients));
             ps.setString(3, instructions);
@@ -63,7 +62,6 @@ public class Add{
             ps.setInt(7, serveSize);
             ps.setInt(8, oTemp);
             ps.setString(9, pic); 
-            ps.setInt(10, size + 1); 
             ps.executeUpdate();            
             ps.close();
         } catch (Exception e){

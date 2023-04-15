@@ -8,7 +8,7 @@ public class Search {
     private String searchInput = null;
     private ArrayList<String> allergens = new ArrayList<>();
     private ArrayList<String> utensils = new ArrayList<>();
-    Connection connect = null; 
+    static Connection connect = null; 
     
     public Search(Connection c, String input, ArrayList<String> a, ArrayList<String> u){
       this.connect = c;
@@ -24,7 +24,6 @@ public class Search {
       //Usnames, Ing, Ut; 
       Statement st = connect.createStatement();
       ResultSet rs = st.executeQuery("SELECT * from recipebuddy.recipes");
-      
       while (rs.next()){
         rNames.add(rs.getString("recipename")); 
         prepT.add(rs.getInt("preptime")); 
@@ -71,10 +70,21 @@ public class Search {
       }
       return result;
     }
+    public static ArrayList<Integer> IndxScale(ArrayList<Integer> list) throws SQLException{
+      PreparedStatement ps = connect.prepareStatement
+      ("select * from recipebuddy.recipes limit 1");
+      ResultSet rs = ps.executeQuery();
+      int lowestid = rs.getInt(10);
+      for(int i : list){
+        i += lowestid - 1;
+      }
+      return list;
+    } 
     void fSearch(String s, Boolean allerg, Boolean uten){
         try{
         //Get indexes of all recipies with matching strings/ints
-        ArrayList<Integer> indx = removeDuplicates(getindx());
+        ArrayList<Integer> indx = removeDuplicates(getindx()); 
+        indx = IndxScale(indx);
         PreparedStatement ps = connect.prepareStatement
         ("select * from recipebuddy.recipes where id in (" + ListIntToString(indx) + ")");
         ResultSet rs = ps.executeQuery();

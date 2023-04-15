@@ -12,7 +12,8 @@ public class User {
     private List<String> user_recipes;
     private List<String> pantry;
 
-    public User(boolean fav, String userName, String userBio, String userPic, List<String> userRecipes, List<String> p) {
+    public User(SQLConnect db, boolean fav, String userName, String userBio, String userPic, List<String> userRecipes, List<String> p) {
+        this.connect = db.getConn();
         this.favorite = fav;
         this.user_name = userName;
         this.user_bio = userBio;
@@ -21,10 +22,10 @@ public class User {
         this.pantry = p;
     }
 
-    public void Create(int size) throws SQLException {
+    public void Create() throws SQLException {
         try {
             PreparedStatement ps = connect.prepareStatement
-            ("insert into recipebuddy.users (favorite, user_name, user_bio, user_picture, user_recipes, pantry) values (?, ?, ?, ?, ?, ?)");
+            ("insert into recipebuddy.users (fav, userName, userBio, userPic, userRecipes, p) values (?, ?, ?, ?, ?, ?)");
             ps.setBoolean(1, favorite);
             ps.setString(2, user_name);
             ps.setString(3, user_bio);

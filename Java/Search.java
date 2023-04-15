@@ -90,7 +90,7 @@ public class Search {
         indx = IndxScale(indx);
         System.out.println(indx);
         PreparedStatement ps = connect.prepareStatement
-        ("select * from recipebuddy.recipes where id in (" + ListIntToString(indx) + ")", ResultSet.CONCUR_UPDATABLE);
+        ("select * from recipebuddy.recipes where id in (" + ListIntToString(indx) + ")", ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE);
         ResultSet rs = ps.executeQuery();
         //Filter Allergens and Utensils
         if(allerg || uten){
@@ -102,7 +102,7 @@ public class Search {
         }
           if(uten){
             for(String u : utensils){
-              if(!(rs.getString("utensils")).contains(u)){rs.deleteRow();}
+              if(!(rs.getString(4).contains(u))){rs.deleteRow();}
           }
         }
       }

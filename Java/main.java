@@ -19,7 +19,7 @@ public static void main(String[] args) throws Exception {
         // Test.testadd(testaddS);
         //Test.printDB();
 
-        Test.search("Name", false, false);
+        Test.search("Name", false, true);
         Test.search("Name", true, false);
         //Edit Test
         // Test.testedit();

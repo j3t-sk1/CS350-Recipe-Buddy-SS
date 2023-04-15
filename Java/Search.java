@@ -74,6 +74,7 @@ public class Search {
       PreparedStatement ps = connect.prepareStatement
       ("select * from recipebuddy.recipes limit 1");
       ResultSet rs = ps.executeQuery();
+      rs.next();
       int lowestid = rs.getInt(10);
       for(int i : list){
         i += lowestid - 1;

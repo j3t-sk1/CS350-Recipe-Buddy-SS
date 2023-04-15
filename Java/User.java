@@ -32,6 +32,7 @@ public class User {
             ps.setString(4, user_picture);
             ps.setString(5, String.join(" ", user_recipes));
             ps.setString(6, String.join(" ", pantry));
+            ps.executeUpdate();
         } catch (Exception e){
             System.out.println(e.toString());
         }

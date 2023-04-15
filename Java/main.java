@@ -19,8 +19,8 @@ public static void main(String[] args) throws Exception {
         // Test.testadd(testaddS);
         //Test.printDB();
 
-        Test.search("default", false, false);
-        Test.search("default", true, false);
+        Test.search("Name", false, false);
+        Test.search("Name", true, false);
         //Edit Test
         // Test.testedit();
         // Test.printDB();
@@ -32,7 +32,7 @@ public static void main(String[] args) throws Exception {
         //Test.printDBU();
         
 
-        Test.resetDB();
+       Test.resetDB();
     }
 }
 //String updatedRecipeName = "Spaghet";

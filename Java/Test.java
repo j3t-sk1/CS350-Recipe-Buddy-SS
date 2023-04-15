@@ -24,6 +24,16 @@ public class Test {
     public static void testadd(String s){
         
     }
+
+    public static void testUser() throws SQLException{
+        ArrayList<String> UserRecipes = new ArrayList<>();
+        UserRecipes.add("Default");
+        ArrayList<String> Pantry = new ArrayList<>();
+        Pantry.add("Default");
+        User userTest = new User(true, "username", "userbio", "picture", UserRecipes, Pantry);
+        userTest.Create();
+    }
+
     public static void search(String s, Boolean a, Boolean u){
         ArrayList<String> Allergens = new ArrayList<>();
         Allergens.add("Default");

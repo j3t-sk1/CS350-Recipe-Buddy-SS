@@ -15,24 +15,24 @@ public static void main(String[] args) throws Exception {
         //For add String
         //(Name (Ingredient Ingredient) (In stru ctions) (Utensil Utensil) rating preptime servesize oTemp picurl)
         String testaddS = "Pizza (Cheese Tomato) (cook lol) (rolling_pin oven) 5 40 2 400 html";
-        // Test.testadd();
+        Test.testadd();
         // Test.testadd(testaddS);
         //Test.printDB();
 
-        // Test.search("default", false, false);
-        // Test.search("default", true, false);
+        Test.search("default", false, false);
+        Test.search("default", true, false);
         //Edit Test
         // Test.testedit();
         // Test.printDB();
         
         //User Test
         //String testUserString = "true username exampleBio picture (pizza pasta) (utensils allergens)";
-        Test.testUser();
+        //Test.testUser();
         
-        Test.printDBU();
+        //Test.printDBU();
         
 
-        // Test.resetDB();
+        Test.resetDB();
     }
 }
 //String updatedRecipeName = "Spaghet";

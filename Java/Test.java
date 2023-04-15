@@ -30,7 +30,7 @@ public class Test {
         UserRecipes.add("Default");
         ArrayList<String> Pantry = new ArrayList<>();
         Pantry.add("Default");
-        User userTest = new User(Database, true, "username", "userbio", "picture", UserRecipes, Pantry);
+        User userTest = new User(Database, true, "username", "userbio", "picture", UserRecipes, Pantry, "comment");
         userTest.Create();
     }
 

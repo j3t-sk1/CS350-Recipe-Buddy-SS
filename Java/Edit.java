@@ -35,7 +35,7 @@ public class Edit {
 
     public void Update() throws SQLException {
         try {
-            PreparedStatement ps = connect.prepareStatement("UPDATE recipebuddy.recipes  SET recipeName = ?, ingredients = ?, instructions = ?, utensils = ?, chefRate = ?, prepTime = ?, serveSize = ?, oTemp = ?, pic =? WHERE id = ?");
+            PreparedStatement ps = connect.prepareStatement("UPDATE recipebuddy.recipes SET recipeName = ?, ingredients = ?, instructions = ?, utensils = ?, chefRate = ?, prepTime = ?, serveSize = ?, oTemp = ?, pic =? WHERE id = ?");
             ps.setString(1, recipeName);
             ps.setString(2, String.join(" ", ingredients));
             ps.setString(3, instructions);
@@ -52,26 +52,26 @@ public class Edit {
             System.out.println(e.toString());
         }
     }
-    public void Updater() throws Exception {
+    // public void Updater() throws Exception {
 
-        PreparedStatement updateStmt = connect.prepareStatement( "UPDATE recipebuddy.recipes SET recipeName = ?, ingredients = ?, instructions = ?, utensils = ?, chefRate = ?, prepTime = ?, serveSize = ?, oTemp = ?, pic = ? WHERE id = ?");
+    //     PreparedStatement updateStmt = connect.prepareStatement( "UPDATE recipebuddy.recipes SET recipeName = ?, ingredients = ?, instructions = ?, utensils = ?, chefRate = ?, prepTime = ?, serveSize = ?, oTemp = ?, pic = ? WHERE id = ?");
         
-        // Set the parameter values
-        updateStmt.setString(1, recipeName);
-        updateStmt.setString(2, ingredients.toString());
-        updateStmt.setString(3, instructions);
-        updateStmt.setString(4, utensils.toString());
-        updateStmt.setInt(5, chefRate);
-        updateStmt.setInt(6, prepTime);
-        updateStmt.setInt(7, serveSize);
-        updateStmt.setInt(8, oTemp);
-        updateStmt.setString(9, pic);
-        updateStmt.setInt(10, recipeID);
+    //     // Set the parameter values
+    //     updateStmt.setString(1, recipeName);
+    //     updateStmt.setString(2, ingredients.toString());
+    //     updateStmt.setString(3, instructions);
+    //     updateStmt.setString(4, utensils.toString());
+    //     updateStmt.setInt(5, chefRate);
+    //     updateStmt.setInt(6, prepTime);
+    //     updateStmt.setInt(7, serveSize);
+    //     updateStmt.setInt(8, oTemp);
+    //     updateStmt.setString(9, pic);
+    //     updateStmt.setInt(10, recipeID);
         
-        // Execute the update
-        updateStmt.executeUpdate();
+    //     // Execute the update
+    //     updateStmt.executeUpdate();
         
-        // Print a message indicating success
-        System.out.println("Recipe with ID " + recipeID + " has been updated in the database.");
-    }
+    //     // Print a message indicating success
+    //     System.out.println("Recipe with ID " + recipeID + " has been updated in the database.");
+    // }
 }

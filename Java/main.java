@@ -14,12 +14,12 @@ public static void main(String[] args) throws Exception {
         //Testing
         //For add String
         //(Name (Ingredient Ingredient) (In stru ctions) (Utensil Utensil) rating preptime servesize oTemp picurl)
-        String testaddS = "Pizza (Cheese Tomato) (cook lol) (rolling_pin oven) 5 40 2 400 html";
-        Test.testadd();
-        //Test.testadd(testaddS);
-        Test.printDB();
+        // String testaddS = "Pizza (Cheese Tomato) (cook lol) (rolling_pin oven) 5 40 2 400 html";
+        // Test.testadd();
+        // //Test.testadd(testaddS);
+        // Test.printDB();
 
-        Test.resetDB();
+        // Test.resetDB();
 
         //Doing Add before edit
         String addrecipeName = "Pizza";
@@ -33,9 +33,7 @@ public static void main(String[] args) throws Exception {
         String addpic = "pizza.jpg";
         
         Add pizzaRecipe = new Add(Database, addrecipeName, addingredients, addinstructions, addutensils, addchefRate, addprepTime, addserveSize, addoTemp, addpic);
-        
-        int newRecipeID = pizzaRecipe.Create();
-        System.out.println("Pizza recipe added to the database with ID: " + newRecipeID);
+        pizzaRecipe.Create();
 
         //Test for edit
         // Define the updated recipe information
@@ -50,7 +48,7 @@ public static void main(String[] args) throws Exception {
         int updatedOTemp = 9;
         String updatedPic = "spaghet.jpg";
         // Create an instance of the Edit class and update the recipe in the database
-        Edit edit = new Edit(Database, newRecipeID, updatedRecipeName, updatedIngredients, updatedInstructions, updatedUtensils, updatedChefRate, updatedPrepTime, updatedServeSize, updatedOTemp, updatedPic);
+        Edit edit = new Edit(Database, 1, updatedRecipeName, updatedIngredients, updatedInstructions, updatedUtensils, updatedChefRate, updatedPrepTime, updatedServeSize, updatedOTemp, updatedPic);
         edit.Update();
     }
 }

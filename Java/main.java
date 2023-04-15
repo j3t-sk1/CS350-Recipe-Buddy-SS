@@ -25,6 +25,12 @@ public static void main(String[] args) throws Exception {
         // Test.testedit();
         // Test.printDB();
         
+        //User Test
+        //String testUserString = "true username exampleBio picture (pizza pasta) (utensils allergens)";
+        Test.testUser();
+        
+        Test.printDB();
+        
 
         // Test.resetDB();
     }

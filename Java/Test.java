@@ -12,11 +12,6 @@ public class Test {
     }
 
     public static void testadd() throws SQLException{
-        PreparedStatement ps = Database.getConn().prepareStatement
-        ("select count(*) from recipebuddy.recipes");
-        ResultSet rs = ps.executeQuery();
-        rs.next();
-        int count = rs.getInt(1);
         ArrayList<String> Ingredient = new ArrayList<>();
         Ingredient.add("Default");
         Ingredient.add("Default2");
@@ -24,7 +19,7 @@ public class Test {
         Utensils.add("Default");
         Utensils.add("Default2");
         Add defaultAdd = new Add(Database, "Name", Ingredient, "Instructions for the food", Utensils, 1, 20, 1, 500, "Html");
-        defaultAdd.Create(count);
+        defaultAdd.Create();
     }
     public static void testadd(String s){
         
@@ -36,6 +31,19 @@ public class Test {
         Utensils.add("Default");
         Search testS = new Search(Database.getConn(), s, Allergens, Utensils);
         testS.fSearch(s, a, u);
+    }
+    public static void testedit() throws SQLException{
+        ArrayList<String> Ingredient = new ArrayList<>();
+        Ingredient.add("DefaultE");
+        Ingredient.add("DefaultE2");
+        ArrayList<String> Utensils = new ArrayList<>();
+        Utensils.add("DefaultE");
+        Utensils.add("DefaultE2");
+        Edit defaultEdit = new Edit(Database, 1, "NameE", Ingredient, "Instructions for edit", Utensils, 2, 30, 2, 300, "HtmlE");
+        defaultEdit.Update();
+    }
+    public static void testedit(String s){
+
     }
     public static void printDB() throws SQLException{
         PreparedStatement ps = Database.getConn().prepareStatement

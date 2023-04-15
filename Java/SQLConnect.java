@@ -23,6 +23,14 @@ public class SQLConnect {
     public Connection getConn() {
         return connect;
     }
+    public int getSize() throws SQLException{
+        PreparedStatement ps = this.getConn().prepareStatement
+        ("select count(*) from recipebuddy.recipes");
+        ResultSet rs = ps.executeQuery();
+        rs.next();
+        int count = rs.getInt(1);
+        return count;
+    }
     
     public void close() {
         try {

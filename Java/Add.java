@@ -49,10 +49,10 @@ public class Add{
         this.pic = pC;
     }
 
-    public void Create(int size) throws SQLException {
+    public void Create() throws SQLException {
         try {
             PreparedStatement ps = connect.prepareStatement
-            ("insert into recipebuddy.recipes (recipeName, ingredients, instructions, utensils, chefRate, prepTime, serveSize, oTemp, pic, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"); //modified
+            ("insert into recipebuddy.recipes (recipeName, ingredients, instructions, utensils, chefRate, prepTime, serveSize, oTemp, pic, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?)"); //modified
             ps.setString(1, recipeName);
             ps.setString(2, String.join(" ", ingredients));
             ps.setString(3, instructions);
@@ -62,32 +62,10 @@ public class Add{
             ps.setInt(7, serveSize);
             ps.setInt(8, oTemp);
             ps.setString(9, pic); 
-            ps.setInt(10, size + 1); 
             ps.executeUpdate();            
             ps.close();
         } catch (Exception e){
             System.out.println(e.toString());
         }
     }
-    public int Create() throws SQLException {
-        String query = "INSERT INTO recipebuddy.recipes (recipeName, ingredients, instructions, utensils, chefRate, prepTime, serveSize, oTemp, pic) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        PreparedStatement pstmt = connect.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
-        pstmt.setString(1, recipeName);
-        pstmt.setString(2, String.join(",", ingredients));
-        pstmt.setString(3, instructions);
-        pstmt.setString(4, String.join(",", utensils));
-        pstmt.setInt(5, chefRate);
-        pstmt.setInt(6, prepTime);
-        pstmt.setInt(7, serveSize);
-        pstmt.setInt(8, oTemp);
-        pstmt.setString(9, pic);
-        pstmt.executeUpdate();
-        ResultSet keys = pstmt.getGeneratedKeys();
-        int newRecipeID = 0;
-        if (keys.next()) {
-            newRecipeID = keys.getInt(1);
-        }
-        return newRecipeID;
-    }
-    
 } 

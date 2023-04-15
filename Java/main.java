@@ -19,6 +19,8 @@ public static void main(String[] args) throws Exception {
         //Test.testadd(testaddS);
         Test.printDB();
 
+        Test.resetDB();
+
         //Doing Add before edit
         String addrecipeName = "Pizza";
         List<String> addingredients = Arrays.asList("Dough", "Tomato sauce", "Mozzarella cheese", "Love");

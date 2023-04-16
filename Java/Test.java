@@ -24,6 +24,16 @@ public class Test {
     public static void testadd(String s){
         
     }
+
+    public static void testUser() throws SQLException{
+        ArrayList<String> UserRecipes = new ArrayList<>();
+        UserRecipes.add("Default");
+        ArrayList<String> Pantry = new ArrayList<>();
+        Pantry.add("Default");
+        User userTest = new User(Database, true, "username", "userbio", "picture", UserRecipes, Pantry, "comment");
+        userTest.Create();
+    }
+
     public static void search(String s, Boolean a, Boolean u){
         ArrayList<String> Allergens = new ArrayList<>();
         Allergens.add("Default");
@@ -78,12 +88,40 @@ public class Test {
             System.out.println("PictureUrl: " + pic);
         }
     }
+
+    public static void printDBU() throws SQLException{
+        PreparedStatement ps = Database.getConn().prepareStatement
+        ("select * from recipebuddy.users");
+        ResultSet rs = ps.executeQuery();
+        
+        System.out.println("The columns in the table are: ");
+        System.out.println("Table: " + rs.getMetaData().getTableName(1));
+        for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++){
+            System.out.println
+            ("Column " + i + " " + rs.getMetaData().getColumnName(i));
+        }
+
+        while (rs.next()) {
+            boolean fav = rs.getBoolean(1);
+            String uN = rs.getString(2);
+            String uB = rs.getString(3);
+            String uP = rs.getString(4);
+            String uR = rs.getString(5);
+            String pT = rs.getString(6);
+            System.out.println("Favorite: " + fav);
+            System.out.println("Username: " + uN);
+            System.out.println("Bio: " + uB);
+            System.out.println("Pic: " + uP);
+            System.out.println("Recipes: " + uR);
+            System.out.println("Pantry: " + pT);
+        }
+    }
     public static void resetDB() throws SQLException{
         PreparedStatement ps = Database.getConn().prepareStatement("DELETE FROM recipes WHERE recipeName <> ''");
         ps.executeUpdate();
 
         System.out.println("Removing testing values from recipes table in database...");
 
-        printDB();
+       // printDB();
     }
 }

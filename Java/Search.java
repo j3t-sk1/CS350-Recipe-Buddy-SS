@@ -38,7 +38,8 @@ public class Search {
           int temp = Integer.parseInt(s);
           if(temp == prepT.get(i)){indx.add(i);}
         }
-          else if(s == rNames.get(i)){indx.add(i);}
+          else if(s.equals(rNames.get(i))){
+            indx.add(i);}
         }
       } 
       return indx;
@@ -71,24 +72,26 @@ public class Search {
       return result;
     }
     public static ArrayList<Integer> IndxScale(ArrayList<Integer> list) throws SQLException{
+      ArrayList<Integer> temp = new ArrayList<>();
       PreparedStatement ps = connect.prepareStatement
       ("select * from recipebuddy.recipes limit 1");
       ResultSet rs = ps.executeQuery();
+      rs.next();
       int lowestid = rs.getInt(10);
-      for(int i : list){
-        i += lowestid - 1;
+      for(int i = 0; i < list.size(); i++){
+        temp.add(list.get(i) + lowestid);
       }
-      return list;
+      return temp;
     } 
     void fSearch(String s, Boolean allerg, Boolean uten){
         try{
-        //Get indexes of all recipies with matching strings/ints
+        //Get indexes of all recipies with matching strings/intsc
         ArrayList<Integer> indx = removeDuplicates(getindx()); 
         indx = IndxScale(indx);
+        System.out.println(indx);
         PreparedStatement ps = connect.prepareStatement
-        ("select * from recipebuddy.recipes where id in (" + ListIntToString(indx) + ")");
+        ("select * from recipebuddy.recipes where id in (" + ListIntToString(indx) + ")", ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE);
         ResultSet rs = ps.executeQuery();
-        
         //Filter Allergens and Utensils
         if(allerg || uten){
         while (rs.next()){
@@ -99,7 +102,7 @@ public class Search {
         }
           if(uten){
             for(String u : utensils){
-              if(!(rs.getString("utensils")).contains(u)){rs.deleteRow();}
+              if(!(rs.getString(4).contains(u))){rs.deleteRow();}
           }
         }
       }

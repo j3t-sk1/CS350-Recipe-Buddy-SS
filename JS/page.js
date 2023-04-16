@@ -1,62 +1,61 @@
-// Timer function:
-let hour = 0;
-let minute = 0;
-let second = 0;
-let millisecond = 0;
+// // Timer function:
+// let hour = 0;
+// let minute = 0;
+// let second = 0;
+// let millisecond = 0;
 
-let cron;
-
+// let cron;
 document.form_main.start.onclick = () => start();
 document.form_main.pause.onclick = () => pause();
 document.form_main.reset.onclick = () => reset();
 
-function start() {
-  pause();
-  cron = setInterval(() => { timer(); }, 10);
-}
+// function start() {
+//   pause();
+//   cron = setInterval(() => { timer(); }, 10);
+// }
 
-function pause() {
-  clearInterval(cron);
-}
+// function pause() {
+//   clearInterval(cron);
+// }
 
-function reset() {
-  hour = 0;
-  minute = 0;
-  second = 0;
-  millisecond = 0;
-  document.getElementById('hour').innerText = '00';
-  document.getElementById('minute').innerText = '00';
-  document.getElementById('second').innerText = '00';
-  document.getElementById('millisecond').innerText = '000';
-}
+// function reset() {
+//   hour = 0;
+//   minute = 0;
+//   second = 0;
+//   millisecond = 0;
+//   document.getElementById('hour').innerText = '00';
+//   document.getElementById('minute').innerText = '00';
+//   document.getElementById('second').innerText = '00';
+//   document.getElementById('millisecond').innerText = '000';
+// }
 
-function timer() {
-  if ((millisecond += 10) == 1000) {
-    millisecond = 0;
-    second++;
-  }
-  if (second == 60) {
-    second = 0;
-    minute++;
-  }
-  if (minute == 60) {
-    minute = 0;
-    hour++;
-  }
-  document.getElementById('hour').innerText = returnData(hour);
-  document.getElementById('minute').innerText = returnData(minute);
-  document.getElementById('second').innerText = returnData(second);
-  document.getElementById('millisecond').innerText = returnData(millisecond);
-}
+// function timer() {
+//   if ((millisecond += 10) == 1000) {
+//     millisecond = 0;
+//     second++;
+//   }
+//   if (second == 60) {
+//     second = 0;
+//     minute++;
+//   }
+//   if (minute == 60) {
+//     minute = 0;
+//     hour++;
+//   }
+//   document.getElementById('hour').innerText = returnData(hour);
+//   document.getElementById('minute').innerText = returnData(minute);
+//   document.getElementById('second').innerText = returnData(second);
+//   document.getElementById('millisecond').innerText = returnData(millisecond);
+// }
 
-function returnData(input) {
-  return input >= 10 ? input : `0${input}`
-}
-// -- End of timer function
+// function returnData(input) {
+//   return input >= 10 ? input : `0${input}`
+// }
+ // -- End of timer function
 
 
 
-const modal = document.querySelector(".modal");
+ const modal = document.querySelector(".modal");
 const trigger = document.querySelector(".trigger");
 const trigger2 = document.querySelector(".trigger2");
 const trigger3 = document.querySelector(".trigger3");
@@ -70,9 +69,9 @@ function toggleModal() {
 }
 
 function windowOnClick(event) {
-    if (event.target === modal) {
-        toggleModal();
-    }
+  if (event.target === modal) {
+    toggleModal();
+  }
 }
 
 trigger.addEventListener("click", toggleModal);
@@ -97,15 +96,49 @@ $( '.dropdown-menu a' ).on( 'click', function( event ) {
        idx;
 
    if ( ( idx = options.indexOf( val ) ) > -1 ) {
-      options.splice( idx, 1 );
-      setTimeout( function() { $inp.prop( 'checked', false ) }, 0);
-   } else {
+     options.splice( idx, 1 );
+     setTimeout( function() { $inp.prop( 'checked', false ) }, 0);
+    } else {
       options.push( val );
       setTimeout( function() { $inp.prop( 'checked', true ) }, 0);
-   }
+  }
 
    $( event.target ).blur();
 
    console.log( options );
    return false;
 });
+
+var hours, minutes, seconds, countdown;
+
+function timer() {
+  // Get the user input
+  hours = document.getElementById("hours").value;
+  minutes = document.getElementById("minutes").value;
+  seconds = document.getElementById("seconds").value;
+
+  // Convert user input to seconds
+  var totalSeconds = (parseInt(hours) * 60 * 60) + (parseInt(minutes) * 60) + parseInt(seconds);
+
+  // Set the timer
+  countdown = setInterval(function () {
+    // Calculate hours, minutes, and seconds
+    var hoursLeft = Math.floor(totalSeconds / 3600);
+    var minutesLeft = Math.floor((totalSeconds - (hoursLeft * 3600)) / 60);
+    var secondsLeft = totalSeconds - (hoursLeft * 3600) - (minutesLeft * 60);
+
+    // Display the countdown
+    document.getElementById("timer").innerHTML = hoursLeft + ":" + minutesLeft + ":" + secondsLeft;
+
+    // Stop the timer when it reaches zero
+    if (totalSeconds == 0) {
+      clearInterval(countdown);
+    } else {
+      totalSeconds--;
+    }
+  }, 1000);
+}
+
+function stopCountdown() {
+  clearInterval(countdown);
+}

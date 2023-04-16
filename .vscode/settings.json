@@ -4,5 +4,6 @@
         "Java/mysql-connector-j-8.0.32.jar",
         "Database/mysql-connector-j-8.0.32.jar"
     ],
-    "java.debug.settings.onBuildFailureProceed": true
+    "java.debug.settings.onBuildFailureProceed": true,
+    "liveServer.settings.port": 5501
 }

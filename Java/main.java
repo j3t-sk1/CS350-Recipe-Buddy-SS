@@ -32,6 +32,9 @@ public static void main(String[] args) throws Exception {
         //Test.printDBU();
         
 
+       ImageHandler test = new ImageHandler();
+       System.out.println(test.addUrl("chicken", "rice"));
+
        Test.resetDB();
     }
 }

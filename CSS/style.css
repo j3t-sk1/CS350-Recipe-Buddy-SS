@@ -1827,6 +1827,10 @@ p.search_text{
   transition-duration: .35s;
 }
 
+.time {
+  width: 50%;
+}
+
 @media (max-width: 1000px) {
   .small {
     font-size: 200%;

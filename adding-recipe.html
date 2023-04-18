@@ -49,17 +49,10 @@
 
       <header>
         <div class="header_info">
-
           <div class="header_bar">
-
-
             <h1 class="small">RecipeBuddy</h1>
-
-
             <div class="search">
               <form>
-
-
                 <input type="text" class="searching" name="search"
                   placeholder="Search" maxlength="100"/>
 
@@ -74,31 +67,23 @@
             <a href="editing-recipe.html"><img src ="icons\pencil-square.svg" class="b_add" alt="edit" width="43" height="43"/></a>
             <a href="delete2.html"><img src ="icons\trash3-fill.svg" class="b_delete" alt="delete" width="40" height="40"/></a>
           </header>
+
           <article><!-- page content -->
             <div class="row no-gutters">
               <div class="col-md-1 no-gutters">
                 <div class="leftside">
                   <div class="left_1">
-                    <!-- <div class="timer">
+                    <div class="timer">
                       <form class="timing" name="form_main">
-                        <div>
-                          <span id="hour">00</span>:<span id="minute">00</span>:<span
-                            id="second">00</span>:<span id="millisecond">000</span>
-                        </div>
-                        <br />
 
-                        <button type="button" name="start">start</button>
-                        <button type="button" name="pause">pause</button>
-                        <button type="button" name="reset">reset</button> -->
-                        <div>
-                          <input type="text" id="hours" placeholder="Hours">
-                          <input type="text" id="minutes" placeholder="Minutes">
-                          <input type="text" id="seconds" placeholder="Seconds">
-                          <button onclick="timer()">Start Timer</button>
-                          <button onclick="stopCountdown()">Stop Timer</button>
-                        </div>
-                        <div id="timer"></div>
-                      </form>
+                      <div>
+                        <input type="text" id="hours" placeholder="Hours">
+                        <input type="text" id="minutes" placeholder="Minutes">
+                        <input type="text" id="seconds" placeholder="Seconds">
+                        <button onclick="timer()">Start Timer</button>
+                        <button onclick="stopCountdown()">Stop Timer</button>
+                      </div>
+
                     </div>
                   </div>
                   <div class="left_2">
@@ -133,52 +118,62 @@
                 <div class="rightside">
                   <div class="main_page">
 
-                    <p class="adding-recipe" style="color:rgb(231, 228, 28)">
-                      Add Recipe </p>
-                    <div class="add-divbox">
-                      <input type="text" class="recipe-name" name="recipename"
-                        placeholder="Recipe Name">
-                      <input type="text" class="recipe-rate" name="reciperate"
-                        placeholder="Rating">
-                      <input type="text" class="oven-temp" name="oventemp"
-                        placeholder="Oven/Stove Temp">
-                      <select class="temp-type">
-                        <option value="Fahrenheit">°F</option>
-                        <option value="Celcius">°C</option>
-                      </select>
-                      <select class="serv-size">
-                        <option value="title"><span class="serv-size-word">Serving
-                            Size</span></option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10+">10+</option>
-                      </select>
-                      <textarea class="utensilslist" name="Utensils"
-                        placeholder="List Utensils Used"></textarea>
-                      <p class="picturebox">Picture</p>
-                    </div>
-                    <div class="pantry">
-                      <textarea class="ingredientslist" name="Ingredients"
-                        placeholder="List Ingredients"></textarea>
-                    </div>
-                    <div class="instruct-box">
-                      <textarea class="instructions" name="Intruct"
-                        placeholder="Intructions"></textarea>
-                    </div>
-                    <div class="savebutton">
-                      <button class="add">
-                        Save
-                      </button>
-                      <button class="add">
-                        Cancel
-                      </button>
+                    <div class="rightside">
+                      <div class="main_page">
+                        <p class="adding-recipe" style="color:rgb(231, 228, 28)">
+                          Add Recipe </p>
+                        <div class="add-divbox">
+                          <input type="text" class="recipe-name" name="recipename"
+                            placeholder="Recipe Name">
+                          <input type="text" class="recipe-rate" name="reciperate"
+                            placeholder="Rating">
+                          <input type="text" class="oven-temp" name="oventemp"
+                            placeholder="Oven/Stove Temp">
+                          <select class="temp-type">
+                            <option value="Fahrenheit">°F</option>
+                            <option value="Celcius">°C</option>
+                          </select>
+                          <select class="serv-size">
+                            <option value="title"><span class="serv-size-word">Serving
+                                Size</span></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10+">10+</option>
+                          </select>
+                          <textarea class="utensilslist" name="Utensils"
+                            placeholder="List Utensils Used"></textarea>
+                          <p class="picturebox">Picture</p>
+                          <!-- <form> --> <!-- *ONLY USE IF NECESSARY, API SHOULD COVER THIS FUNCTIONALITY --> 
+                            <!-- <label for="image">Upload an image:</label> -->
+                            <!-- <input type="file" id="image" name="image"> -->
+                            <!-- <button type="submit">Submit</button> -->
+                          <!-- </form> -->
+                          
+                        </div>
+                        <div class="pantry">
+                          <textarea class="ingredientslist" name="Ingredients"
+                            placeholder="List Ingredients"></textarea>
+                        </div>
+                        <div class="instruct-box">
+                          <textarea class="instructions" name="Intruct"
+                            placeholder="Intructions"></textarea>
+                        </div>
+                        <div class="savebutton">
+                          <button class="add">
+                            Save
+                          </button>
+                          <button class="add">
+                            Cancel
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

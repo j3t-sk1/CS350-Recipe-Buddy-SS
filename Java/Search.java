@@ -11,7 +11,7 @@ public class Search {
     static Connection connect = null; 
     
     public Search(Connection c, String input, ArrayList<String> a, ArrayList<String> u){
-      this.connect = c;
+      Search.connect = c;
       this.searchInput = input; 
       this.allergens = a;
       this.utensils = u;
@@ -97,7 +97,7 @@ public class Search {
         while (rs.next()){
           if(allerg){
           for(String a :allergens){
-            if((rs.getString("ingredients")).contains(a)){rs.deleteRow();}
+            if(((rs.getString("ingredients")).contains(a)) == false){rs.deleteRow();}
           }
         }
           if(uten){

@@ -8,7 +8,7 @@ import java.util.*;
 public class Test {
     private static SQLConnect Database = new SQLConnect();
     Test(SQLConnect d){
-        this.Database = d;
+        Test.Database = d;
     }
 
     public static void testadd() throws SQLException{

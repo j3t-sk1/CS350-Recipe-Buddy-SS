@@ -47,7 +47,7 @@
 
 <body>
   <div class="timer"></div>
-  <button onclick="location.href='timer_testp2.html'">Go to test 2<1/button>
+  <button onclick="location.href='timer_test.html'">Go to test 1<1/button>
   <script>
     class Timer {
   constructor(root) {
@@ -66,6 +66,11 @@
 
 
     // // Check if a timer was previously started and if so, resume it
+    // const storedSeconds = parseInt(localStorage.getItem("remainingSeconds"));
+    // if (!isNaN(storedSeconds) && storedSeconds > 0) {
+    //   this.remainingSeconds = storedSeconds;
+    //   this.start();
+    // }    
     const timerStart = parseInt(localStorage.getItem('timerStart'));
     const remainingTime = parseInt(localStorage.getItem('remainingTime'));
     if (timerStart && remainingTime) {
@@ -89,7 +94,11 @@
       const inputMinutes = prompt("Enter number of minutes:");
 
       const totalSeconds = inputHours * 3600 + inputMinutes * 60;
-
+      // if (inputMinutes < 60) {
+      //   this.stop();
+      //   this.remainingSeconds = inputMinutes * 60;
+      //   this.updateInterfaceTime();
+      // }
       if (!isNaN(inputHours) && !isNaN(inputMinutes) && inputHours >= 0 && inputMinutes >= 0) {
         this.stop();
         this.remainingSeconds = totalSeconds;
@@ -98,6 +107,12 @@
       }
     });
 
+    // window.addEventListener('beforeunload', function() {
+    //   const now = Date.now();
+    //   const remainingTime = this.remainingSeconds;
+    //   localStorage.setItem('timerStart', now);
+    //   localStorage.setItem('remainingTime', remainingTime);
+    // }.bind(this));
         // Store the timer in localStorage when the user leaves the page
     window.addEventListener('beforeunload', () => {
       localStorage.setItem('timerStart', Date.now());

@@ -39,6 +39,7 @@ public class Test {
         Pantry.add("Default");
         User userTest = new User(Database, true, "username", "userbio", "picture", UserRecipes, Pantry, "comment");
         userTest.Create();
+
     }
 
     public static void search(String s, Boolean a, Boolean u){
@@ -56,11 +57,18 @@ public class Test {
         ArrayList<String> Utensils = new ArrayList<>();
         Utensils.add("DefaultE");
         Utensils.add("DefaultE2");
-        Edit defaultEdit = new Edit(Database, 1, "NameE", Ingredient, "Instructions for edit", Utensils, 2, 30, 2, 300, "HtmlE");
+        Edit defaultEdit = new Edit(Database, 1, "NameE", Ingredient, "Instructions for edit", Utensils, 2, 30, 2, 300);
         defaultEdit.Update();
     }
-    public static void testedit(String s){
+    public static void testedit(String s, Int i){
+        String[] Split = s.split("(", 4);
+        String[] Ingredients = Split[1].split(")");   
+        String[] Instructions = Split[2].split(")"); 
+        String[] Utensils = Split[3].split(")"); 
+        String[] Nums = Split[4].split(" "); 
 
+        Edit testAdd = new Edit
+        (Database,i,Split[0],Arrays.asList(Ingredients),Instructions[0],Arrays.asList(Utensils),Integer.parseInt(Nums[0]),Integer.parseInt(Nums[1]),Integer.parseInt(Nums[2]),Integer.parseInt(Nums[3]));
     }
 
     public static void testimage(){

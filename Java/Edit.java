@@ -17,7 +17,7 @@ public class Edit {
     private String pic;
     private int recipeID;
 
-    public Edit(SQLConnect Data, int rID,String rN, List<String> iG, String iN, List<String> uT, int cR, int pT, int sS, int oT, String pC) {
+    public Edit(SQLConnect Data, int rID,String rN, List<String> iG, String iN, List<String> uT, int cR, int pT, int sS, int oT) {
         this.database = Data;
         this.connect = database.getConn();
         this.recipeName = rN;
@@ -28,13 +28,12 @@ public class Edit {
         this.prepTime = pT;
         this.serveSize = sS;
         this.oTemp = oT;
-        this.pic = pC;
         this.recipeID = rID;
-        System.out.println("Edit constructor called with ID: " + rID);
     }
 
     public void Update() throws SQLException {
         try {
+            ImageHandler img = new ImageHandler();
             PreparedStatement ps = connect.prepareStatement("UPDATE recipebuddy.recipes SET recipeName = ?, ingredients = ?, instructions = ?, utensils = ?, chefRate = ?, prepTime = ?, serveSize = ?, oTemp = ?, pic =? WHERE id = ?");
             ps.setString(1, recipeName);
             ps.setString(2, String.join(" ", ingredients));
@@ -44,8 +43,7 @@ public class Edit {
             ps.setInt(6, prepTime);
             ps.setInt(7, serveSize);
             ps.setInt(8, oTemp);
-            ps.setString(9, pic);
-            ps.setInt(10, recipeID);
+            ps.setString(9, img.addUrl(recipeName, ingredients.get(1)));
             ps.executeUpdate();
             ps.close();
         } catch (SQLException e) {

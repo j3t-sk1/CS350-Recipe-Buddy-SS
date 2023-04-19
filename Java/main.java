@@ -13,8 +13,8 @@ public static void main(String[] args) throws Exception {
 
         //Add Test
         //For add String
-        //(Name (Ingredient Ingredient) (In stru ctions) (Utensil Utensil) rating preptime servesize oTemp picurl)
-        String testaddS = "Pizza (Cheese Tomato) (cook lol) (rolling_pin oven) 5 40 2 400 html";
+        //(Name (Ingredient Ingredient) (In stru ctions) (Utensil Utensil) rating preptime servesize oTemp)
+        String testaddS = "Pizza (Cheese Tomato) (cook lol) (rolling_pin oven) 5 40 2 400";
         Test.testadd();
         // Test.testadd(testaddS);
         //Test.printDB();
@@ -38,14 +38,5 @@ public static void main(String[] args) throws Exception {
        Test.resetDB();
     }
 }
-//String updatedRecipeName = "Spaghet";
-// List<String> updatedIngredients = Arrays.asList("spaghet", "meatbol", "sauce", "onion", "garlic");
-// String updatedInstructions = "1. Cook spaghet\n2. In a large pan, add onion and garlic. \n3. Add meatbol. \n4. Add sauce. \n5. Serve spaghet.";
-// List<String> updatedUtensils = Arrays.asList("large pan", "spatula", "pot");
-// int updatedChefRate = 4;
-// int updatedPrepTime = 20;
-// int updatedServeSize = 6;
-// int updatedOTemp = 9;
-// String updatedPic = "spaghet.jpg";
 
 

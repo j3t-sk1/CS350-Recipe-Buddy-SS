@@ -18,11 +18,18 @@ public class Test {
         ArrayList<String> Utensils = new ArrayList<>();
         Utensils.add("Default");
         Utensils.add("Default2");
-        Add defaultAdd = new Add(Database, "Name", Ingredient, "Instructions for the food", Utensils, 1, 20, 1, 500, "Html");
+        Add defaultAdd = new Add(Database, "Name", Ingredient, "Instructions for the food", Utensils, 1, 20, 1, 500);
         defaultAdd.Create();
     }
     public static void testadd(String s){
-        
+        String[] Split = s.split("(", 4);
+        String[] Ingredients = Split[1].split(")");   
+        String[] Instructions = Split[2].split(")"); 
+        String[] Utensils = Split[3].split(")"); 
+        String[] Nums = Split[4].split(" "); 
+
+        Add testAdd = new Add
+        (Database,Split[0],Arrays.asList(Ingredients),Instructions[0],Arrays.asList(Utensils),Integer.parseInt(Nums[0]),Integer.parseInt(Nums[1]),Integer.parseInt(Nums[2]),Integer.parseInt(Nums[3]));
     }
 
     public static void testUser() throws SQLException{
@@ -54,6 +61,16 @@ public class Test {
     }
     public static void testedit(String s){
 
+    }
+
+    public static void testimage(){
+        ImageHandler defaultImg = new ImageHandler();
+        System.out.println(defaultImg.addUrl("Salad", "Chicken"));
+        System.out.println(defaultImg.addUrl("1", null));
+    }
+    public static void testimage(String n, String i){
+        ImageHandler defaultImg = new ImageHandler();
+        System.out.println(defaultImg.addUrl("n", "i"));
     }
     public static void printDB() throws SQLException{
         PreparedStatement ps = Database.getConn().prepareStatement

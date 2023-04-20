@@ -60,7 +60,7 @@ public class Test {
         Edit defaultEdit = new Edit(Database, 1, "NameE", Ingredient, "Instructions for edit", Utensils, 2, 30, 2, 300);
         defaultEdit.Update();
     }
-    public static void testedit(String s, Int i){
+    public static void testedit(String s, int i){
         String[] Split = s.split("(", 4);
         String[] Ingredients = Split[1].split(")");   
         String[] Instructions = Split[2].split(")"); 

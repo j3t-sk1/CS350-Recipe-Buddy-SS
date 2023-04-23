@@ -34,6 +34,7 @@ body {
 
 .header_bar {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    -ms-font-feature-settings: 'liga' 1, 'clig' 1, 'kern' 1, 'calt' 1;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -50,9 +51,27 @@ body {
     margin: auto;
     margin-left: 1rem;
     background-clip: text;
+    /* background-image: linear-gradient(rgb(204, 204, 204), rgb(255, 251, 0)); */
+    /* -webkit-text-fill-color: transparent; */
+}
+
+/* Apply the style for Edge */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .small {
+    background-image: -ms-linear-gradient(rgb(204, 204, 204), rgb(255, 251, 0));
+    -ms-text-fill-color: transparent;
+  }
+}
+
+/* Apply the style for Firefox */
+@-moz-document url-prefix() {
+  .small {
     background-image: linear-gradient(rgb(204, 204, 204), rgb(255, 251, 0));
     -webkit-text-fill-color: transparent;
+  }
 }
+
+
 
 .smaller {
   color:rgb(231, 228, 28);
@@ -1184,17 +1203,38 @@ footer {
   margin: auto;
   background-color: rgb(42, 42, 42);
   margin-left: 5%;
-  padding-left: 5%;
+  padding-left: 15%;
   margin-right: 5%;
   padding-right: 5%;
   border-radius: 1rem;
   padding-top: 15%;
-  padding-bottom: 15%;
+  padding-bottom: 12%;
+
+}
+.timer__part {
+
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+.timer__btn {
+  width: 40px;
+  height: 40px;
+  margin-left: 20px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  background: rgb(224, 221, 24);
+  cursor: pointer;
+}
+.timer__btn--start {
+  background: rgb(0, 206, 0);
 }
 
-.timing {
-  font-size: 10pt;
+.timer__btn--stop {
+  background: #ff020a;
 }
+
 
 .modal {
   position: fixed;
@@ -1825,6 +1865,10 @@ p.search_text{
 .b_delete:active {
   transform: translateY(3px);
   transition-duration: .35s;
+}
+
+.time {
+  width: 50%;
 }
 
 @media (max-width: 1000px) {

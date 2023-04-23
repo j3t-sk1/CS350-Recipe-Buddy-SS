@@ -1,4 +1,4 @@
-package Java;
+package com.shanghaishark.recipebuddy.Java;
 
 public class Timer {
   private int hours;

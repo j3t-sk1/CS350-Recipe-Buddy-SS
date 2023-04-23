@@ -1,4 +1,4 @@
-package Java;
+package com.shanghaishark.recipebuddy.Java;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

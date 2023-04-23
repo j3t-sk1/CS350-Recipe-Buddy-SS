@@ -1,8 +1,8 @@
-package Java;
+package com.shanghaishark.recipebuddy.Java;
 import java.sql.*;
 import java.util.*;
 
-import com.mysql.cj.util.StringUtils;
+
 
 public class Search {
     private String searchInput = null;

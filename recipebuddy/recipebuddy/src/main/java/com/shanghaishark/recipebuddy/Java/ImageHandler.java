@@ -1,4 +1,4 @@
-package Java;
+package com.shanghaishark.recipebuddy.Java;
 import java.net.*;
 import java.io.*;
 public class ImageHandler {

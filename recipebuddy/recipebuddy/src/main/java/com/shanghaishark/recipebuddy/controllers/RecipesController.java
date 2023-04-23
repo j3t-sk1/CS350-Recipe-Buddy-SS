@@ -222,9 +222,9 @@ public class RecipesController {
         return "recipe-viewing";
     }
 
-    @GetMapping("/user-recipes")
+    @GetMapping("/user_recipes")
     public String showUserRecipes(Model model){
-        return "user-recipes";
+        return "user_recipes";
     }
 
     @GetMapping("/edit")

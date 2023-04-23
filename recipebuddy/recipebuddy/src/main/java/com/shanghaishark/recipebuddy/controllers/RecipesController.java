@@ -96,7 +96,6 @@ public class RecipesController {
     }
 
     @GetMapping("/search")
-    @RequestMapping("/")
     public String showResults(Model model, @Param ("word") String keyword){
         model.addAttribute("results", rbs.searchRecipes(keyword));
         return "search";

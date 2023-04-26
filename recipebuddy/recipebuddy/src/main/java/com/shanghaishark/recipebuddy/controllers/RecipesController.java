@@ -32,10 +32,10 @@ public class RecipesController {
 
         Random rand = new Random();
         
-        a = rand.nextInt(rbs.getRecipes().size());
-        b = rand.nextInt(rbs.getRecipes().size());
-        c = rand.nextInt(rbs.getRecipes().size());
-        d = rand.nextInt(rbs.getRecipes().size());
+        a = rand.nextInt(rbs.getRecipes().size()-1);
+        b = rand.nextInt(rbs.getRecipes().size()-1);
+        c = rand.nextInt(rbs.getRecipes().size()-1);
+        d = rand.nextInt(rbs.getRecipes().size()-1);
 
         model.addAttribute("randOne", rbs.getRecipes().get(a));
         model.addAttribute("randTwo", rbs.getRecipes().get(b));

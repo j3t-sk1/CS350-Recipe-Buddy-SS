@@ -11,5 +11,4 @@ public class RecipebuddyApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(RecipebuddyApplication.class, args);
 	}
-
 }

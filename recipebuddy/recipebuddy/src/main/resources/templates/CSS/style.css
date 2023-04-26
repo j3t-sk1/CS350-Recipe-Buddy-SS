@@ -1184,17 +1184,41 @@ footer {
   margin: auto;
   background-color: rgb(42, 42, 42);
   margin-left: 5%;
-  padding-left: 5%;
+  padding-left: 15%;
   margin-right: 5%;
   padding-right: 5%;
   border-radius: 1rem;
   padding-top: 15%;
-  padding-bottom: 15%;
+  padding-bottom: 12%;
 }
 
-.timing {
-  font-size: 10pt;
+.timer__part {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
 }
+
+.timer__btn {
+  width: 40px;
+  height: 40px;
+  margin-left: 20px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  background: rgb(224, 221, 24);
+  cursor: pointer;
+}
+.timer__btn--start {
+  background: rgb(0, 206, 0);
+}
+
+.timer__btn--stop {
+  background: #ff020a;
+}
+
+
+
+
 
 .modal {
   position: fixed;
@@ -1208,6 +1232,8 @@ footer {
   align-items: center;
   justify-content: center;
 }
+
+
 
 .show-modal {
   display: flex;

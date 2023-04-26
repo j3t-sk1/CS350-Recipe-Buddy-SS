@@ -20,13 +20,24 @@ public class Search {
     ArrayList<Integer> getindx() throws Exception{
       try{
       ArrayList<String> rNames = new ArrayList<>(); 
+      ArrayList<String> inG = new ArrayList<>(); 
+      ArrayList<String> inS = new ArrayList<>(); 
+      ArrayList<String> uT = new ArrayList<>(); 
+      ArrayList<Integer> chefR = new ArrayList<>(); 
       ArrayList<Integer> prepT = new ArrayList<>(); 
+      ArrayList<Integer> servS = new ArrayList<>(); 
+      ArrayList<Integer> ovT = new ArrayList<>(); 
+      ArrayList<String> url = new ArrayList<>(); 
       //Usnames, Ing, Ut; 
       Statement st = connect.createStatement();
       ResultSet rs = st.executeQuery("SELECT * from recipebuddy.recipes");
       while (rs.next()){
-        rNames.add(rs.getString("recipename")); 
-        prepT.add(rs.getInt("preptime")); 
+        rNames.add(rs.getString(1)); 
+        inG.add(rs.getString(2));
+        uT.add(rs.getString(4)); 
+        chefR.add(rs.getInt(5)); 
+        prepT.add(rs.getInt(6)); 
+        servS.add(rs.getInt(7)); 
       }
       Integer databaseSize = rNames.size();
       //Takes input from text bar and splits per word
@@ -36,9 +47,9 @@ public class Search {
         for(Integer i = 0; i < databaseSize; i++){
           if(isInteger(s)){ 
           int temp = Integer.parseInt(s);
-          if(temp == prepT.get(i)){indx.add(i);}
+          if((temp == chefR.get(i)) || (temp == prepT.get(i)) || (temp == servS.get(i))){indx.add(i);}
         }
-          else if(s.equals(rNames.get(i))){
+          else if((s.equals(rNames.get(i))) || (s.equals(inG.get(i))) || (s.equals(uT.get(i)))){
             indx.add(i);}
         }
       } 

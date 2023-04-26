@@ -1,5 +1,6 @@
 package com.shanghaishark.recipebuddy.models;
 
+import java.io.StringBufferInputStream;
 import java.util.List;
 
 import jakarta.persistence.Entity;
@@ -11,9 +12,9 @@ public class Recipe {
 
     @Id
     private String recipeName;
-    private List<String> ingredients;
+    private String ingredients;
     private String instructions;
-    private List<String> utensils;
+    private String utensils;
     private int chefRate;
     private int prepTime;
     private int serveSize;
@@ -21,23 +22,26 @@ public class Recipe {
     private String pic;
 
     
-    public List<String> getIngredients() {
+    public String getIngredients(){
         return ingredients;
     }
-    public void setIngredients(List<String> ingredients) {
+
+    public void setIngredients(String ingredients) {
         this.ingredients = ingredients;
     }
+
+    public void setUtensils(String utensils) {
+        this.utensils = utensils;
+    }
+
     public String getInstructions() {
         return instructions;
     }
     public void setInstructions(String instructions) {
         this.instructions = instructions;
     }
-    public List<String> getUtensils() {
+    public String getUtensils() {
         return utensils;
-    }
-    public void setUtensils(List<String> utensils) {
-        this.utensils = utensils;
     }
     public int getChefRate() {
         return chefRate;
@@ -75,7 +79,7 @@ public class Recipe {
     public void setRecipeName(String recipeName) {
         this.recipeName = recipeName;
     }
-    public Recipe(String recipeName, List<String> ingredients, String instructions, List<String> utensils, int chefRate,
+    public Recipe(String recipeName, String ingredients, String instructions, String utensils, int chefRate,
             int prepTime, int serveSize, int oTemp, String pic) {
         this.recipeName = recipeName;
         this.ingredients = ingredients;

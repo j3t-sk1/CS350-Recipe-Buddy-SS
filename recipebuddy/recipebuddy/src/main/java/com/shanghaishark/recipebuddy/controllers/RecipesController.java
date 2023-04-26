@@ -32,11 +32,20 @@ public class RecipesController {
 
         Random rand = new Random();
         
-        a = rand.nextInt(rbs.getRecipes().size()-1);
-        b = rand.nextInt(rbs.getRecipes().size()-1);
-        c = rand.nextInt(rbs.getRecipes().size()-1);
-        d = rand.nextInt(rbs.getRecipes().size()-1);
+        if(rbs.getRecipes().size()>0){
+            a = rand.nextInt(rbs.getRecipes().size()-1);
+            b = rand.nextInt(rbs.getRecipes().size()-1);
+            c = rand.nextInt(rbs.getRecipes().size()-1);
+            d = rand.nextInt(rbs.getRecipes().size()-1);
+        }
+        else{
+            a = 0;
+            b = 0;
+            c = 0;
+            d = 0;
+        }
 
+        if(rbs.getRecipes().size() > 0){
         model.addAttribute("randOne", rbs.getRecipes().get(a));
         model.addAttribute("randTwo", rbs.getRecipes().get(b));
         model.addAttribute("randThree", rbs.getRecipes().get(c));
@@ -46,25 +55,42 @@ public class RecipesController {
         model.addAttribute("randTwoName", rbs.getRecipes().get(b).getRecipeName());
         model.addAttribute("randThreeName", rbs.getRecipes().get(c).getRecipeName());
         model.addAttribute("randFourName", rbs.getRecipes().get(d).getRecipeName());
+        }
 
-        model.addAttribute("recentOne", rbs.getRecipes().get(rbs.getRecipes().size()-1));
-        model.addAttribute("recentTwo", rbs.getRecipes().get(rbs.getRecipes().size()-2));
+        if(rbs.getRecipes().size()>1)
+            model.addAttribute("recentOne", rbs.getRecipes().get(rbs.getRecipes().size()-1));
+        if(rbs.getRecipes().size()>2)
+            model.addAttribute("recentTwo", rbs.getRecipes().get(rbs.getRecipes().size()-2));
+        if(rbs.getRecipes().size()>3)
         model.addAttribute("recentThree", rbs.getRecipes().get(rbs.getRecipes().size()-3));
-        model.addAttribute("recentFour", rbs.getRecipes().get(rbs.getRecipes().size()-4));
+        if(rbs.getRecipes().size()>4)
+            model.addAttribute("recentFour", rbs.getRecipes().get(rbs.getRecipes().size()-4));
 
-        model.addAttribute("recentOneName", rbs.getRecipes().get(rbs.getRecipes().size()-1).getRecipeName());
-        model.addAttribute("recentTwoName", rbs.getRecipes().get(rbs.getRecipes().size()-2).getRecipeName());
+        if(rbs.getRecipes().size()>1)
+            model.addAttribute("recentOneName", rbs.getRecipes().get(rbs.getRecipes().size()-1).getRecipeName());
+        if(rbs.getRecipes().size()>2)
+            model.addAttribute("recentTwoName", rbs.getRecipes().get(rbs.getRecipes().size()-2).getRecipeName());
+        if(rbs.getRecipes().size()>3)
         model.addAttribute("recentThreeName", rbs.getRecipes().get(rbs.getRecipes().size()-3).getRecipeName());
+        if(rbs.getRecipes().size()>4)
         model.addAttribute("recentFourName", rbs.getRecipes().get(rbs.getRecipes().size()-4).getRecipeName());
 
-        model.addAttribute("ratedOne", rbs.orderByRating().get(rbs.orderByRating().size()-1));
-        model.addAttribute("ratedTwo", rbs.orderByRating().get(rbs.orderByRating().size()-2));
-        model.addAttribute("ratedThree", rbs.orderByRating().get(rbs.orderByRating().size()-3));
-        model.addAttribute("ratedFour", rbs.orderByRating().get(rbs.orderByRating().size()-1));
+        if(rbs.getRecipes().size()>1)
+            model.addAttribute("ratedOne", rbs.orderByRating().get(rbs.orderByRating().size()-1));
+        if(rbs.getRecipes().size()>2)
+            model.addAttribute("ratedTwo", rbs.orderByRating().get(rbs.orderByRating().size()-2));
+        if(rbs.getRecipes().size()>3)
+            model.addAttribute("ratedThree", rbs.orderByRating().get(rbs.orderByRating().size()-3));
+        if(rbs.getRecipes().size()>4)
+            model.addAttribute("ratedFour", rbs.orderByRating().get(rbs.orderByRating().size()-1));
 
+        if(rbs.getRecipes().size()>1)
         model.addAttribute("ratedOneName", rbs.orderByRating().get(rbs.orderByRating().size()-1).getRecipeName());
+        if(rbs.getRecipes().size()>2)
         model.addAttribute("ratedTwoName", rbs.orderByRating().get(rbs.orderByRating().size()-2).getRecipeName());
+        if(rbs.getRecipes().size()>3)
         model.addAttribute("ratedThreeName", rbs.orderByRating().get(rbs.orderByRating().size()-3).getRecipeName());
+        if(rbs.getRecipes().size()>4)
         model.addAttribute("ratedFourName", rbs.orderByRating().get(rbs.orderByRating().size()-1).getRecipeName());
 
         return "index";

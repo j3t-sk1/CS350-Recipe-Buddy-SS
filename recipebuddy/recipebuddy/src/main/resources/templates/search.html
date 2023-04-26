@@ -289,81 +289,21 @@
                 </div>
                         
                           
-                      </script>
-                      <div class="edit_box" style= "overflow-y:scroll; max-height:600px;">
-                        <div class="user_recipes">
-                          <button class="listed_recipes" onclick="window.location.href='favorite1';">
-                            <div class="listed_recipe_image">
-                              <p class="listed_text">Recipe Image</p>
-                            </div>
-                            <p class="recipe_name">Recipe Name</p>
-                            <div class="listed_time">
-                              <p class="listed_text">Time to Make</p>
-                            </div>
-                            <div class="listed_serving_size">
-                              <p class="listed_text">Serving Size</p>
-                            </div>
-                            <p class="listed_rating">Rating</p>
-                          </button>
-                
-                        <button class="listed_recipes" onclick="window.location.href='favorite1';">
-                          <div class="listed_recipe_image">
-                            <p class="listed_text">Recipe Image</p>
-                          </div>
-                          <p class="recipe_name">Recipe Name</p>
-                          <div class="listed_time">
-                            <p class="listed_text">Time to Make</p>
-                          </div>
-                          <div class="listed_serving_size">
-                            <p class="listed_text">Serving Size</p>
-                          </div>
-                          <p class="listed_rating">Rating</p>
-                        </button>
-                
-                        <button class="listed_recipes" onclick="window.location.href='favorite1';">
-                          <div class="listed_recipe_image">
-                            <p class="listed_text">Recipe Image</p>
-                          </div>
-                          <p class="recipe_name">Recipe Name</p>
-                          <div class="listed_time">
-                            <p class="listed_text">Time to Make</p>
-                          </div>
-                          <div class="listed_serving_size">
-                            <p class="listed_text">Serving Size</p>
-                          </div>
-                          <p class="listed_rating">Rating</p>
-                        </button>
-      
-                        <button class="listed_recipes" onclick="window.location.href='favorite1';">
-                          <div class="listed_recipe_image">
-                            <p class="listed_text">Recipe Image</p>
-                          </div>
-                          <p class="recipe_name">Recipe Name</p>
-                          <div class="listed_time">
-                            <p class="listed_text">Time to Make</p>
-                          </div>
-                          <div class="listed_serving_size">
-                            <p class="listed_text">Serving Size</p>
-                          </div>
-                          <p class="listed_rating">Rating</p>
-                        </button>
-  
-                        <button class="listed_recipes" onclick="window.location.href='favorite1';">
-                          <div class="listed_recipe_image">
-                            <p class="listed_text">Recipe Image</p>
-                          </div>
-                          <p class="recipe_name">Recipe Name</p>
-                          <div class="listed_time">
-                            <p class="listed_text">Time to Make</p>
-                          </div>
-                          <div class="listed_serving_size">
-                            <p class="listed_text">Serving Size</p>
-                          </div>
-                          <p class="listed_rating">Rating</p>
-                        </button>
-  
-                        </div>
-                      </div>
+                <table>
+                  <thead>
+                      <tr>
+                          <th> Recipe Name </th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                <tr th:if="${recipe.empty}">
+                          <td colspan="2"> No Recipes Available </td>
+                      </tr>
+                      <tr th:each="recipe : ${recipes}">
+                          <td><span th:text="${Recipe.recipeName}"> Recipe Name </span></td>
+                      </tr>
+                  </tbody>
+              </table>
               <div>
 
           </article>

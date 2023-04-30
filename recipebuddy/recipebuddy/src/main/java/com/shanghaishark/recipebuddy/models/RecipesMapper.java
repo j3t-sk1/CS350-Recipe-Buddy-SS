@@ -11,12 +11,8 @@ public class RecipesMapper implements RowMapper<Recipe>{
 
     @Override
     public Recipe mapRow(ResultSet rs, int rowNum) throws SQLException {
-
         
-        List<String> ingredientsList = Arrays.asList(rs.getString("ingredients").split(" "));
-        List<String> utensilsList = Arrays.asList(rs.getString("utensils").split(" "));
-        
-        Recipe recipe = new Recipe(rs.getString("recipeName"), ingredientsList, rs.getString("instructions"), utensilsList, rs.getInt("chefRate"), rs.getInt("prepTime"), rs.getInt("serveSize"), rs.getInt("oTemp"), rs.getString("pic"));
+        Recipe recipe = new Recipe(rs.getString("recipeName"), rs.getString("ingredients"), rs.getString("instructions"), rs.getString("utensils"), rs.getInt("chefRate"), rs.getInt("prepTime"), rs.getInt("serveSize"), rs.getInt("oTemp"), rs.getString("pic"), rs.getInt("id"));
 
         return recipe;
     }

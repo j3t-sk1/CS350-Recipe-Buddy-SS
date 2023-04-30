@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
@@ -219,70 +219,45 @@
                 <div class="rightside">
                   <div class="main_page">
 
-                    <p class="favorite" style="color:rgb(231, 228, 28)">
-                      Matt's Pancake Recipe 
+                    <p class="favorite" style="color:rgb(231, 228, 28)" th:text ="${name}"> 
                     </p>
                     <div class="recipe-box">
                       <div>
-                        <img class="picpic" src="icons/Pancakes.jpg">
+                        <img class="picpic" th:text ="${pic}">
                       </div>
                       <div class="f1-ingredients">
                         <p class="subtitles">
                           Ingredients:
                         </p>
-                        <p>
-                          Flour<br>
-                          Baking powder<br>
-                          Sugar<br>
-                          Salt<br>
-                          Milk<br>
-                          Butter<br>
-                          Egg
+                        <p th:text = ${ingredients}>
                         </p>
                       </div>
                       <div class="f1-utensils">
                         <p class="subtitles">
                           Utensils:
                         </p>
-                        <p>
-                          pan/griddle<br>
-                          spatula<br>
-                          plate<br>
-                          fork<br>
-                          knife
+                        <p th:text = ${utensils}>
                         </p>
                       </div>
                       <div class="f1-oventemp">
                         <p class="subtitles">
                           Oven/Stove Temp:
                         </p>
-                        <p>
-                          Stove: Medium-High
+                        <p th:text = ${temp}>
                         </p>
                       </div>
                       <div class="f1-servsize">
                         <p class="subtitles">
                           Serving Size:
                         </p>
-                        <p>
-                          8
+                        <p th:text = "${serveSize}">
                         </p>
                       </div>
                       <div class="f1-instructs">
                         <p class="subtitles">
                           Instructions:
                         </p>
-                        <p>
-                          It's not hard to make homemade pancakes — you just need a good recipe.<br>
-                          That's where we come in! Here's a brief overview of what you can expect:<br>
-                          1. Sift the dry ingredients together.<br>
-                          2. Make a well, then add the wet ingredients. Stir to combine.<br>
-                          3. Scoop the batter onto a hot griddle or pan.<br>
-                          4. Cook for two to three minutes, then flip.<br>
-                          5. Continue cooking until brown on both sides.<br>                        
-                          6. Your pancake will tell you when it's ready to flip.<br>
-                          7. Wait until bubbles start to form on the top and the edges look dry and set.<br>
-                          8. This will usually take about two to three minutes on each side.
+                        <p th:text = "${instructions}">
                         </p>
                       </div>
                       <div class="f1-comments">

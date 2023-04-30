@@ -12,8 +12,8 @@ public interface RecipesDataAccessInterface {
     public List<Recipe> searchRecipes(String searchTerm);
     
     public int addOne(Recipe newRecipe);
-    public boolean deleteOne(String name);
-    public Recipe updateOne (String name, Recipe updateRecipe);
+    public boolean deleteOne(int id);
+    public Recipe updateOne (int id, Recipe updateRecipe);
 
     public List<Recipe> orderByRating();
 }

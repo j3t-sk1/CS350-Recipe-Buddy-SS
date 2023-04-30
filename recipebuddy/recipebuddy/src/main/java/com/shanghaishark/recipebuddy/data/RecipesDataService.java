@@ -45,7 +45,7 @@ public class RecipesDataService implements RecipesDataAccessInterface {
 
     @Override
     public int addOne(Recipe newRecipe){
-        int result = jdbcTemplate.update("INSERT INTO RECIPES (recipeName, ingredients, instructions, utensils, chefRate, prepTime, serveSize, oTemp, pic) VALUES (?,?,?,?,?,?,?,?,?)",
+        int result = jdbcTemplate.update("INSERT INTO RECIPES (recipeName, ingredients, instructions, utensils, chefRate, prepTime, serveSize, oTemp, pic, id) VALUES (?,?,?,?,?,?,?,?,?,?)",
         newRecipe.getRecipeName(),
         newRecipe.getIngredients(),
         newRecipe.getInstructions(),
@@ -54,14 +54,15 @@ public class RecipesDataService implements RecipesDataAccessInterface {
         newRecipe.getPrepTime(),
         newRecipe.getServeSize(),
         newRecipe.getoTemp(),
-        newRecipe.getPic()
+        newRecipe.getPic(),
+        newRecipe.getId()
         );
         return result;
     }
 
     @Override
-    public boolean deleteOne(String name){
-        int result = jdbcTemplate.update("DELETE FROM RECIPES WHERE recipeName = name", name);
+    public boolean deleteOne(int id){
+        int result = jdbcTemplate.update("DELETE FROM RECIPES WHERE id = ?", id);
         if(result>0)
             return true;
         else
@@ -69,8 +70,8 @@ public class RecipesDataService implements RecipesDataAccessInterface {
     }
 
     @Override
-    public Recipe updateOne (String name, Recipe updateRecipe){
-        int result = jdbcTemplate.update("UPDATE RECIPES SET recipeName = ?, ingredients = ?, instructions = ?, utensils = ?, chefRate = ?, prepTime = ?, serveSize = ?, oTemp = ?, pic = ? WHERE recipeName = ?", 
+    public Recipe updateOne (int id, Recipe updateRecipe){
+        int result = jdbcTemplate.update("UPDATE RECIPES SET recipeName = ?, ingredients = ?, instructions = ?, utensils = ?, chefRate = ?, prepTime = ?, serveSize = ?, oTemp = ?, pic = ? WHERE id = ?", 
         updateRecipe.getRecipeName(),
         updateRecipe.getIngredients(),
         updateRecipe.getInstructions(),
@@ -79,7 +80,8 @@ public class RecipesDataService implements RecipesDataAccessInterface {
         updateRecipe.getPrepTime(),
         updateRecipe.getServeSize(),
         updateRecipe.getoTemp(),
-        updateRecipe.getPic()
+        updateRecipe.getPic(),
+        id
         );
 
         if(result > 0)

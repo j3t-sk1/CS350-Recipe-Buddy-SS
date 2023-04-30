@@ -4,13 +4,14 @@ import java.io.StringBufferInputStream;
 import java.util.List;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 
 @Entity
 public class Recipe {
 
-    @Id
     private String recipeName;
     private String ingredients;
     private String instructions;
@@ -20,6 +21,10 @@ public class Recipe {
     private int serveSize;
     private int oTemp;
     private String pic;
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private int id;
 
     
     public String getIngredients(){
@@ -80,7 +85,7 @@ public class Recipe {
         this.recipeName = recipeName;
     }
     public Recipe(String recipeName, String ingredients, String instructions, String utensils, int chefRate,
-            int prepTime, int serveSize, int oTemp, String pic) {
+            int prepTime, int serveSize, int oTemp, String pic, int id) {
         this.recipeName = recipeName;
         this.ingredients = ingredients;
         this.instructions = instructions;
@@ -90,14 +95,25 @@ public class Recipe {
         this.serveSize = serveSize;
         this.oTemp = oTemp;
         this.pic = pic;
+        this.id = id;
     }
     public Recipe() {
     }
+
+
     @Override
     public String toString() {
         return "Recipe [recipeName=" + recipeName + ", ingredients=" + ingredients + ", instructions=" + instructions
                 + ", utensils=" + utensils + ", chefRate=" + chefRate + ", prepTime=" + prepTime + ", serveSize="
-                + serveSize + ", oTemp=" + oTemp + ", pic=" + pic + "]";
+                + serveSize + ", oTemp=" + oTemp + ", pic=" + pic + ", id=" + id + "]";
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     

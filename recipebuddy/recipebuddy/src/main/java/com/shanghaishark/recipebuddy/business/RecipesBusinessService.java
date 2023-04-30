@@ -26,13 +26,13 @@ public class RecipesBusinessService implements RecipesBusinessServiceInterface {
     }
 
     @Override
-    public boolean deleteOne(String name){
-        return recipesDAO.deleteOne(name);
+    public boolean deleteOne(int id){
+        return recipesDAO.deleteOne(id);
     }
 
     @Override
-    public Recipe updateOne (String name, Recipe updateRecipe){
-        return recipesDAO.updateOne(name, updateRecipe);
+    public Recipe updateOne (int id, Recipe updateRecipe){
+        return recipesDAO.updateOne(id, updateRecipe);
     }
 
     @Override

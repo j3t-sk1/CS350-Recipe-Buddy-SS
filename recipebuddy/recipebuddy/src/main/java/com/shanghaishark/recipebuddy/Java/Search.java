@@ -2,6 +2,8 @@ package com.shanghaishark.recipebuddy.Java;
 import java.sql.*;
 import java.util.*;
 
+import org.aspectj.weaver.bcel.FakeAnnotation;
+
 
 
 public class Search {
@@ -94,12 +96,31 @@ public class Search {
       }
       return temp;
     } 
+    String RecipeToString(ResultSet rs) throws SQLException{
+      String s;
+      s = "Recipe: ";
+      for(int i = 1; i <= 7; i++) {
+          s += rs.getString(i);    
+      }
+      return s;
+    }
+    boolean MyContains(String a, String b){
+      boolean temp = true;
+      String[] words = b.split(" ");
+      for(String s : words){
+        if(a.contains(s) == false){
+          temp = false;
+          break;
+        }
+      }
+      return temp;
+    }
+
     void fSearch(String s, Boolean allerg, Boolean uten){
         try{
         //Get indexes of all recipies with matching strings/intsc
         ArrayList<Integer> indx = removeDuplicates(getindx()); 
         indx = IndxScale(indx);
-        System.out.println(indx);
         PreparedStatement ps = connect.prepareStatement
         ("select * from recipebuddy.recipes where id in (" + ListIntToString(indx) + ")", ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE);
         ResultSet rs = ps.executeQuery();
@@ -108,13 +129,23 @@ public class Search {
         while (rs.next()){
           if(allerg){
           for(String a :allergens){
-            if(((rs.getString("ingredients")).contains(a)) == false){rs.deleteRow();}
+            if(((rs.getString("ingredients")).contains(a)) == false){
+              rs.deleteRow();
+              continue;
+            }
           }
         }
           if(uten){
             for(String u : utensils){
-              if(!(rs.getString(4).contains(u))){rs.deleteRow();}
+              if(!(rs.getString(4).contains(u))){
+                rs.deleteRow();
+                continue;
+            }
           }
+        }
+          if(MyContains(RecipeToString(rs), s) == false){
+            rs.deleteRow();
+            continue;
         }
       }
     }
@@ -122,12 +153,10 @@ public class Search {
 
       //Run through and output
         while (rs.next()){
-        //Needs more getStrings and the like
         String recipeName = rs.getString(1);
         Integer prepTime = rs.getInt(6);
 
         // print the results
-        System.out.println("Search results");
         System.out.format("%s %d \n", recipeName, prepTime);
       }
       ps.close();

@@ -60,6 +60,7 @@ public class Add{
             ps.setInt(7, serveSize);
             ps.setInt(8, oTemp);
             ps.setString(9, img.addUrl(recipeName, ingredients.get(1))); 
+            ps.setInt(11, 0);
             ps.executeUpdate();            
             ps.close();
         } catch (Exception e){

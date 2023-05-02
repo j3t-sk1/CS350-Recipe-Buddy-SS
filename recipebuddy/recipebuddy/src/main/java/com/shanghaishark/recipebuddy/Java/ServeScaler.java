@@ -5,6 +5,10 @@ import java.util.*;
 
 public class ServeScaler{
 private SQLConnect data;
+
+public ServeScaler(SQLConnect d){
+    this.data = d;
+}
 public static boolean isNumeric(String strNum) {
         if (strNum == null) {
             return false;

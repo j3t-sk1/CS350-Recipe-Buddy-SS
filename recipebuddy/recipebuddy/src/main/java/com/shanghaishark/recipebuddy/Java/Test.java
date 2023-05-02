@@ -18,7 +18,7 @@ public class Test {
         ArrayList<String> Utensils = new ArrayList<>();
         Utensils.add("Default");
         Utensils.add("Default2");
-        Add defaultAdd = new Add(Database, "Name", Ingredient, "Instructions for the food", Utensils, 1, 20, 1, 500);
+        Add defaultAdd = new Add(Database, "Name", Ingredient, "Add 2 cups Default2. Mix well. Finally sprinkle 1 tbs Default on top ", Utensils, 1, 20, 1, 500);
         defaultAdd.Create();
     }
     public static void testadd(String s){

@@ -14,9 +14,9 @@ public static void main(String[] args) throws Exception {
         //Add Test
         //For add String
         //(Name (Ingredient Ingredient) (In stru ctions) (Utensil Utensil) rating preptime servesize oTemp)
-      String testaddS = "Pizza (Cheese Tomato) (Add 2 cups Cheese and then add 4 scoops Tomato) (rolling_pin oven) 5 40 2 400";
-    //    Test.testadd();
-     Test.testadd(testaddS);
+      // String testaddS = "Pizza (Cheese Tomato) (Add 2 cups Cheese and then add 4 scoops Tomato) (rolling_pin oven) 5 40 2 400";
+     Test.testadd();
+    //  Test.testadd(testaddS);
     //     //Test.printDB();
 
     //     Test.search("Name", false, true);

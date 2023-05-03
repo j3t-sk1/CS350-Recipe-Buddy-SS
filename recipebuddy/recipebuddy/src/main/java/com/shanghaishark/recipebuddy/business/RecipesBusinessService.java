@@ -46,5 +46,10 @@ public class RecipesBusinessService implements RecipesBusinessServiceInterface {
         List<Recipe> results = recipesDAO.orderByRating();
         return results;
     }
+
+    public Recipe getById(int id){
+        Recipe result = recipesDAO.getById(id);
+        return result;
+    }
     
 }

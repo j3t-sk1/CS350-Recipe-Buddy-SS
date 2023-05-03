@@ -35,15 +35,24 @@
             <div class="header_info"> 
                 <div class="header_bar">
                   <h1 class="small">RecipeBuddy</h1>
-                    <div class="search">
-                        <form>
-                          <input type="text" class="searching" name="search" placeholder="Search" maxlength="100"/>
-                          
-                          <div class="icon_search">
-                            <a href="search"><img src ="icons\search.svg" alt="search" width="20" height="20" class="icon_search"/></a>  
-                          </div>
-                        </form>
-                    </div>
+                  <div class="search">
+                    <!-- C:\Users\cpsou\OneDrive\Documents\GitHub\CS350-Recipe-Buddy-SS\icons\loupe.png -->
+                    <!-- <form action="/html/tags/html_form_tag_action.cfm" method="get"> -->
+                    <form th:action="@{/search}" action="#" method="GET">
+                      <!-- <i class="search_icon" style="font-size: 0.73em;"> -->
+                      <!-- <img src="icons\loupe.png"> -->
+                      <!-- </i> -->
+        
+                      <input field="*{keyword}" type="text" class="searching" name="search" placeholder="Search" maxlength="100" />
+                      <div class="icon_search">
+                        <script>
+                          var word="*{keyword}";
+                        </script>
+                        <a href="search"onclick="location.href=this.href+'?keyword='+word;return false;"><img src ="icons\search.svg" alt="search" width="20" height="20" class="icon_search"/></a>
+                      </div>
+                      <!-- <input type="submit" value="Submit" /> -->
+                    </form>
+                  </div>
     
                     <button class="add" role="button">
                         <a href="adding-recipe">Add</a>

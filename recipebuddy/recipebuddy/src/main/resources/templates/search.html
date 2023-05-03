@@ -68,22 +68,24 @@
                     <div class="search">
                       <!-- C:\Users\cpsou\OneDrive\Documents\GitHub\CS350-Recipe-Buddy-SS\icons\loupe.png -->
                       <!-- <form action="/html/tags/html_form_tag_action.cfm" method="get"> -->
-                        <form>
-                          <!-- <i class="search_icon" style="font-size: 0.73em;"> -->
-                            <!-- <img src="icons\loupe.png"> -->
-                          <!-- </i> -->
-    
-                          <input type="text" class="searching" name="search" placeholder="Search" maxlength="100"/>
-                          
-                          <div class="icon_search">
-                            <a href="search"><img src ="icons\search.svg" alt="search" width="20" height="20" class="icon_search"/></a>
-                          </div>
-                          <!-- <input type="submit" value="Submit" /> -->
-                        </form>
-                      </div>
+                      <form th:action="@{/search}" action="#" method="GET">
+                        <!-- <i class="search_icon" style="font-size: 0.73em;"> -->
+                        <!-- <img src="icons\loupe.png"> -->
+                        <!-- </i> -->
+          
+                        <input field="*{keyword}" type="text" class="searching" name="search" placeholder="Search" maxlength="100" />
+                        <div class="icon_search">
+                          <script>
+                            var word="*{keyword}";
+                          </script>
+                          <a href="search"onclick="location.href=this.href+'?keyword='+word;return false;"><img src ="icons\search.svg" alt="search" width="20" height="20" class="icon_search"/></a>
+                        </div>
+                        <!-- <input type="submit" value="Submit" /> -->
+                      </form>
+                    </div>
     
                       <a href="adding-recipe"><img src ="icons\plus-square.svg" class="b_add" alt="add" width="40" height="40"/></a>
-                      <a href="editing-recipe"><img src ="icons\pencil-square.svg" class="b_add" alt="edit" width="43" height="43"/></a>
+                      <a href="edit"><img src ="icons\pencil-square.svg" class="b_add" alt="edit" width="43" height="43"/></a>
                       <a href="delete2"><img src ="icons\trash3-fill.svg" class="b_delete" alt="delete" width="40" height="40"/></a>
     
                       <!-- <div class="add"> -->
@@ -287,24 +289,31 @@
                       </div> 
 
                 </div>
-                        
+                <style>
+                  .tb { position:absolute; border-collapse: collapse; width:600px; clear: both; margin-left:500px; margin-top:100px;}
+                  .tb th, .tb td {padding: 5px; margin-top:100px; border:solid 1px #777; }
+                  .tb th { margin-top:100px; background-color:rgb(231, 228, 28); }
+                </style>        
                           
-                <table>
+                <table class="tb">
+                  <script>
+                    function rowClicked(value){
+                      location.href = "/recipe-viewing?id="+value;
+                    }
+                  </script>
                   <thead>
                       <tr>
                           <th> Recipe Name </th>
                       </tr>
                   </thead>
-                  <tbody>
-                <tr th:if="${recipe.empty}">
-                          <td colspan="2"> No Recipes Available </td>
-                      </tr>
-                      <tr th:each="recipe : ${recipes}">
-                          <td><span th:text="${Recipe.recipeName}"> Recipe Name </span></td>
+                  <tbody style="background-color: white">
+                      <tr th:each="recipe : ${searchResults}" style="cursor: pointer"
+                          th:onclick="'location.href= \''+ @{/recipe-viewing?(id=${recipe.id})} + '\''">
+                          <td th:text="${recipe.recipeName}">
                       </tr>
                   </tbody>
               </table>
-              <div>
+            <div>
 
           </article>
           <footer>

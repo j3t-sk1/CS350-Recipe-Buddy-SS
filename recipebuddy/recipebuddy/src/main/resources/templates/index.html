@@ -82,16 +82,17 @@
           <div class="search">
             <!-- C:\Users\cpsou\OneDrive\Documents\GitHub\CS350-Recipe-Buddy-SS\icons\loupe.png -->
             <!-- <form action="/html/tags/html_form_tag_action.cfm" method="get"> -->
-            <form>
+            <form th:action="@{/search}" action="#" method="GET">
               <!-- <i class="search_icon" style="font-size: 0.73em;"> -->
               <!-- <img src="icons\loupe.png"> -->
               <!-- </i> -->
 
-              <input type="text" class="searching" name="search" placeholder="Search" maxlength="100" />
-
+              <input field="*{keyword}" type="text" class="searching" name="search" placeholder="Search" maxlength="100" />
               <div class="icon_search">
-                <a href="search"><img src="icons\search.svg" alt="search" width="24" height="24"
-                    class="icon_search" /></a>
+                <script>
+                  var word="*{keyword}";
+                </script>
+                <a href="search"onclick="location.href=this.href+'?keyword='+word;return false;"><img src ="icons\search.svg" alt="search" width="20" height="20" class="icon_search"/></a>
               </div>
               <!-- <input type="submit" value="Submit" /> -->
             </form>
@@ -99,7 +100,7 @@
 
           <a href="adding-recipe"><img src="icons\plus-square.svg" class="b_add" alt="add" width="40"
               height="40" /></a>
-          <a href="editing-recipe"><img src="icons\pencil-square.svg" class="b_add" alt="edit" width="43"
+          <a href="edit"><img src="icons\pencil-square.svg" class="b_add" alt="edit" width="43"
               height="43" /></a>
           <a href="delete2"><img src="icons\trash3-fill.svg" class="b_delete" alt="delete" width="40"
               height="40" /></a>

@@ -6,7 +6,7 @@ import com.shanghaishark.recipebuddy.models.Recipe;
 
 public interface RecipesDataAccessInterface {
     
-    public Recipe getByName(String name);
+    public Recipe getById(int id);
 
     public List<Recipe> getRecipes();
     public List<Recipe> searchRecipes(String searchTerm);

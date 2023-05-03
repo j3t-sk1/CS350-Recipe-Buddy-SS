@@ -23,8 +23,8 @@ public class RecipesDataService implements RecipesDataAccessInterface {
     JdbcTemplate jdbcTemplate;
 
     @Override
-    public Recipe getByName(String name){
-        List<Recipe> results = jdbcTemplate.query("SELECT * FROM RECIPES WHERE recipeName = ?", new RecipesMapper(), name);
+    public Recipe getById(int id){
+        List<Recipe> results = jdbcTemplate.query("SELECT * FROM RECIPES WHERE id = ?", new RecipesMapper(), id);
         if(results.size()>0)
             return results.get(0);
         else
@@ -39,7 +39,8 @@ public class RecipesDataService implements RecipesDataAccessInterface {
 
     @Override
     public List<Recipe> searchRecipes(String searchTerm){
-        List<Recipe> results = jdbcTemplate.query("SELECT * FROM RECIPES WHERE recipeName LIKE ? OR ingredients LIKE ? OR instructions LIKE ? OR utensils LIKE ? OR chefRate LIKE ? OR prepTime LIKE ? OR serveSize LIKE ? OR oTemp LIKE ? OR pic LIKE ?", new RecipesMapper(), "%" + searchTerm + "%");
+        String s = "'%" + searchTerm + "%'";
+        List<Recipe> results = jdbcTemplate.query("SELECT * FROM RECIPES WHERE recipeName LIKE " + s + " OR ingredients LIKE " + s + " OR instructions LIKE " + s + " OR utensils LIKE " + s + " OR chefRate LIKE " + s + " OR prepTime LIKE " + s + " OR serveSize LIKE " + s + " OR oTemp LIKE " + s + "", new RecipesMapper());
         return results;
     }
 

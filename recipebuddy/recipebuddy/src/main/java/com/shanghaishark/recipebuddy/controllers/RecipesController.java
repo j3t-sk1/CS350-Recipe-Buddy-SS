@@ -7,10 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shanghaishark.recipebuddy.business.RecipesBusinessService;
@@ -138,40 +141,51 @@ public class RecipesController {
     }
 
     @PostMapping("/adding-recipe")
-    public String submitAdd(@ModelAttribute Recipe toAdd){
+    public String submitAdd(@ModelAttribute Recipe toAdd, Model model){
         rbs.addOne(toAdd);
         return "redirect:index";
     }
     
-    @GetMapping("/editing-recipe")
-    public String showEdit(Recipe toEdit, Model model){
+    @RequestMapping(value="/editing-recipe", method=RequestMethod.GET)
+    public String showEdit(Model model, @RequestParam(value="id", required=true, defaultValue = "") String queryParam){
+        model.addAttribute("recipeToEdit", rbs.getById(Integer.parseInt(queryParam)));
+        model.addAttribute("name", rbs.getById(Integer.parseInt(queryParam)).getRecipeName());
+        model.addAttribute("ingredients", rbs.getById(Integer.parseInt(queryParam)).getIngredients());
+        model.addAttribute("instructions", rbs.getById(Integer.parseInt(queryParam)).getInstructions());
+        model.addAttribute("rate", rbs.getById(Integer.parseInt(queryParam)).getChefRate());
+        model.addAttribute("utensils", rbs.getById(Integer.parseInt(queryParam)).getUtensils());
+        model.addAttribute("serveSize", rbs.getById(Integer.parseInt(queryParam)).getServeSize());
+        model.addAttribute("temp", rbs.getById(Integer.parseInt(queryParam)).getoTemp());
+        model.addAttribute("pic", rbs.getById(Integer.parseInt(queryParam)).getPic());
         return "editing-recipe";
     }
 
     @PostMapping("/editing-recipe")
-    public String submitEdit(@ModelAttribute Recipe toEdit){
+    public String submitEdit(@ModelAttribute Recipe toEdit, Model model){
         rbs.updateOne(toEdit.getId(), toEdit);
-        return "index";
+        return "redirect:index";
     }
 
-    @GetMapping("/search")
-    @RequestMapping("/")
-    @ResponseBody
-    public String showResults(Model model, @Param ("word") String keyword){
+    @RequestMapping(value="/search", method=RequestMethod.GET)
+    public String searchResults(Model model, @RequestParam(value="search", required=true, defaultValue = "") String queryParam){
+        String keyword = queryParam;
         List<Recipe> searchResults = rbs.searchRecipes(keyword);
-        model.addAttribute("results", searchResults);
+        model.addAttribute("searchResults", searchResults);
         return "search";
     }
 
+
     @GetMapping("/delete2")
     public String showDelete(Recipe toDelete, Model model){
+        List<Recipe> allRecipes = rbs.getRecipes();
+        model.addAttribute("allRecipes", allRecipes);
         return "delete2";
     }
 
     @PostMapping("/delete2")
     public String submitDelete(@ModelAttribute Recipe toDelete){
         rbs.deleteOne(toDelete.getId());
-        return "delete2";
+        return "redirect:index";
     }
 
     @GetMapping("/random1")
@@ -384,18 +398,31 @@ public class RecipesController {
         return "profile";
     }
 
-    @GetMapping("/recipe-viewing")
-    public String showRecipeView(Model model){
+    @RequestMapping(value="/recipe-viewing", method=RequestMethod.GET)
+    public String showRecipeView(Model model, @RequestParam(value="id", required=true, defaultValue = "") String queryParam){
+        model.addAttribute("recipeToView", rbs.getById(Integer.parseInt(queryParam)));
+        model.addAttribute("name", rbs.getById(Integer.parseInt(queryParam)).getRecipeName());
+        model.addAttribute("ingredients", rbs.getById(Integer.parseInt(queryParam)).getIngredients());
+        model.addAttribute("instructions", rbs.getById(Integer.parseInt(queryParam)).getInstructions());
+        model.addAttribute("rate", rbs.getById(Integer.parseInt(queryParam)).getChefRate());
+        model.addAttribute("utensils", rbs.getById(Integer.parseInt(queryParam)).getUtensils());
+        model.addAttribute("serveSize", rbs.getById(Integer.parseInt(queryParam)).getServeSize());
+        model.addAttribute("temp", rbs.getById(Integer.parseInt(queryParam)).getoTemp());
+        model.addAttribute("pic", rbs.getById(Integer.parseInt(queryParam)).getPic());
         return "recipe-viewing";
     }
 
     @GetMapping("/user_recipes")
     public String showUserRecipes(Model model){
+        List<Recipe> allRecipes = rbs.getRecipes();
+        model.addAttribute("allRecipes", allRecipes);
         return "user_recipes";
     }
 
     @GetMapping("/edit")
     public String showEdit(Model model){
+        List<Recipe> allRecipes = rbs.getRecipes();
+        model.addAttribute("allRecipes", allRecipes);
         return "edit";
     }
 
@@ -404,5 +431,9 @@ public class RecipesController {
         return "settings";
     }
 
+    @GetMapping("/")
+    public String landing(Model model){
+        return "redirect:index";
+    }
 }
 

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
@@ -42,94 +41,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-
-
-  <!-- <head> -->
-  <!-- <meta charset="utf-8"> -->
-  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-  <!-- <title>Chapter 3</title> -->
-  <!-- below 3 links all load google fonts -->
-  <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
-  <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet"> -->
-  <!-- modern normalize for cross-browser compatibility -->
-  <!-- <link href="css/modern-normalize.css" rel="stylesheet"> -->
-  <!-- needs our stylesheet here -->
-  <!-- <link href="css/style.css" rel="stylesheet"> -->
   <body>
     <main id="page">
-      <nav><!-- main menu -->
-        <!-- <ul> -->
-        <!-- <li><a href="#">&#8592; this is an unordered list (bullets)</a></li> -->
-        <!-- <li><a href="#" class="active">2</a></li> -->
-        <!-- <li><a href="#">3 &#8594;</a></li> -->
-        <!-- </ul> -->
+      <nav>
       </nav>
-
-      <header><!-- hero unit -->
+      <header>
         <div class="header_info">
-          <!-- <figure> -->
-          <!-- <img src="img/tale.jpg" alt="A very long tale" /> -->
-          <!-- <p>if you have images, line above is how you insert them using html</p> -->
-          <!-- </figure> -->
           <div class="header_bar">
-
-            <!-- **BUTTON HOME -->
-            <!-- <button class="home" role="button"> -->
-            <!-- <h1 class="small">RecipeBuddy</h1> -->
-            <!-- <a href="index.html"></a> -->
-            <!-- </button> -->
-
             <h1 class="small">RecipeBuddy</h1>
-
-            <!-- <h2 class="sub_small">The only cookbook you need.</h2> -->
-            <!-- <h2 class="sub_small">The only cookbook you need.</h2> -->
-
             <div class="search">
               <!-- C:\Users\cpsou\OneDrive\Documents\GitHub\CS350-Recipe-Buddy-SS\icons\loupe.png -->
               <!-- <form action="/html/tags/html_form_tag_action.cfm" method="get"> -->
-              <form>
+              <form th:action="@{/search}" action="#" method="GET">
                 <!-- <i class="search_icon" style="font-size: 0.73em;"> -->
                 <!-- <img src="icons\loupe.png"> -->
                 <!-- </i> -->
-
-                <input type="text" class="searching" name="search"
-                  placeholder="Search" maxlength="100"/>
-
+  
+                <input field="*{keyword}" type="text" class="searching" name="search" placeholder="Search" maxlength="100" />
                 <div class="icon_search">
-                  <a href="search"><img src="icons\search.svg" alt="search"
-                      width="24" height="24" class="icon_search"/></a>
-
+                  <script>
+                    var word="*{keyword}";
+                  </script>
+                  <a href="search"onclick="location.href=this.href+'?keyword='+word;return false;"><img src ="icons\search.svg" alt="search" width="20" height="20" class="icon_search"/></a>
                 </div>
                 <!-- <input type="submit" value="Submit" /> -->
               </form>
             </div>
 
-            <!-- <button class="add" role="button">
-                        <a href="adding-recipe.html">Add</a>
-                      </button> -->
-                      <a href="adding-recipe"><img src ="icons\plus-square.svg" class="b_add" alt="add" width="40" height="40"/></a>
-                      <a href="editing-recipe"><img src ="icons\pencil-square.svg" class="b_add" alt="edit" width="43" height="43"/></a>
-                      <a href="delete2"><img src ="icons\trash3-fill.svg" class="b_delete" alt="delete" width="40" height="40"/></a>
-            <!-- <button class="edit" role="button">Edit</button> -->
-
-            <!-- <button class="delete" role="button"> -->
-            <!-- <a href="delete.html">Delete</a> -->
-            <!-- </button> -->
-
-            <!-- <div class="add"> -->
-            <!-- <p>Add</p> -->
-            <!-- </div> -->
-
-            <!-- <div class="edit"> -->
-            <!-- <p>Edit</p> -->
-            <!-- </div> -->
-
-            <!-- <div class="delete"> -->
-            <!-- <p>Delete</p> -->
-            <!-- </div> -->
-            <!-- </div> -->
+            <a href="adding-recipe"><img src ="icons\plus-square.svg" class="b_add" alt="add" width="40" height="40"/></a>
+            <a href="edit"><img src ="icons\pencil-square.svg" class="b_add" alt="edit" width="43" height="43"/></a>
+            <a href="delete2"><img src ="icons\trash3-fill.svg" class="b_delete" alt="delete" width="40" height="40"/></a>
           </header>
           <article><!-- page content -->
             <div class="row no-gutters">
@@ -286,68 +227,79 @@
                 <div class="rightside">
                   <div class="main_page">
 
-                    <p class="adding-recipe" style="color:rgb(231, 228, 28)">
-                      View Recipe </p>
-                    <div class="add-divbox">
-                      <input type="text" class="recipe-name" name="recipename"
-                        placeholder="Recipe Name">
-                      <input type="text" class="recipe-rate" name="reciperate"
-                        placeholder="Rate Recipe">
-                      <input type="text" class="oven-temp" name="oventemp"
-                        placeholder="Oven Temp">
-                      <select class="temp-type">
-                        <option value="Fahrenheit">°F</option>
-                        <option value="Celcius">°C</option>
-                      </select>
-                      <select class="serv-size">
-                        <option value="title"><span class="serv-size-word">Serving
-                            Size</span></option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10+">10+</option>
-                      </select>
-                      <textarea class="utensilslist" name="Utensils"
-                      placeholder="List Utensils and Equipment Used"></textarea>
-                      <p class="picturebox">Picture</p>
-                    </div>
-                    <div class="pantry">
-                      <textarea class="ingredientslist" name="Ingredients"
-                      placeholder="List Ingredients"></textarea>
-                    </div>
-                    <div class="instruct-box">
-                      <textarea class="instructions" name="Instruct"
-                        placeholder="Instructions"></textarea>
-                    </div>
-                    <div class="savebutton">
+                    <p class="favorite" style="color:rgb(231, 228, 28)" th:text ="${name}"> 
+                    </p>
+                    <div class="recipe-box">
+                      <div>
+                        <img class="picpic" th:text ="${pic}">
+                      </div>
+                      <div class="f1-ingredients">
+                        <p class="subtitles">
+                          Ingredients:
+                        </p>
+                        <p th:text = ${ingredients}>
+                        </p>
+                      </div>
+                      <div class="f1-utensils">
+                        <p class="subtitles">
+                          Utensils:
+                        </p>
+                        <p th:text = ${utensils}>
+                        </p>
+                      </div>
+                      <div class="f1-oventemp">
+                        <p class="subtitles">
+                          Oven/Stove Temp:
+                        </p>
+                        <p th:text = ${temp}>
+                        </p>
+                      </div>
+                      <div class="f1-servsize">
+                        <p class="subtitles">
+                          Serving Size:
+                        </p>
+                        <p th:text = "${serveSize}">
+                        </p>
+                      </div>
+                      <div class="f1-instructs">
+                        <p class="subtitles">
+                          Instructions:
+                        </p>
+                        <p th:text = "${instructions}">
+                        </p>
+                      </div>
+                      <div class="f1-comments">
+                        <p class="subtitles">
+                          Comments:
+                        </p>
+                        <p>
+                          User-6182:<br>
+                          <span class="indent">This is a coooool recipe!!!</span><br>
+                          User-6371:<br>
+                          <span class="indent">&#128293;&#128293;&#128293;Never cook this again&#128293;&#128293;&#128293;</span><br>
+                          User-2123:<br>
+                          <span class="indent">Didn't know that you could make pancakes at home. WOW</span><br>
+                          User-7772:<br>
+                          <span class="indent">This isn't a hamburger recipe 1/10</span><br>
+                          User-1748:<br>
+                          <span class="indent">Lovely!</span><br>
+                        </p>
+                      </div>
+                      <input type="text" class="times" name="timez"
+                       placeholder="Times Cooked">
                       <button class="save">
                         Save
                       </button>
-                      <button class="cancel">
-                        Cancel
-                      </button>
+
                     </div>
+                    
+
+
+                    
+                  
                   </div>
                 </div>
               </div>
-
-              <!-- <button>Show Modal</button> -->
-
-              <!-- <div class="modal hidden"> -->
-              <!-- <div class="container"> -->
-              <!-- <div class="body"> -->
-              <!-- <p>Click outside this box to close the modal.<p> -->
-              <!-- <p>You could of course add a close button etc</p> -->
-              <!-- <p>But this is left for the OP todo</p>  -->
-              <!-- </div> -->
-              <!-- </div> -->
-              <!-- </div> -->
 
               <footer>
                 <p>&copy; 2023 Shanghai Shark</p>

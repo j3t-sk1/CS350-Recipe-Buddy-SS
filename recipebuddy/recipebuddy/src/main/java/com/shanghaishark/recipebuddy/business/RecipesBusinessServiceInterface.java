@@ -8,6 +8,7 @@ public interface RecipesBusinessServiceInterface {
     
     public List<Recipe> getRecipes();
     public List<Recipe> searchRecipes(String searchTerm);
+    public Recipe getById(int id);
     
     public int addOne(Recipe newRecipe);
     public boolean deleteOne(int id);

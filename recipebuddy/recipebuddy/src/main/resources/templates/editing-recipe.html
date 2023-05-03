@@ -89,18 +89,17 @@
             <div class="search">
               <!-- C:\Users\cpsou\OneDrive\Documents\GitHub\CS350-Recipe-Buddy-SS\icons\loupe.png -->
               <!-- <form action="/html/tags/html_form_tag_action.cfm" method="get"> -->
-              <form>
+              <form th:action="@{/search}" action="#" method="GET">
                 <!-- <i class="search_icon" style="font-size: 0.73em;"> -->
                 <!-- <img src="icons\loupe.png"> -->
                 <!-- </i> -->
-
-                <input type="text" class="searching" name="search"
-                  placeholder="Search" maxlength="100"/>
-
+  
+                <input field="*{keyword}" type="text" class="searching" name="search" placeholder="Search" maxlength="100" />
                 <div class="icon_search">
-                  <a href="search"><img src="icons\search.svg" alt="search"
-                      width="24" height="24" class="icon_search"/></a>
-
+                  <script>
+                    var word="*{keyword}";
+                  </script>
+                  <a href="search"onclick="location.href=this.href+'?keyword='+word;return false;"><img src ="icons\search.svg" alt="search" width="20" height="20" class="icon_search"/></a>
                 </div>
                 <!-- <input type="submit" value="Submit" /> -->
               </form>
@@ -110,7 +109,7 @@
                         <a href="adding-recipe.html">Add</a>
                       </button> -->
                       <a href="adding-recipe"><img src ="icons\plus-square.svg" class="b_add" alt="add" width="40" height="40"/></a>
-                      <a href="editing-recipe"><img src ="icons\pencil-square.svg" class="b_add" alt="edit" width="43" height="43"/></a>
+                      <a href="edit"><img src ="icons\pencil-square.svg" class="b_add" alt="edit" width="43" height="43"/></a>
                       <a href="delete2"><img src ="icons\trash3-fill.svg" class="b_delete" alt="delete" width="40" height="40"/></a>
             <!-- <button class="edit" role="button">Edit</button> -->
 
@@ -292,71 +291,55 @@
               <div class="col-md-11 no-gutters">
                 <div class="rightside">
                   <div class="main_page">
-
-                    <p class="adding-recipe" style="color:rgb(231, 228, 28)">
-                      Edit Recipe </p>
-                    <div class="add-divbox">
-                      <input type="text" class="recipe-name" name="recipename"
-                        placeholder="Pancakes">
-                      <input type="text" class="recipe-rate" name="reciperate"
-                        placeholder="10/10">
-                      <input type="text" class="oven-temp" name="oventemp"
-                        placeholder="Medium Heat">
-                      <select class="temp-type">
-                        <option value="Clear"></option>
-                        <option value="Fahrenheit">°F</option>
-                        <option value="Celcius">°C</option>
-                      </select>
-                      <select class="serv-size">
-                        <option value="title">8</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10+">10+</option>
-                      </select>
-                      <textarea class="utensilslist" name="Utensils"
-                      placeholder="pan/griddle,spatula,plate,fork,knife"></textarea>
-                      <p class="picturebox">Picture</p>
-                    </div>
-                    <div class="pantry">
-                      <textarea class="ingredientslist" name="Ingredients"
-                      placeholder="Flour
-                                   Baking powder
-                                   Sugar
-                                   Salt
-                                   Milk
-                                   Butter
-                                   Egg
-                      
-                      "></textarea>
-                    </div>
-                    <div class="instruct-box">
-                      <textarea class="instructions" name="Intruct">
-How to Make Pancakes From Scratch
-It's not hard to make homemade pancakes — you just need a good recipe. That's where we come in! You'll find the step-by-step recipe below, but here's a brief overview of what you can expect:
-
-1. Sift the dry ingredients together.
-2. Make a well, then add the wet ingredients. Stir to combine.
-3. Scoop the batter onto a hot griddle or pan.
-4. Cook for two to three minutes, then flip. 5. Continue cooking until brown on both sides.
-                                                
-When to Flip Pancakes
-Your pancake will tell you when it's ready to flip. Wait until bubbles start to form on the top and the edges look dry and set. This will usually take about two to three minutes on each side.</textarea>
-                    </div>
-                    <div class="savebutton">
-                      <button class="save">
-                        Save
-                      </button>
-                      <button class="cancel">
-                        Cancel
-                      </button>
-                    </div>
+                    <form th:action="@{/editing-recipe}" th:object = "${recipe}" method = "post">
+                      <p class="adding-recipe" style="color:rgb(231, 228, 28)">
+                        Edit Recipe </p>
+                      <div class="add-divbox">
+                        <input type="text" class="recipe-name" name="recipeName" th:value="${name}" field = "*{recipeName}" required
+                          placeholder="Recipe Name">
+                        <input type="text" class="recipe-rate" name="chefRate" th:value="${rate}" field = "*{chefRate}" required
+                          placeholder="Rating">
+                        <input type="text" class="oven-temp" name="oTemp" th:value="${temp}" field = "*{oTemp}" required
+                          placeholder="Oven/Stove Temp">
+                        <select class="temp-type">
+                          <option value="Fahrenheit">°F</option>
+                          <option value="Celsius">°C</option>
+                        </select>
+                        <select class="serv-size" name="serveSize" th:value="${serveSize}" field = "*{serveSize}" required>
+                          <option value="title"><span class="serv-size-word">Serving
+                              Size</span></option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10+">10+</option>
+                        </select>
+                        <input type = "text" class="utensilslist" name="utensils" th:value="${utensils}" field = "*{utensils}" required
+                          placeholder="List Utensils Used">
+                        <p class="picturebox">Picture</p>
+                      </div>
+                      <div class="pantry">
+                        <input type = "text" class="ingredientslist" name="ingredients" th:value="${ingredients}" field = "*{ingredients}" required
+                          placeholder="List Ingredients">
+                      </div>
+                      <div class="instruct-box">
+                        <input type = "text" class="instructions" name="instructions" th:value="${instructions}" field = "*{instructions}" required
+                          placeholder="Instructions">
+                      </div>
+                      <div class="savebutton">
+                        <button class="add">
+                          Save
+                        </button>
+                        <button type = "submit" class="add">
+                          Cancel
+                        </button>
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>

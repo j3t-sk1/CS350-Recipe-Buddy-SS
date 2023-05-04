@@ -218,7 +218,7 @@
                     <p>Edit Recipe</p>
 
                     <style>
-                      .tb { position:absolute; border-collapse: collapse; width:600px; clear: both; margin-left:500px; margin-top:100px;}
+                      .tb { position:absolute; border-collapse: collapse; width:750px; clear: both; margin-left:500px; margin-top:50px;}
                       .tb th, .tb td {padding: 5px; margin-top:100px; border:solid 1px #777; }
                       .tb th { margin-top:100px; background-color:rgb(231, 228, 28); }
                     </style>        
@@ -230,12 +230,12 @@
                         }
                       </script>
                       <thead>
-                          <tr>
-                              <th> Recipe Name </th>
+                          <tr style="height:50px;">
+                              <th style="text-align: center; font-size: x-large;"> Recipe Name </th>
                           </tr>
                       </thead>
                       <tbody style="background-color: white">
-                          <tr th:each="recipe : ${allRecipes}" style="cursor: pointer"
+                          <tr th:each="recipe : ${allRecipes}" style="cursor: pointer; height:75px; text-align:center; font-size:large;" 
                               th:onclick="'location.href= \''+ @{/editing-recipe?(id=${recipe.id})} + '\''">
                               <td th:text="${recipe.recipeName}">
                           </tr>

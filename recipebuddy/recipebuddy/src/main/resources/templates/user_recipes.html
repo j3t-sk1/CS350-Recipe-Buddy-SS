@@ -208,7 +208,7 @@
             <div class="rightside">
               <div class="profile_body">
                 <p style = "float:left; margin-left:150px; margin-bottom:0px; margin-top:50px;">My&nbspRecipes</p>
-                <div class="search" style="float:left; margin-left:150px; margin-bottom:0px; margin-top:50px; width:400px;">
+                <div class="search" style="float:left; margin-left:400px; margin-bottom:0px; margin-top:50px; width:400px;">
                   <!-- C:\Users\cpsou\OneDrive\Documents\GitHub\CS350-Recipe-Buddy-SS\icons\loupe.png -->
                   <!-- <form action="/html/tags/html_form_tag_action.cfm" method="get"> -->
                     <form>
@@ -233,65 +233,30 @@
                     </div>
                   </div>
 
-                <div class="user_box" style="clear:both; padding-top:0%;">
-                  <div class="user_recipes">
-                    <button class="listed_recipes" onclick="window.location.href='editing-recipe';">
-                      <div class="listed_recipe_image">
-                        <p class="listed_text">Recipe Image</p>
-                      </div>
-                      <p class="recipe_name">Recipe Name</p>
-                      <div class="listed_time">
-                        <p class="listed_text">Time to Make</p>
-                      </div>
-                      <div class="listed_serving_size">
-                        <p class="listed_text">Serving Size</p>
-                      </div>
-                      <p class="listed_rating">Rating</p>
-                    </button>
-          
-                  <button class="listed_recipes" onclick="window.location.href='editing-recipe';">
-                    <div class="listed_recipe_image">
-                      <p class="listed_text">Recipe Image</p>
-                    </div>
-                    <p class="recipe_name">Recipe Name</p>
-                    <div class="listed_time">
-                      <p class="listed_text">Time to Make</p>
-                    </div>
-                    <div class="listed_serving_size">
-                      <p class="listed_text">Serving Size</p>
-                    </div>
-                    <p class="listed_rating">Rating</p>
-                  </button>
-          
-                  <button class="listed_recipes" onclick="window.location.href='editing-recipe';">
-                    <div class="listed_recipe_image">
-                      <p class="listed_text">Recipe Image</p>
-                    </div>
-                    <p class="recipe_name">Recipe Name</p>
-                    <div class="listed_time">
-                      <p class="listed_text">Time to Make</p>
-                    </div>
-                    <div class="listed_serving_size">
-                      <p class="listed_text">Serving Size</p>
-                    </div>
-                    <p class="listed_rating">Rating</p>
-                  </button>
-
-                  <button class="listed_recipes" onclick="window.location.href='editing-recipe';">
-                    <div class="listed_recipe_image">
-                      <p class="listed_text">Recipe Image</p>
-                    </div>
-                    <p class="recipe_name">Recipe Name</p>
-                    <div class="listed_time">
-                      <p class="listed_text">Time to Make</p>
-                    </div>
-                    <div class="listed_serving_size">
-                      <p class="listed_text">Serving Size</p>
-                    </div>
-                    <p class="listed_rating">Rating</p>
-                  </button>
-                  </div>
-                </div>
+                  <style>
+                    .tb { position:absolute; border-collapse: collapse; width:750px; clear: both; margin-left:500px; margin-top:100px;}
+                    .tb th, .tb td {padding: 5px; margin-top:100px; border:solid 1px #777; }
+                    .tb th { margin-top:100px; background-color:rgb(231, 228, 28); }
+                  </style>
+                  <table class="tb">
+                    <script>
+                      function rowClicked(value){
+                        location.href = "/recipe-viewing?id="+value;
+                      }
+                    </script>
+                    <thead>
+                        <tr style="height:50px">
+                            <th style="font-size: x-large; text-align: center; color:black;"> Recipe Name </th>
+                        </tr>
+                    </thead>
+                    <tbody style="background-color: white">
+                        <tr th:each="recipe : ${allRecipes}" style="cursor: pointer; height:75px"
+                            th:onclick="'location.href= \''+ @{/recipe-viewing?(id=${recipe.id})} + '\''">
+                            <td th:text="${recipe.recipeName}" style="text-align: center; font-size:large; color:black">
+                        </tr>
+                    </tbody>
+                </table>
+              <div>
 
 
                 </div>

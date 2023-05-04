@@ -95,4 +95,9 @@ public class RecipesDataService implements RecipesDataAccessInterface {
         List<Recipe> results = jdbcTemplate.query("SELECT * FROM RECIPES ORDER BY chefRate", new RecipesMapper());
         return results;
     }
+
+    public List<Recipe> getRecent(){
+        List<Recipe> recent = jdbcTemplate.query("SELECT * FROM RECIPES ORDER BY id DESC LIMIT 4", new RecipesMapper());
+        return recent;
+    }
 }

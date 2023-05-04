@@ -51,5 +51,10 @@ public class RecipesBusinessService implements RecipesBusinessServiceInterface {
         Recipe result = recipesDAO.getById(id);
         return result;
     }
+
+    public List<Recipe> getRecent(){
+        List<Recipe> recent = recipesDAO.getRecent();
+        return recent;
+    }
     
 }

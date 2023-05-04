@@ -127,13 +127,13 @@ public class RecipesController {
             model.addAttribute("ratedFour", rbs.orderByRating().get(rbs.orderByRating().size()-1));
 
         if(rbs.getRecipes().size()>0)
-        model.addAttribute("ratedOneName", rbs.orderByRating().get(rbs.orderByRating().size()-1).getRecipeName());
+            model.addAttribute("ratedOneName", rbs.orderByRating().get(rbs.orderByRating().size()-1).getRecipeName());
         if(rbs.getRecipes().size()>1)
-        model.addAttribute("ratedTwoName", rbs.orderByRating().get(rbs.orderByRating().size()-2).getRecipeName());
+            model.addAttribute("ratedTwoName", rbs.orderByRating().get(rbs.orderByRating().size()-2).getRecipeName());
         if(rbs.getRecipes().size()>2)
-        model.addAttribute("ratedThreeName", rbs.orderByRating().get(rbs.orderByRating().size()-3).getRecipeName());
+            model.addAttribute("ratedThreeName", rbs.orderByRating().get(rbs.orderByRating().size()-3).getRecipeName());
         if(rbs.getRecipes().size()>3)
-        model.addAttribute("ratedFourName", rbs.orderByRating().get(rbs.orderByRating().size()-1).getRecipeName());
+            model.addAttribute("ratedFourName", rbs.orderByRating().get(rbs.orderByRating().size()-1).getRecipeName());
         }
 
         return "index";
@@ -193,7 +193,7 @@ public class RecipesController {
     }
 
     @PostMapping("/delete2")
-    public String submitDelete(@ModelAttribute Recipe toDelete){
+    public String submitDelete(Recipe toDelete, BindingResult bindingresult, Model model){
         rbs.deleteOne(toDelete.getId());
         return "redirect:index";
     }

@@ -35,7 +35,11 @@ public static void main(String[] args) throws Exception {
     //    ImageHandler test = new ImageHandler();
     //    System.out.println(test.addUrl("chicken", "rice"));
         ServeScaler scale = new ServeScaler(Database);
-        //You will have to manually put in indx, first argument
+        PreparedStatement ps = Database.getConn().prepareStatement
+        ("select * from recipebuddy.recipes Order BY id limit 1");
+        ResultSet rs = ps.executeQuery();
+        rs.next();
+        int lowestid = rs.getInt(10);
         scale.Try2(0, 4);
        Test.resetDB();
     }

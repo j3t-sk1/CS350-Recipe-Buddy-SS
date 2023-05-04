@@ -223,80 +223,30 @@
 
                     <p>Edit Recipe</p>
 
-                    <div class="edit_box">
-                      <div class="user_recipes">
-                        <button class="listed_recipes" onclick="window.location.href='editing-recipe';">
-                          <div class="listed_recipe_image">
-                            <!--<p class="listed_text">Recipe Image</p> -->
-                            <img class="thumbnail" src="icons/Pancakes.jpg">
-                          </div>
-                          <p class="recipe_name">Matt's Pancake Recipe</p>
-                          <div class="listed_time">
-                            <p class="listed_text">Time:<br> 15 min</p>
-                          </div>
-                          <div class="listed_serving_size">
-                            <p class="listed_text">Serving Size: 8</p>
-                          </div>
-                          <p class="listed_rating">Rating:<br> 6/10</p>
-                        </button>
-              
-                      <button class="listed_recipes" onclick="window.location.href='editing-recipe';">
-                        <div class="listed_recipe_image">
-                          <p class="listed_text">Recipe Image</p>
-                        </div>
-                        <p class="recipe_name">Recipe Name</p>
-                        <div class="listed_time">
-                          <p class="listed_text">Time to Make</p>
-                        </div>
-                        <div class="listed_serving_size">
-                          <p class="listed_text">Serving Size</p>
-                        </div>
-                        <p class="listed_rating">Rating</p>
-                      </button>
-              
-                      <button class="listed_recipes" onclick="window.location.href='editing-recipe';">
-                        <div class="listed_recipe_image">
-                          <p class="listed_text">Recipe Image</p>
-                        </div>
-                        <p class="recipe_name">Recipe Name</p>
-                        <div class="listed_time">
-                          <p class="listed_text">Time to Make</p>
-                        </div>
-                        <div class="listed_serving_size">
-                          <p class="listed_text">Serving Size</p>
-                        </div>
-                        <p class="listed_rating">Rating</p>
-                      </button>
-    
-                      <button class="listed_recipes" onclick="window.location.href='editing-recipe';">
-                        <div class="listed_recipe_image">
-                          <p class="listed_text">Recipe Image</p>
-                        </div>
-                        <p class="recipe_name">Recipe Name</p>
-                        <div class="listed_time">
-                          <p class="listed_text">Time to Make</p>
-                        </div>
-                        <div class="listed_serving_size">
-                          <p class="listed_text">Serving Size</p>
-                        </div>
-                        <p class="listed_rating">Rating</p>
-                      </button>
-
-                      <button class="listed_recipes" onclick="window.location.href='editing-recipe';">
-                        <div class="listed_recipe_image">
-                          <p class="listed_text">Recipe Image</p>
-                        </div>
-                        <p class="recipe_name">Recipe Name</p>
-                        <div class="listed_time">
-                          <p class="listed_text">Time to Make</p>
-                        </div>
-                        <div class="listed_serving_size">
-                          <p class="listed_text">Serving Size</p>
-                        </div>
-                        <p class="listed_rating">Rating</p>
-                      </button>
-
-                      </div>
+                    <style>
+                      .tb { position:absolute; border-collapse: collapse; width:600px; clear: both; margin-left:500px; margin-top:100px;}
+                      .tb th, .tb td {padding: 5px; margin-top:100px; border:solid 1px #777; }
+                      .tb th { margin-top:100px; background-color:rgb(231, 228, 28); }
+                    </style>        
+                              
+                    <table class="tb">
+                      <script>
+                        function rowClicked(value){
+                          location.href = "/editing-recipe?id="+value;
+                        }
+                      </script>
+                      <thead>
+                          <tr>
+                              <th> Recipe Name </th>
+                          </tr>
+                      </thead>
+                      <tbody style="background-color: white">
+                          <tr th:each="recipe : ${allRecipes}" style="cursor: pointer"
+                              th:onclick="'location.href= \''+ @{/editing-recipe?(id=${recipe.id})} + '\''">
+                              <td th:text="${recipe.recipeName}">
+                          </tr>
+                      </tbody>
+                  </table>
                     </div>
 
 

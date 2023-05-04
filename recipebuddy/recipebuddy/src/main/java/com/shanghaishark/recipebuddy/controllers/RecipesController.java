@@ -10,7 +10,10 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,6 +21,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shanghaishark.recipebuddy.business.RecipesBusinessService;
 import com.shanghaishark.recipebuddy.models.Recipe;
+
+import jakarta.servlet.http.HttpServletRequest;
 
 
 @Controller
@@ -30,6 +35,8 @@ public class RecipesController {
     public int b;
     public int c;
     public int d;
+    
+    public int num = 0;
     
     @GetMapping("/index")
     public String showHome(Model model){
@@ -147,22 +154,25 @@ public class RecipesController {
     }
     
     @RequestMapping(value="/editing-recipe", method=RequestMethod.GET)
-    public String showEdit(Model model, @RequestParam(value="id", required=true, defaultValue = "") String queryParam){
-        model.addAttribute("recipeToEdit", rbs.getById(Integer.parseInt(queryParam)));
-        model.addAttribute("name", rbs.getById(Integer.parseInt(queryParam)).getRecipeName());
-        model.addAttribute("ingredients", rbs.getById(Integer.parseInt(queryParam)).getIngredients());
-        model.addAttribute("instructions", rbs.getById(Integer.parseInt(queryParam)).getInstructions());
-        model.addAttribute("rate", rbs.getById(Integer.parseInt(queryParam)).getChefRate());
-        model.addAttribute("utensils", rbs.getById(Integer.parseInt(queryParam)).getUtensils());
-        model.addAttribute("serveSize", rbs.getById(Integer.parseInt(queryParam)).getServeSize());
-        model.addAttribute("temp", rbs.getById(Integer.parseInt(queryParam)).getoTemp());
-        model.addAttribute("pic", rbs.getById(Integer.parseInt(queryParam)).getPic());
+    public String showEdit(Model model, @RequestParam(name="id", required=true, defaultValue = "") String id){
+        model.addAttribute("recipeToEdit", rbs.getById(Integer.parseInt(id)));
+        model.addAttribute("name", rbs.getById(Integer.parseInt(id)).getRecipeName());
+        model.addAttribute("ingredients", rbs.getById(Integer.parseInt(id)).getIngredients());
+        model.addAttribute("instructions", rbs.getById(Integer.parseInt(id)).getInstructions());
+        model.addAttribute("rate", rbs.getById(Integer.parseInt(id)).getChefRate());
+        model.addAttribute("utensils", rbs.getById(Integer.parseInt(id)).getUtensils());
+        model.addAttribute("serveSize", rbs.getById(Integer.parseInt(id)).getServeSize());
+        model.addAttribute("temp", rbs.getById(Integer.parseInt(id)).getoTemp());
+        model.addAttribute("pic", rbs.getById(Integer.parseInt(id)).getPic());
+        model.addAttribute("id", Integer.parseInt(id));
+
         return "editing-recipe";
     }
 
-    @PostMapping("/editing-recipe")
-    public String submitEdit(@ModelAttribute Recipe toEdit, Model model){
-        rbs.updateOne(toEdit.getId(), toEdit);
+    
+    @PostMapping("editing-recipe")
+    public String submitEdit(Recipe recipe, BindingResult bindingResult, Model model){
+        rbs.updateOne(recipe.getId(), recipe);
         return "redirect:index";
     }
 

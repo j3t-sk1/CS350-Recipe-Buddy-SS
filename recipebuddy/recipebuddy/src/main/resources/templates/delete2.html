@@ -25,6 +25,9 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     
         
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -278,9 +281,12 @@
                               </tr>
                           </thead>
                           <tbody style="background-color: white">
-                              <tr th:each="recipe : ${allRecipes}" style="cursor: pointer"
-                                  th:onclick="'location.href= \''+ @{/delete2/#delModal} + '\''">
-                                  <td th:text="${recipe.recipeName}">
+                              <tr th:each="recipe : ${allRecipes}" style="cursor: pointer">
+                                  <td>
+                                    <form th:action = "@{delete2/}+${{recipe.id}}" method = "get">
+                                      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#delModal" th:text="${recipe.recipeName}"></button>
+                                    </form>
+                                  </td>
                               </tr>
                           </tbody>
                       </table>
@@ -339,11 +345,6 @@
       </div>
       <script src="js/page.js"></script>
       <script>
-        $(document).ready(function(){
-          if(window.location.href.indexOf('#delModal') != -1){
-            $('#delModal').modal('show');
-          }
-        });
       </script>
       </body>
     </html>

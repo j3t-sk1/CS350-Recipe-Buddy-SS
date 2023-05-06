@@ -69,6 +69,15 @@ public class RecipesDataService implements RecipesDataAccessInterface {
         else
             return false;
     }
+    
+    @Override
+    public boolean deleteOne(String name){
+        int result = jdbcTemplate.update("DELETE FROM RECIPES WHERE recipeName = ?", name);
+        if(result>0)
+            return true;
+        else
+            return false;
+    }
 
     @Override
     public Recipe updateOne (int id, Recipe updateRecipe){

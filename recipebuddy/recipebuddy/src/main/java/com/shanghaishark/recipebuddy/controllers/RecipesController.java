@@ -3,6 +3,7 @@ package com.shanghaishark.recipebuddy.controllers;
 import java.util.List;
 import java.util.Random;
 
+import org.hibernate.query.QueryParameter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
@@ -192,10 +193,10 @@ public class RecipesController {
         return "delete2";
     }
 
-    @PostMapping("/delete2")
+    @GetMapping("/delete2/submit")
     public String submitDelete(Recipe toDelete, BindingResult bindingresult, Model model){
-        rbs.deleteOne(toDelete.getId());
-        return "redirect:index";
+        rbs.deleteOne("Pie");
+        return "redirect:http://localhost:8080/index";
     }
 
     @GetMapping("/random1")

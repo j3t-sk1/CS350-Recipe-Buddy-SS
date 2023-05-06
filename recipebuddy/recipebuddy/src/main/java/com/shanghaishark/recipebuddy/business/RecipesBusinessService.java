@@ -31,6 +31,11 @@ public class RecipesBusinessService implements RecipesBusinessServiceInterface {
     }
 
     @Override
+    public boolean deleteOne(String name){
+        return recipesDAO.deleteOne(name);
+    }
+
+    @Override
     public Recipe updateOne (int id, Recipe updateRecipe){
         return recipesDAO.updateOne(id, updateRecipe);
     }

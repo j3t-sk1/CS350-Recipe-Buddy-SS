@@ -195,7 +195,7 @@ public class RecipesController {
 
     @GetMapping("/delete2/submit")
     public String submitDelete(Recipe toDelete, BindingResult bindingresult, Model model){
-        rbs.deleteOne("Pie");
+        rbs.deleteOne(toDelete.getId());
         return "redirect:http://localhost:8080/index";
     }
 

@@ -34,7 +34,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
 
-      <body>
+      <body style="background-color: rgb(48, 48, 48);">
         <main id="page">
           <nav><!-- main menu -->
             <!-- <ul> -->
@@ -283,30 +283,13 @@
                           <tbody style="background-color: white">
                               <tr th:each="recipe : ${allRecipes}" style="cursor: pointer">
                                   <td>
-                                    <form th:action = "@{delete2/}+${{recipe.id}}" method = "get">
-                                      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#delModal" th:text="${recipe.recipeName}"></button>
+                                    <form><!--th:action = "@{delete2/}+${{recipe.id}}" method = "get">-->
+                                      <button type="button" class="btn btn-info btn-lg" style="background-color:white; border: white; color:black; align-self: center; align-content: center;" data-toggle="modal" data-target="#delModal" th:text="${recipe.recipeName}"></button>
                                     </form>
                                   </td>
                               </tr>
                           </tbody>
-                      </table>
-
-                    <div class="delete_box">
-
-
-                    <div class="listed_recipes_modded">
-                        <div class="listed_recipe_image">
-                          <p class="listed_text">Recipe Image</p>
-                        </div>
-                        <p class="recipe_name">Recipe Name</p>
-                        <div class="listed_time">
-                          <p class="listed_text">Time to Make</p>
-                        </div>
-                        <div class="listed_serving_size">
-                          <p class="listed_text">Serving Size</p>
-                        </div>
-                        <p class="listed_rating">Rating</p>
-                    </div>
+                        </table>
             
                     <button id="delete" class="trigger">
                       <a width="80px" height="8px" alt="delete">
@@ -321,10 +304,9 @@
                           </div>
                         </div>
                         <h1>Are you sure you want to delete?</h1>
-                        <button class="m_button" onclick="location.href='@{/delete2?(id=${recipe.id})}'">Yes</button>
+                        <button class="m_button" onclick="location.href='delete2/submit'">Yes</button>
                         <button class="m_button_2" onclick="location.href='delete2.html'">No</button>
                       </div>
-                  </div> 
 
 
                     

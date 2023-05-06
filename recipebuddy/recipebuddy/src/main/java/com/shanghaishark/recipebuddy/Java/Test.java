@@ -22,10 +22,10 @@ public class Test {
         defaultAdd.Create();
     }
     public static void testadd(String s){
-        String[] Split = s.split("(()", 4);
-        String[] Ingredients = Split[1].split("())");   
-        String[] Instructions = Split[2].split("())"); 
-        String[] Utensils = Split[3].split("())"); 
+        String[] Split = s.split("\\(\\", 4);
+        String[] Ingredients = Split[1].split("\\)\\");   
+        String[] Instructions = Split[2].split("\\)\\"); 
+        String[] Utensils = Split[3].split("\\)\\"); 
         String[] Nums = Split[4].split(" "); 
 
         Add testAdd = new Add
